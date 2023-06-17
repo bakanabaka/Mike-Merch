@@ -1,0 +1,510 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* border: none;
+    outline: none; */
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.wrapper {
+    width: 95%;
+    margin: 0 auto;
+
+}
+
+#search-container {
+    margin: 1em 0;
+    justify-content: center;
+    text-align: center;
+    background-image: url('https://images.unsplash.com/reserve/uZYSV4nuQeyq64azfVIn_15130980706_64134efc6e_o.jpg?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwyMDc2OTk3fHxlbnwwfHx8fA%3D%3D&w=1000&q=80');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+
+}
+
+
+
+#search-container input {
+    width: 40%;
+    border-bottom: 2px solid #110f29;
+    padding: 1em 0.3em;
+    position: relative;
+    top: 32vh;
+}
+
+#search-container #search {
+    position: relative;
+    top: 32vh;
+}
+
+
+#search-container button {
+    padding: 1em 2em;
+    margin-left: 1em;
+    background-color: black;
+    color: #ffffff;
+    border-radius: 5px;
+    margin-top: 0.5em;
+    cursor: pointer;
+}
+
+#search-container button:hover {
+    background-color: white;
+    color: black;
+    border-color: green;
+    outline: #333;
+}
+
+
+.active {
+    background-color: black;
+    color: #ffffff;
+}
+
+#products {
+    /* display: flex; */
+    /* grid-template-columns: auto auto auto; */
+    padding: 2em 0;
+    text-align: left;
+}
+
+.card {
+    background-color: #ffffff;
+    /* max-width: 18em; */
+    /* width: 20%; */
+
+    margin-top: 1em;
+    padding: 1em;
+    /* box-shadow: 1em 2em 2.5em rgba(1, 2, 68, 0.08); */
+}
+
+
+.container {
+    padding-top: 1em;
+    color: #110f29;
+    font-size: 4vh;
+}
+
+.container h5 {
+    text-align: center;
+    font-weight: 1000;
+}
+
+.container p {
+    font-size: 3vh;
+}
+
+.hide {
+    display: none;
+}
+
+@media screen and (max-width: 720px) {
+
+
+    .card {
+        max-width: 10em;
+        margin-top: 1em;
+        position: relative;
+        left: 60vh;
+    }
+
+    #products {
+        /* grid-template-columns: auto auto;
+        grid-column-gap: 1em; */
+        position: relative;
+        right: 60vh;
+    }
+
+    .container {
+        font-size: 2vh;
+        position: relative;
+        left: 10vh;
+    }
+
+    .container h5 {
+        font-size: 3vh;
+    }
+}
+
+.help {
+    text-align: center;
+    font-size: 7vh;
+    text-transform: uppercase;
+
+}
+
+#option {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 5%;
+
+}
+
+.items {
+    flex: 1;
+    min-width: 33%;
+    padding: 2%;
+    line-height: 7vh;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.items-img {
+    width: 60%;
+    height: 40%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.items-p {
+    line-height: 3.5vh;
+}
+
+@media screen and (max-width:600px) {
+    .items {
+        padding: 0.2% 18%;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        /* text-align: center; */
+        right: 12%;
+        font-size: 4vh;
+    }
+
+    .items-img {
+        width: 28vh;
+        height: 20vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .items-p {
+        font-size: 2vh;
+        text-align: center;
+        position: relative;
+        left: 4vh;
+    }
+}
+
+#option2 {
+    padding: 2% 5%;
+}
+
+.class-name:after {
+    content: " ";
+    display: block;
+    border-bottom: 0.5px solid #9E9E9E;
+}
+
+.option1 {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 2%;
+}
+
+.items1 {
+    flex: 1;
+    min-width: 33%;
+    padding: 2%;
+    line-height: 7vh;
+    box-sizing: border-box;
+
+}
+
+.items-p {
+    line-height: 3.5vh;
+}
+
+.items-p1 {
+    line-height: 5.5vh;
+}
+
+.items1 {
+    text-align: center;
+}
+
+@media screen and (max-width:600px) {
+    .option1 {
+        background-color: white;
+        color: black;
+        padding: 4vh;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 3vh;
+        cursor: pointer;
+    }
+
+
+
+    .items1 {
+        padding: 0 18px;
+        max-height: 120vh;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        background-color: white;
+        text-align: left;
+        width: 60vh;
+    }
+}
+
+
+footer {
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #000;
+    color: white;
+    padding: 24px;
+}
+
+footer .col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    margin-right: 30vh;
+}
+
+footer .logo {
+    margin-bottom: 30px;
+}
+
+footer h4 {
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+footer p {
+    font-size: 13px;
+    margin: 0 0 8px 0;
+}
+
+footer a {
+    font-size: 13px;
+    text-decoration: none;
+    color: grey;
+    margin-bottom: 10px;
+}
+
+footer .follow {
+    margin-top: 20px;
+}
+
+footer .follow i {
+    color: lightgray;
+    padding-right: 4px;
+    cursor: pointer;
+}
+
+footer .follow i:hover,
+footer a:hover {
+    color: white;
+}
+
+footer .copyright {
+    width: 100%;
+    text-align: center;
+}
+
+
+
+
+
+
+
+#myBtn {
+    background-color: black;
+    color: gray;
+    cursor: pointer;
+    position: relative;
+    bottom: 1vh;
+
+}
+
+#myBtn:hover {
+    color: white;
+}
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    color: #000;
+    margin: auto;
+    padding: 3%;
+    border: 1px solid #888;
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    border-radius: 12px;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+}
+
+@media screen and (max-width:600px) {
+    .modal-content {
+        position: relative;
+        right: 50vh;
+        width: 60vh;
+    }
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+/* The Close Button */
+.close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: gray;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.Bodal-header {
+    padding: 2px 16px;
+    background-color: white;
+    color: black;
+}
+
+.modal-body {
+    padding: 2px 16px;
+}
+
+.modal-p {
+    font-size: 2.5vh;
+}
+
+.fname {
+    color: #000;
+    outline: black;
+    /* background-color: black; */
+    /* outline-style: auto; */
+    border: 1px solid lightgray;
+    outline-width: thin;
+    width: 80vh;
+    height: 7vh;
+}
+
+
+
+.fname:hover {
+    border: 1px solid black;
+}
+
+.text-box {
+    color: #000;
+    outline: black;
+    /* background-color: black; */
+    /* outline-style: auto; */
+    border: 1px solid lightgray;
+    outline-width: thin;
+    /* width: 80vh; */
+}
+
+
+.last-p {
+    color: gray;
+    font-size: 2.1vh;
+}
+
+.but1 {
+    float: right;
+    align-items: right;
+    justify-content: right;
+    text-align: center;
+    position: relative;
+    right: 6vh;
+    color: white;
+    background-color: black;
+    border-radius: 12px;
+    width: 16%;
+    height: 5.4vh;
+}
+
+.but1:hover {
+    background-color: lightgray;
+    color: black;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width:600px) {
+    .fname {
+        width: 40vh;
+    }
+
+    .text-box {
+        width: 40vh;
+    }
+
+    .but1 {
+        width: 15vh;
+    }
+}

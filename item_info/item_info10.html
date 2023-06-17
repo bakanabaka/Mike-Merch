@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="item_info.css">
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="../index1.html"><img src="../images/logs-removebg-preview.png" alt="" height="100vh"
+                        width="100vh"></a>
+            </div>
+            <ul class="links">
+                <li><a href="../signup/login.html">Login</a></li>
+                <li><a href="../style1.html">SHOP</a></li>
+                <li><a href="../signup/signup.html">Sign up</a></li>
+                <div class="dropdown">
+                    <button class="dropbtn">NEW
+
+                    </button>
+                    <div class="dropdown-content">
+                        <div class="row">
+                            <div class="column">
+                                <h3 class="column-h3">Eco Varsity Jacket</h3>
+                                <a href="../item_info/item_info2.html">Varsity Forest</a>
+                                <a href="../item_info/item_info3.html">Varsity Stone</a>
+                                <a href="../item_info/item_info4.html">Varsity Off</a>
+                            </div>
+                            <div class="column">
+                                <h3 class="column-h3">Artisan Hoodie</h3>
+                                <a href="../item_info/item_info16.html">Pastel Hoodie</a>
+                                <a href="../item_info/item_info18.html">Partition Hoodie</a>
+                                <a href="../item_info/item_info19.html">Toby Hoodie</a>
+                            </div>
+                            <div class="column">
+                                <h3 class="column-h3">Cosmo Puffer Jackets</h3>
+                                <a href="../item_info/item_info8.html">XIX Nitro Puffer</a>
+                                <a href="../item_info/item_info9.html">XIX Nitro Hoodie</a>
+                                <a href="../item_info/item_info11.html">XIX Nitro Hoodie</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr6UOrU0yygGzm6JVLGSzGlFzIzbK-9jXw3DIojgmKxPXHpaJL"
+                    height="40vh" width="40vh" onclick="toggleMe()"> -->
+                <i class="fa-regular fa-user" onclick="toggleMe()"></i>
+                <div class="sub-menu-wrap" id="subMenu">
+                    <div class="sub-menu">
+                        <div class="user-info">
+                            <img src="https://img.freepik.com/free-icon/user_318-159711.jpg" height="40vh" width="40vh"
+                                alt="" id="nav-img">
+                            <h2 id="nav-h2">Name</h2>
+                        </div>
+                        <hr>
+                        <a href="../useracc/account.html" class="sub-menu-link">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <p>Edit</p>
+                            <span>></span>
+                        </a>
+                        <a href="../agreement.html" class="sub-menu-link">
+                            <i class="fa-solid fa-gear"></i>
+                            <p>Terms of sale</p>
+                            <span>></span>
+                        </a>
+                    </div>
+                </div>
+                <script>
+                    let subMenu = document.getElementById('subMenu');
+                    function toggleMe() {
+                        subMenu.classList.toggle("open-menu");
+                    }
+                </script>
+            </ul>
+            <div>
+
+            </div>
+            <div class="search-bar">
+                <i class="fa-solid fa-heart" style="color: red;font-size: 3.2vh;margin-right: 2vh;cursor: pointer;"
+                    id="heart-icon"></i>
+                <i class="fa-solid fa-cart-shopping" style="font-size: 3.2vh;margin-right: 2vh; cursor: pointer;"
+                    id="wish-icon"></i>
+                <script>
+                    document.getElementById('heart-icon').addEventListener('click', function () {
+                        // Replace 'your-page-url' with the URL of the page you want to navigate to
+                        window.location.href = '../favourite.html';
+                    });
+                    document.getElementById('wish-icon').addEventListener('click', function () {
+                        // Replace 'your-page-url' with the URL of the page you want to navigate to
+                        window.location.href = '../nani.html';
+                    });
+                </script>
+                <input type="text" id="search-bar-1">
+                <button class="search-button" onclick="search()"><i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+            <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
+            <div class="dropdown_menu">
+                <li><a href="../signup/login.html">LOGIN</a></li>
+                <li><a href="../style1.html">SHOP</a></li>
+                <li><a href="../signup/signup.html">SIGN UP</a></li>
+                <div class="dropdown">
+                    <button class="dropbtn" id="dropbtn" onclick="toggleHeight()">NEW</button>
+                    <script>
+                        function toggleHeight() {
+                            var button = document.querySelector('.dropbtn');
+                            var dropdown = document.querySelector('.dropdown_menu');
+                            dropdown.classList.toggle('tall');
+                        }
+
+                    </script>
+                    <div class="dropdown-content">
+                        <div class="row">
+                            <div class="column">
+                                <h3>Varsity</h3>
+                                <a href="../item_info/item_info2.html">Varsity Forest</a>
+                                <a href="../item_info/item_info3.html">Varsity Stone</a>
+                                <a href="../item_info/item_info4.html">Varsity Off</a>
+                            </div>
+                            <div class="column">
+                                <h3>Hoodie</h3>
+                                <a href="../item_info/item_info16.html">Pastel Hoodie</a>
+                                <a href="../item_info/item_info18.html">Partition Hoodie</a>
+                                <a href="../item_info/item_info19.html">Toby Hoodie</a>
+                            </div>
+                            <div class="column">
+                                <h3>Puffer</h3>
+                                <a href="../item_info/item_info8.html">Nitro Puffer</a>
+                                <a href="../item_info/item_info9.html">Nitro Hoodie</a>
+                                <a href="../item_info/item_info11.html"> Nitro Hoodie</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <br><br><br><br><br><br>
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn');
+        const toggleBtnIcon = document.querySelector('.toggle_btn i');
+        const dropDownMenu = document.querySelector('.dropdown_menu');
+
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open');
+            const isOpen = dropDownMenu.classList.contains('open');
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        }
+    </script>
+    <script type="text/javascript">
+        function search() {
+            const searchQuery = document.getElementById("search-bar-1").value;
+            window.location.href = "../style1.html?searchQuery=" + encodeURIComponent(searchQuery);
+        }
+    </script>
+
+
+    <!-- <div class="container">
+        <div class="item">
+            <h2>Icons</h2>
+            <p>Air Force 1</p>
+            <p>Hurache</p>
+            <p>Air Max 90</p>
+            <p>Air Max 97</p>
+        </div>
+        <div class="item">
+            <h2>Shoes</h2>
+            <p>Air Force 1</p>
+            <p>Hurache</p>
+            <p>Air Max 90</p>
+            <p>Air Max 97</p>
+        </div>
+        <div class="item">
+            <h2>Clothing</h2>
+            <p>Air Force 1</p>
+            <p>Hurache</p>
+            <p>Air Max 90</p>
+            <p>Air Max 97</p>
+        </div>
+        <div class="item">
+            <h2>Kids</h2>
+            <p>Air Force 1</p>
+            <p>Hurache</p>
+            <p>Air Max 90</p>
+            <p>Air Max 97</p>
+        </div>
+    </div> -->
+
+
+    </div>
+    </div>
+
+    </div>
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        .visible {
+            display: table;
+        }
+    </style>
+    <div>
+        <div class="div1">
+            <div>
+                <img id="img4"
+                    src="https://cdn.shopify.com/s/files/1/1078/8124/products/NitroOrangeHoodie1_900x.png?v=1664216573"
+                    class="img-shoe1" alt="">
+                <img src="https://cdn.shopify.com/s/files/1/1078/8124/products/NitroOrangeHoodieModel_900x.png?v=1664799128"
+                    class="img-shoe2" alt="">
+                <div class="sub-div">
+                    <div class="part-class">
+                        <h2 class="hey" id="name4">XIX Nitro Orange Hood</h2>
+                        <p>Men's Hoodie</p><br><br>
+                        <p id="price4">MRP : ₹ 4800.00</p>
+                        <p class="hey-incl">incl. of taxes</p>
+                        <p class="hey-also">(Also includes all applicable duties)</p>
+                    </div>
+                    <br><br>
+                    <p class="hey-sel">Select Size</p>
+                    <div class="bb">
+                        <button class="but2" data-size="UK 7">UK 7</button>
+                        <button class="but2" data-size="UK 7.5">UK 7.5</button>
+                        <button class="but2" data-size="UK 8">UK 8</button>
+                    </div>
+                    <div>
+                        <button class="but2" data-size="UK 8.5">UK 8.5</button>
+                        <button class="but2" data-size="UK 9">UK 9</button>
+                        <button class="but2" data-size="UK 9.5">UK 9.5</button>
+                    </div>
+                    <div>
+                        <button class="but2" data-size="UK 10">UK 10</button>
+                        <button class="but2" data-size="UK 10.5">UK 10.5</button>
+                        <button class="but2" data-size="UK 11">UK 11</button>
+                    </div>
+                    <br>
+                    <div>
+
+                        <button class="add-to-wishlist"
+                            data-image="https://cdn.shopify.com/s/files/1/1078/8124/products/NitroOrangeHoodie1_900x.png?v=1664216573"
+                            data-price="4800" data-name="XIX Nitro Orange Hood" data-size="">Add To
+                            WishList</button>
+
+                        <br><br>
+                        <button class="fav"
+                            data-image="https://cdn.shopify.com/s/files/1/1078/8124/products/NitroOrangeHoodie1_900x.png?v=1664216573"
+                            data-price="4800" data-name="XIX Nitro Orange Hood" data-size="">Add To
+                            Favorites</button>
+                        <!-- <button class="fav">Favourite<box-icon name='heart'></box-icon></button> -->
+                    </div>
+                    <div class="text-div">
+                        <p>You've got the hops and the speed—lace up in</p>
+                        <p>shoes that enhance what you bring to the court. The</p>
+                        <p>latest AJ is all about take-offs and landings, with</p>
+                        <p>multiple Air units to help get you off the ground and</p>
+                        <p>Formula 23 foam to ease your impact. The upper is</p>
+                        <p>made from strong, reinforced leno-weave fabric</p>
+                        <p>that'll help keep you contained no matter how fast</p>
+                        <p>you move—and leave your game uncompromised.</p>
+                        <br><br>
+                        <ul>
+                            <li>Colour Shown: Military Blue/Midnight Navy/True</li>
+                            <p> Red/White</p>
+                            <li>Style: DV9908-401</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <br>
+                        <hr>
+                        <button class="collapsible">Open Section 1</button>
+                        <div class="content">
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                        <hr>
+                        <button class="collapsible">Comments</button>
+                        <div class="content">
+                            <form class="form-p" id="my-form">
+                                <input type="text" id="fname" placeholder="  Tell us Your Name..." required>
+                                <textarea name="" class="text-box" id="text-box" cols="30" rows="10" maxlength="100"
+                                    placeholder="We would like to have your feedback(max 100 words)"
+                                    required></textarea><br>
+                                <button class="sub-bub" type="submit">Submit</button>
+                                <p class="paras">Comments By others</p>
+                            </form>
+
+                            <ul id="data-list"></ul>
+                        </div>
+                        <hr>
+                        <button class="collapsible">Open Section 3</button>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                        <hr>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <br>
+            <div>
+                <img src="https://assets.ajio.com/medias/sys_master/root/20221114/gA10/63725b5ff997ddfdbd72a2d0/-473Wx593H-469288421-orange-MODEL.jpg"
+                    class="img-shoe3" alt="">
+                <img src="https://cdn.shopify.com/s/files/1/1078/8124/products/NitroOrangeHoodie2_900x.png?v=1664799128"
+                    class="img-shoe4" alt="">
+
+
+
+            </div>
+
+            <br>
+
+            <div>
+                <img src="https://cdn.shopify.com/s/files/1/1078/8124/products/NitroOrangeHoodie1_900x.png?v=1664216573"
+                    class="img-shoe3" alt="">
+            </div>
+            <br>
+
+        </div>
+
+    </div>
+    <div>
+        <section class="product">
+            <br><br><br><br><br><br><br>
+            <h2 class="product-category">You might also like</h2>
+            <button class="pre-btn"><img src="../images/arrow.png" alt=""></button>
+            <button class="nxt-btn"><img src="../images/arrow.png" alt=""></button>
+            <div class="product-container">
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="discount-tag">50% off</span>
+                        <img src="../images/card1.jpg" class="product-thumb" alt="">
+                    </div>
+                    <div class="product-info">
+                        <h2 class="product-brand">brand</h2>
+                        <p class="product-short-description">a short line about the cloth..</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="discount-tag">50% off</span>
+                        <img src="../images/card2.jpg" class="product-thumb" alt="">
+                    </div>
+                    <div class="product-info">
+                        <h2 class="product-brand">brand</h2>
+                        <p class="product-short-description">a short line about the cloth..</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="discount-tag">50% off</span>
+                        <img src="../images/card3.jpg" class="product-thumb" alt="">
+                    </div>
+                    <div class="product-info">
+                        <h2 class="product-brand">brand</h2>
+                        <p class="product-short-description">a short line about the cloth..</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="discount-tag">50% off</span>
+                        <img src="../images/card4.jpg" class="product-thumb" alt="">
+                    </div>
+                    <div class="product-info">
+                        <h2 class="product-brand">brand</h2>
+                        <p class="product-short-description">a short line about the cloth..</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="discount-tag">50% off</span>
+                        <img src="../images/card5.jpg" class="product-thumb" alt="">
+
+                    </div>
+                    <div class="product-info">
+                        <h2 class="product-brand">brand</h2>
+                        <p class="product-short-description">a short line about the cloth..</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="discount-tag">50% off</span>
+                        <img src="../images/card6.jpg" class="product-thumb" alt="">
+
+                    </div>
+                    <div class="product-info">
+                        <h2 class="product-brand">brand</h2>
+                        <p class="product-short-description">a short line about the cloth..</p>
+
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="discount-tag">50% off</span>
+                        <img src="../images/card7.jpg" class="product-thumb" alt="">
+
+                    </div>
+                    <div class="product-info">
+                        <h2 class="product-brand">brand</h2>
+                        <p class="product-short-description">a short line about the cloth..</p>
+
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="discount-tag">50% off</span>
+                        <img src="../images/card8.jpg" class="product-thumb" alt="">
+
+                    </div>
+                    <div class="product-info">
+                        <h2 class="product-brand">brand</h2>
+                        <p class="product-short-description">a short line about the cloth..</p>
+
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="discount-tag">50% off</span>
+                        <img src="../images/card9.jpg" class="product-thumb" alt="">
+
+                    </div>
+                    <div class="product-info">
+                        <h2 class="product-brand">brand</h2>
+                        <p class="product-short-description">a short line about the cloth..</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="discount-tag">50% off</span>
+                        <img src="../images/card10.jpg" class="product-thumb" alt="">
+
+                    </div>
+                    <div class="product-info">
+                        <h2 class="product-brand">brand</h2>
+                        <p class="product-short-description">a short line about the cloth..</p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+            // Array of item information to be randomly assigned
+            var itemInfo = [
+                {
+                    name: "SDMN Varsity Jacket",
+                    description: "Men's Varsity Jacket",
+                    imageUrl: "https://cdn.shopify.com/s/files/1/1078/8124/products/VarsityJacket1_900x.png?v=1657557874",
+                    redirectUrl: "../item_info/item_info1.html",
+                },
+                {
+                    name: "SDMN Varsity Forest",
+                    description: "Men's Varsity Hoodie",
+                    imageUrl: "https://cdn.shopify.com/s/files/1/1078/8124/products/ForestGreenHoodie1_900x.png?v=1666444501",
+                    redirectUrl: "../item_info/item_info2.html",
+                },
+                {
+                    name: "SDMN Varsity Stone",
+                    description: "Men's Varsity Hoodie",
+                    imageUrl: "https://cdn.shopify.com/s/files/1/1078/8124/products/StoneHoodie1_900x.png?v=1666444860",
+                    redirectUrl: "../item_info/item_info3.html",
+                },
+                {
+                    name: "SDMN Varsity Off",
+                    description: "Men's Varsity Hoodie",
+                    imageUrl: "https://cdn.shopify.com/s/files/1/1078/8124/products/OffWhiteRedHood1_900x.png?v=1657554270",
+                    redirectUrl: "../item_info/item_info4.html",
+                },
+                {
+                    name: "SDMN Varsity Fullshirt",
+                    description: "Men's Varsity Sweatshirt",
+                    imageUrl: "https://cdn.shopify.com/s/files/1/1078/8124/products/BlackOrangeSweater1_900x.png?v=1657554966",
+                    redirectUrl: "../item_info/item_info5.html",
+                },
+                {
+                    name: "SDMN Varsity Sweatshirt",
+                    description: "Men's Varsity Sweatshirt",
+                    imageUrl: "https://cdn.shopify.com/s/files/1/1078/8124/products/BlackOrangeT-Shirt_900x.png?v=1657555813",
+                    redirectUrl: "../item_info/item_info6.html",
+                },
+                {
+                    name: "SDMN Spongebob shirt",
+                    description: "Men's Varsity T-shirt",
+                    imageUrl: "https://cdn.shopify.com/s/files/1/1078/8124/products/BubbleT-ShirtBlack1_900x.png?v=1666266539",
+                    redirectUrl: "../item_info/item_info7.html",
+                },
+                {
+                    name: "XIX Nitro Puffer",
+                    description: "Men's Puffer Jacket",
+                    imageUrl: "https://cdn.shopify.com/s/files/1/1078/8124/products/NitroGilet1_900x.png?v=1659435753",
+                    redirectUrl: "../item_info/item_info8.html",
+                },
+                {
+                    name: "XIX Nitro Hoodie",
+                    description: "Men's Hoodie",
+                    imageUrl: "https://cdn.shopify.com/s/files/1/1078/8124/products/NitroBlackHoodie1_900x.png?v=1664216527",
+                    redirectUrl: "../item_info/item_info9.html",
+                },
+                {
+                    name: "XIX Nitro Thunder",
+                    description: "Men's T-shirt",
+                    imageUrl: "https://cdn.shopify.com/s/files/1/1078/8124/products/ThunderT-Shirt1_900x.png?v=1659436991",
+                    redirectUrl: "../item_info/item_info11.html",
+                },
+                {
+                    name: "SDMN Varsity Melange",
+                    description: "Men's Hoodie",
+                    imageUrl: "https://cdn.shopify.com/s/files/1/1078/8124/products/GreyGreenHood1_900x.png?v=1657553184",
+                    redirectUrl: "../item_info/item_info12.html",
+                },
+                {
+                    name: "SDMN Spongebob Hoodie",
+                    description: "Men's Hoodie",
+                    imageUrl: "https://cdn.shopify.com/s/files/1/1078/8124/products/BlackHoodie1_900x.png?v=1664364068",
+                    redirectUrl: "../item_info/item_info13.html",
+                },
+                {
+                    name: "SDMN Blowing Shirt",
+                    description: "Men's T-shirt",
+                    imageUrl: "https://cdn.shopify.com/s/files/1/1078/8124/products/BubbleT-ShirtWhite1_900x.png?v=1666369710",
+                    redirectUrl: "../item_info/item_info14.html",
+                },
+                {
+                    name: "SDMN Carmine Red Shirt",
+                    description: "Men's T-shirt",
+                    imageUrl: "https://cdn.shopify.com/s/files/1/1078/8124/products/RedT-Shirt1_900x.png?v=1666445092",
+                    redirectUrl: "../item_info/item_info15.html",
+                },
+                {
+                    name: "SDMN Pastel Hoodie",
+                    description: "Men's Hoodie",
+                    imageUrl: "https://cdn.shopify.com/s/files/1/1078/8124/products/ColourBlockPastelHoodie1_900x.png?v=1637686043",
+                    redirectUrl: "../item_info/item_info16.html",
+                },
+                {
+                    name: "SDMN Pink Hoodie",
+                    description: "Men's Hoodie",
+                    imageUrl: "https://cdn.shopify.com/s/files/1/1078/8124/products/PastelPinkPartitionHoodie1_900x.png?v=1644858551",
+                    redirectUrl: "../item_info/item_info17.html",
+                },
+                {
+                    name: "SDMN Partition Hoodie",
+                    description: "Men's Hoodie",
+                    imageUrl: "https://cdn.shopify.com/s/files/1/1078/8124/products/PastelGreenPartitionHoodie1_900x.png?v=1638879571",
+                    redirectUrl: "../item_info/item_info18.html",
+                },
+                {
+                    name: "SDMN Toby Hoodie",
+                    description: "Men's Hoodie",
+                    imageUrl: "https://cdn.shopify.com/s/files/1/1078/8124/products/BlackOrangeHood1_900x.png?v=1657552446",
+                    redirectUrl: "../item_info/item_info19.html",
+                },
+                {
+                    name: "SDMN Soda Sweatshirt",
+                    description: "Men's Swearshirt",
+                    imageUrl: "https://cdn.shopify.com/s/files/1/1078/8124/products/OrangeSodaSweater1_900x.png?v=1657555754",
+                    redirectUrl: "../item_info/item_info20.html",
+                },
+                {
+                    name: "SDMN Harry Hoodie",
+                    description: "Men's Hoodie",
+                    imageUrl: "https://cdn.shopify.com/s/files/1/1078/8124/products/OffWhiteHoodie1_900x.png?v=1664364080",
+                    redirectUrl: "../item_info/item_info21.html",
+                },
+            ];
+
+            // Generate random index for itemInfo array
+            // Array to keep track of previously returned indices
+            var previousIndices = [];
+
+            // Generate random index for itemInfo array
+            function getRandomIndex() {
+                // Check if all indices have been returned
+                if (previousIndices.length === itemInfo.length) {
+                    // Reset the previousIndices array
+                    previousIndices = [];
+                }
+
+                var randomIndex;
+                do {
+                    randomIndex = Math.floor(Math.random() * itemInfo.length);
+                } while (previousIndices.includes(randomIndex));
+
+                // Add the new index to the previousIndices array
+                previousIndices.push(randomIndex);
+
+                return randomIndex;
+            }
+
+
+            // Update product card with random item information
+            function updateProductCard() {
+                var productCards = document.querySelectorAll(".product-card");
+
+                productCards.forEach(function (card) {
+                    var randomIndex = getRandomIndex();
+                    var item = itemInfo[randomIndex];
+
+                    var productImage = card.querySelector(".product-thumb");
+                    var productName = card.querySelector(".product-brand");
+                    var productDescription = card.querySelector(".product-short-description");
+
+                    productImage.src = item.imageUrl;
+                    productName.textContent = item.name;
+                    productDescription.textContent = item.description;
+
+                    card.addEventListener("click", function () {
+                        window.location.href = item.redirectUrl;
+                    });
+                });
+            }
+
+            // Call the function to update product cards
+            updateProductCard();
+        </script>
+        <script src="../script.js"></script>
+        <footer>
+            <div class="col">
+                <h4>Contact</h4>
+                <p><strong>Address:</strong>28/2 6th cross Kg Nagar</p>
+                <p><strong>Phone:</strong>+ 01 2222 365/(+91) 76 7677 6413</p>
+                <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+                <div class="follow">
+                    <h4>Follow Us</h4>
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest-p"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+            <div class="col">
+                <h4>Support</h4>
+                <p id="myBtn">Send Feedback</p>
+
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="close">&times;</span>
+                            <h2>Send Us Feedback</h2>
+                        </div>
+                        <div class="modal-body">
+                            <br>
+                            <p class="modal-p">First, what would you like to tell us about?</p>
+                            <form class="form-p" id="my-form">
+                                <input type="text" id="fname" class="fname" placeholder="  Tell us Your Queries..."
+                                    required>
+                                <br><br>
+                                <p class="modal-p">We'd love to hear your feedback. What was positive? What can we
+                                    improve?
+                                </p><br>
+                                <textarea name="" class="text-box" id="text-box" cols="70" rows="15" maxlength="800"
+                                    placeholder="We would like to have your feedback(max 600 words)"
+                                    required></textarea>
+                                <p class="last-p">We are unable to respond to requests submitted here. If you need
+                                    assistance
+                                    with your Nike
+                                    Product or Services please contact us.</p>
+                                <button class="but1" type="submit">Submit</button>
+                            </form><br>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <a href="../help/delivery.html">Delivery</a>
+                <a href="../help/question1.html">Get Help</a>
+                <a href="../chatbot/chap.html">Chatbot</a>
+                <a href="../chatbot/video.html">Video support</a>
+            </div>
+            <div class="col">
+                <h4>Useful Links
+                </h4>
+                <a href="../subscription.html">Subscription</a>
+                <a href="../donation.html">Donation</a>
+                <a href="../stylist/stylist.html">Virtual Stylist</a>
+                <a href="../signup/signup.html">Sign In</a>
+                <a href="../signup/login.html">Login</a>
+            </div>
+            <div class="copyright">
+                <p>@ 2023, Shravanth, Inc. All Rights Reserved </p>
+            </div>
+        </footer>
+        <script>
+            // Get the modal
+            var modal = document.getElementById("myModal");
+
+            // Get the button that opens the modal
+            var btn = document.getElementById("myBtn");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks the button, open the modal 
+            btn.onclick = function () {
+                modal.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+
+            for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
+            }
+        </script>
+        <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+        <script src="item_info.js"></script>
+
+
+
+
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

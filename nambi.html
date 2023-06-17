@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div>
+        <img id="img1" src="images/card5.jpg" alt="">
+        <p id="price1">100</p>
+        <p id="name1">Adidas Shoes</p>
+        <p id="size1">Large</p>
+        <button class="add-to-wishlist" data-image="images/card5.jpg" data-price="100" data-name="Adidas Shoes"
+            data-size="Large">Add To
+            WishList</button>
+        <button class="add-to-favorites" data-image="images/card5.jpg" data-price="100" data-name="Adidas Shoes"
+            data-size="Large">Add To Favorites</button>
+    </div>
+    <div>
+        <img id="img2" src="images/card6.jpg" alt="">
+        <p id="price2">200</p>
+        <p id="name2">Puma Shoes</p>
+        <p id="size2">Large</p>
+        <button class="add-to-wishlist" data-image="images/card6.jpg" data-price="200" data-name="Puma Shoes"
+            data-size="Large">Add To
+            WishList</button>
+        <button class="add-to-favorites" data-image="images/card6.jpg" data-price="200" data-name="Puma Shoes"
+            data-size="Large">Add To Favorites</button>
+    </div>
+    <div>
+        <img id="img3" src="images/card5.jpg" alt="">
+        <p id="price3">100</p>
+        <p id="name3">Adidas Shoes</p>
+        <p id="size3">Medium</p>
+        <button class="add-to-wishlist" data-image="images/card5.jpg" data-price="100" data-name="Adidas Shoes"
+            data-size="Medium">Add To
+            WishList</button>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyBDdIwSsdQ-29jfyA6IfV5U-8SSmA-7iVM",
+            authDomain: "pommy-a7657.firebaseapp.com",
+            projectId: "pommy-a7657",
+            storageBucket: "pommy-a7657.appspot.com",
+            messagingSenderId: "404036371992",
+            appId: "1:404036371992:web:a040d94f696e6dbc7ce56d",
+            measurementId: "G-B02R9C6K2M"
+        };
+        firebase.initializeApp(firebaseConfig);
+        firebase.auth().onAuthStateChanged(function (user) {
+            var user = firebase.auth().currentUser;
+
+            // Check if a user is currently authenticated
+            if (user) {
+                // User is signed in, retrieve their unique ID
+                var userId = user.uid;
+
+                // Use the user ID to create separate local storage for each user
+                var wishlistStorageKey = 'wishlist_' + userId;
+                var favoritesStorageKey = 'favorites_' + userId;
+                var wishlist = JSON.parse(localStorage.getItem(wishlistStorageKey)) || [];
+                var favorites = JSON.parse(localStorage.getItem(favoritesStorageKey)) || [];
+                console.log(wishlistStorageKey);
+            } else {
+                // No user is signed in, use a default local storage key
+                var wishlistStorageKey = 'wishlist';
+                var favoritesStorageKey = 'favorites';
+                var wishlist = JSON.parse(localStorage.getItem(wishlistStorageKey)) || [];
+                var favorites = JSON.parse(localStorage.getItem(favoritesStorageKey)) || [];
+                console.log(wishlistStorageKey);
+            }
+
+
+            const addToWishlistButtons = document.querySelectorAll('.add-to-wishlist');
+            addToWishlistButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const product = {
+                        image: button.getAttribute('data-image'),
+                        price: button.getAttribute('data-price'),
+                        name: button.getAttribute('data-name'),
+                        size: button.getAttribute('data-size')
+                    };
+
+                    let wishlist = JSON.parse(localStorage.getItem(wishlistStorageKey)) || [];
+                    let productExists = false;
+                    wishlist.forEach(item => {
+                        if (item.name === product.name && item.size === product.size) {
+                            productExists = true;
+                            alert('Item is already present in the wishlist!');
+                            window.location.href = 'nani.html';
+                        }
+                    });
+
+                    if (productExists === false) {
+                        wishlist.push(product);
+                        localStorage.setItem(wishlistStorageKey, JSON.stringify(wishlist));
+                        window.location.href = 'nani.html';
+                    }
+                });
+            });
+            const addToFavoritesButtons = document.querySelectorAll('.add-to-favorites');
+            addToFavoritesButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const product = {
+                        image: button.getAttribute('data-image'),
+                        price: button.getAttribute('data-price'),
+                        name: button.getAttribute('data-name'),
+                        size: button.getAttribute('data-size')
+                    };
+
+                    let favorites = JSON.parse(localStorage.getItem(favoritesStorageKey)) || [];
+                    let productExists = false;
+                    favorites.forEach(item => {
+                        if (item.name === product.name && item.size === product.size) {
+                            productExists = true;
+                            alert('Item is already present in favorites!');
+                            window.location.href = 'favourite.html';
+                        }
+                    });
+
+                    if (productExists === false) {
+                        favorites.push(product);
+                        localStorage.setItem(favoritesStorageKey, JSON.stringify(favorites));
+                        alert('Item added to favorites!');
+                        window.location.href = 'favourite.html';
+                    }
+                });
+            });
+
+        });
+
+    </script>
+
+
+    <a href="signup/login.html">Signup</a>
+</body>
+
+</html>

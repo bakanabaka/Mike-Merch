@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Filter And Search</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="signup.css" />
+    <link rel="stylesheet" href="../navbars/naya.css">
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="../index1.html"><img src="../images/logs-removebg-preview.png" alt="" height="100vh"
+                        width="100vh"></a>
+            </div>
+            <ul class="links">
+                <li><a href="../signup/login.html">Login</a></li>
+                <li><a href="../style1.html">SHOP</a></li>
+                <li><a href="../signup/signup.html">Sign up</a></li>
+                <div class="dropdown">
+                    <button class="dropbtn">NEW
+
+                    </button>
+                    <div class="dropdown-content">
+                        <div class="row">
+                            <div class="column">
+                                <h3 class="column-h3">Eco Varsity Jacket</h3>
+                                <a href="../item_info/item_info2.html">Varsity Forest</a>
+                                <a href="../item_info/item_info3.html">Varsity Stone</a>
+                                <a href="../item_info/item_info4.html">Varsity Off</a>
+                            </div>
+                            <div class="column">
+                                <h3 class="column-h3">Artisan Hoodie</h3>
+                                <a href="../item_info/item_info16.html">Pastel Hoodie</a>
+                                <a href="../item_info/item_info18.html">Partition Hoodie</a>
+                                <a href="../item_info/item_info19.html">Toby Hoodie</a>
+                            </div>
+                            <div class="column">
+                                <h3 class="column-h3">Cosmo Puffer Jackets</h3>
+                                <a href="../item_info/item_info8.html">XIX Nitro Puffer</a>
+                                <a href="../item_info/item_info9.html">XIX Nitro Hoodie</a>
+                                <a href="../item_info/item_info11.html">XIX Nitro Hoodie</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr6UOrU0yygGzm6JVLGSzGlFzIzbK-9jXw3DIojgmKxPXHpaJL"
+                    height="40vh" width="40vh" onclick="toggleMe()"> -->
+                <i class="fa-regular fa-user" onclick="toggleMe()"></i>
+                <div class="sub-menu-wrap" id="subMenu">
+                    <div class="sub-menu">
+                        <div class="user-info">
+                            <img src="https://img.freepik.com/free-icon/user_318-159711.jpg" height="40vh" width="40vh"
+                                alt="" id="nav-img">
+                            <h2 id="nav-h2">Name</h2>
+                        </div>
+                        <hr>
+                        <a href="../useracc/account.html" class="sub-menu-link">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <p>Edit</p>
+                            <span>></span>
+                        </a>
+                        <a href="../agreement.html" class="sub-menu-link">
+                            <i class="fa-solid fa-gear"></i>
+                            <p>Terms of sale</p>
+                            <span>></span>
+                        </a>
+                    </div>
+                </div>
+                <script>
+                    let subMenu = document.getElementById('subMenu');
+                    function toggleMe() {
+                        subMenu.classList.toggle("open-menu");
+                    }
+                </script>
+            </ul>
+            <div>
+
+            </div>
+            <div class="search-bar">
+                <i class="fa-solid fa-heart" style="color: red;font-size: 3.2vh;margin-right: 2vh;cursor: pointer;"
+                    id="heart-icon"></i>
+                <i class="fa-solid fa-cart-shopping" style="font-size: 3.2vh;margin-right: 2vh; cursor: pointer;"
+                    id="wish-icon"></i>
+                <script>
+                    document.getElementById('heart-icon').addEventListener('click', function () {
+                        // Replace 'your-page-url' with the URL of the page you want to navigate to
+                        window.location.href = '../favourite.html';
+                    });
+                    document.getElementById('wish-icon').addEventListener('click', function () {
+                        // Replace 'your-page-url' with the URL of the page you want to navigate to
+                        window.location.href = '../nani.html';
+                    });
+                </script>
+                <input type="text" id="search-bar-1">
+                <button class="search-button" onclick="search()"><i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+            <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
+            <div class="dropdown_menu">
+                <li><a href="../signup/login.html">LOGIN</a></li>
+                <li><a href="../style1.html">SHOP</a></li>
+                <li><a href="../signup/signup.html">SIGN UP</a></li>
+                <div class="dropdown">
+                    <button class="dropbtn" id="dropbtn" onclick="toggleHeight()">NEW</button>
+                    <script>
+                        function toggleHeight() {
+                            var button = document.querySelector('.dropbtn');
+                            var dropdown = document.querySelector('.dropdown_menu');
+                            dropdown.classList.toggle('tall');
+                        }
+
+                    </script>
+                    <div class="dropdown-content">
+                        <div class="row">
+                            <div class="column">
+                                <h3>Varsity</h3>
+                                <a href="../item_info/item_info2.html">Varsity Forest</a>
+                                <a href="../item_info/item_info3.html">Varsity Stone</a>
+                                <a href="../item_info/item_info4.html">Varsity Off</a>
+                            </div>
+                            <div class="column">
+                                <h3>Hoodie</h3>
+                                <a href="../item_info/item_info16.html">Pastel Hoodie</a>
+                                <a href="../item_info/item_info18.html">Partition Hoodie</a>
+                                <a href="../item_info/item_info19.html">Toby Hoodie</a>
+                            </div>
+                            <div class="column">
+                                <h3>Puffer</h3>
+                                <a href="../item_info/item_info8.html">Nitro Puffer</a>
+                                <a href="../item_info/item_info9.html">Nitro Hoodie</a>
+                                <a href="../item_info/item_info11.html"> Nitro Hoodie</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <br><br><br><br><br><br>
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn');
+        const toggleBtnIcon = document.querySelector('.toggle_btn i');
+        const dropDownMenu = document.querySelector('.dropdown_menu');
+
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open');
+            const isOpen = dropDownMenu.classList.contains('open');
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        }
+    </script>
+    <script type="text/javascript">
+        function search() {
+            const searchQuery = document.getElementById("search-bar-1").value;
+            window.location.href = "../style1.html?searchQuery=" + encodeURIComponent(searchQuery);
+        }
+    </script>
+    <video autoplay muted loop>
+        <source src="https://cdn.sanity.io/files/qa41whrn/prod/d0e426e3915a2f3845569ffe9a00772dac3b8edb.mp4"
+            type="video/mp4">
+        <source src="movie.ogg" type="video/ogg">
+        Your browser does not support the video tag.
+    </video>
+    <div class="nike-div">
+        <img class="nike-logo"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXkAAACGCAMAAAAPbgp3AAAAflBMVEX///8AAAD39/f7+/vy8vLs7Ozv7+/Kysq0tLS/v7+np6fS0tJ+fn7X19f19fWDg4Ph4eGdnZ10dHRtbW25ublQUFA9PT3b29sSEhKLi4ssLCxZWVmTk5OsrKxGRkZUVFQgICBjY2M0NDTExMSYmJgWFhZJSUkkJCQ3Nzd3d3elZI5RAAAHF0lEQVR4nO2daaOqIBCGL5ll2Wp72WJ16vT//+AtrU6mKMIMi/p8D8aJXoFZ+vePh5bN9bEaURor1RZUlV1LtQWmY7e5VGNzhjakWrirybTB80GPQJtSIRbdGZks+D67Ih1YYypDy/EIIWeu5X6nS+ag5lSExmm4vrv9wr9qO4S0AQ2qBA3Xv5AHN06ZeeASsoMzqQosxvvQ6+QwHggMMyL1ki/AyJksI7eT2UlopNZ9iFrl2Wh0ej/kRW8kNpj1+ALFvrtqYLX949vr5NC1RAec34dZQ1hWat7CHrEHWKrBY6Ct+DglZrQNlp9uF5aZkF44FMBAJcWeeoeY18m1y3toijEOB6svKVOx2qs1+WIGtAmcRsPV9/JJ+ufdt9fvMgPlKTcabwM0XGkYdYOk18lafDfzwn4OWd+VfZAU9ufyBDxrWq8Z4IY0nGZ0AZbCEGI38+byGhVyUHNx/Xm618l1CyYzId5r4D7osEYy6m4oXoeVmZDxa+Ql8MCmYTsTqtfvggC+7zu9x/ahhzaIZqd3zHD7EVhmHoz+hq+q2DTaVGGPCDBuzq2/q85q7mz64wvd5SErnOPl7G8GD2UCnRltgxyvkzXWFeLwY5JqHaOanVue1+8y42JN73xO08SaRTsa7VW2sKPKzIPF5zxVCQO64xnN1TF3OPC7mTdW7Ja/hzeRNtzPSUuaq2PgyUxILKpFHNS51GM7HsXNCRBlJsSPTwd6E6QZ1mmYeu2YxhF9Cba/ZgSJbGmI9coAYwJZZh40v6Ys5ws26wIsBV9GTO77BR9ImFMutjNhlphw7cl5052/5y1XtUKz07sW8TohE0m3Vv3EzCVKtIllgLHhSztGJucuSSJrP54BxsR8Ks++lAhACTaV9jYrskFDlsyETFMMMDzTxu70KCHrTJa+1DLI7w2l6Z5vtFe/HF6XKzMhqVtcU0tgUzPAmOAt4ePHSbXDxDvi9AwwNs4itTV8tNItMW3Nt6beT/qTMLBTEgWiHKdN0vnBacgn7BGedJkJ6VDMMWZX6Z4LXIAlWZ5V6SrNIiM8v+gWPyfFUCMzIT2aTdrHv7MzwJjwFC6vBdWqrjqj8hkUvgBL8iNUKSwMfe+rbRi24fq8O/YPZop/02nXBk8uai2jsGBLFMjjpvwtlhV41y4a+FHbLsRSrcyE+FkGapXPypQBxsRFh6L21JuyN9oEpaz2qnBkg4Z6mQmh7ihDtOiuYvVhhD3kMNZEQe0cQ5XfHyRq24WAaEgARF6KldKSEXt6K5QokAdIQwIg8pa8usoFi1oCyckSrlIYgvyzt5LMSpBzUgyNZCYkf8mTH9k2FcwAY0InmYkY5hst9e6maAYYE2uYviegDJgsl3R13TxxJQrkAV4pDMI433AiJ7mSXtsuBmxDAjgYN8rIOX5AF2BJDgiVwjBkXFLGwQtRjrgywJjQU2YimEOXSxSpb3U8DGGP0FVmQkb59r9YQ/9sB7wZYGzmaiszEasCzzKHfBSXOwOMiQ1+bY0ghR5nDSQ4GOekGNglfAB8F6PlIf6aBUgUyOFoRKlFYS8IHWabHeALsBRQ+p7AYxV/sj3nD3nA1lFAEANkJuKU/yxJ/OIvWsh4Ep0jZkMCYJirzuP4RUL2DK1iQJBQKQwId4htwqamiy3nd1uYlVm55skKzAJMnCxNbfSdnlBmbxF+jeuJkSg6Lsh1c3b6rU/psZq2O+3e9sK5jgWYGCUzEUCL8nCc72az2W7+K9PhT6Q0JICGY0+pGfh9T3BwVTtOkECrtMMisEWjdEVupTAsgWrn8SOp7wkW8BF+SUhtSICAqS9Yk2UmQugcpYpf2Q0JMKDVv2qM6TLzRPQEKxt1lcLQsGT16cOuDDLzBDsqB4mihgRIoMb+QRmXRWaeoIdEYZDeXgkfwMojPMolM09UOzWfQ2l2M3FU+zWPi/ZNRnhR7dlsNKkURkFjnV/qUimMg4LQHRvllZknElK+eLiVcTcTR8cz7EGDvif46HdvM9OsUhiLrmpHf6FfpTAWRXPnUfnRqyEBLgxV97LQrSEBNqr9/aI6MvMiUO3yB1cNGxKgs1Xt9ftuxozaGmgoXc/l0TMxGxUEaQnuaayrtJv5RqHc6NyQQAINVX7XuiGBFIrU3oNxrbLMvMjuzYpCxWXmjexFP6zsbiaBTLcfNe97Ihd5aa2GNCSQRyDH78Y0JJCHjJ2lqSV8yKBXCJrVkEAmqLEpyX/2aRh4W0vV/1ujPUix8PqOIJ/sf7vgYmdQmx+VQAvOql7urEC+ZicVi2cLArW53DsVjKuK0QjE3T7b1ntIHgTvcDbbclZ4SIG/ONnr1FsZIazMPxCksDuXP/FaApZTKK9+57frNyoYI7b/+7gGXbcK2e5ysZ1bVqHy3Ou269cpGlZ/6vf2679CtuV6N1mNO269cxTjPz+gbSOcpX04AAAAAElFTkSuQmCC"
+            alt=""><br><br>
+        <h2>BE THE FIRST TO KNOW</h2><br><br>
+        <p class="nike-p">Sign up for Nike emails to be the first to see </p>
+        <p class="nike-p">inspiring content, news and exclusive offers.</p>
+        <br><br>
+        <form id="myform" onsubmit="return validate()" action="/signup.html">
+            <p class="form-p1">Email Address</p>
+            <input type="email" id="email" class="fmail" placeholder="  Email Address..." size="20" required><br>
+            <span class="password-span" id="mail-span"></span>
+            <br>
+            <p class="form-p1">Password
+            </p>
+            <input type="password" id="password" class="fmail" placeholder="  Password..." size="20" required>
+
+            <br><span class="password-span" id="password-span"></span><br><br>
+            <p class="form-p1">Confirm Password</p>
+            <input type="password" id="confirmpassword" class="fmail" placeholder="  Confirm Password ..." size="20">
+            <br>
+            <br><span class="password-span" id="cpassword-span"></span><br><br>
+            <span id="error-message"></span>
+            <button type="submit" class="but2" id="boos">SIGN UP</button>
+        </form>
+        <p id="error-message"></p>
+        <br><br><br>
+        <p class="final-p">By signing up, you agree to Nike's Privacy Policy and</p>
+        <p class="final-p">Terms of Use.</p><br><br><br>
+    </div>
+    <script type="text/javascript">
+        function validate() {
+            var form = document.getElementById('form');
+            var email_validate = document.getElementById('email');
+            var password_validate = document.getElementById('password');
+            var password_span = document.getElementById('password-span');
+            var cpassword_span = document.getElementById('cpassword-span');
+            var confirmpassword = document.getElementById('confirmpassword');
+            var email_span = document.getElementById('mail-span');
+            // var text = document.getElementById('text').nodeValue;
+            // var regx = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
+            if (email_validate.value === '' || email_validate.value === null) {
+                email_span.innerHTML = "no blank values allowed";
+                return false;
+            }
+            if (!email_validate.value.match(/[@]/)) {
+                email_span.innerHTML = "There is no @"
+                return false;
+            }
+            if (password_validate.value === '' || password_validate.value === null) {
+                if (email_span.innerHTML !== '' || email_span.innerHTML !== null) {
+                    email_span.innerHTML = "";
+                }
+
+                password_span.innerHTML = "no blank values allowed";
+                return false;
+            }
+
+            if (password_validate.value.length <= 6) {
+                // alert('password must be longer than 6 charcters');
+                password_span.innerHTML = "password must be longer than 6 charcters"
+                // password_span.style.color = '#F8F988'
+                return false;
+            }
+            if (password_validate.value.length >= 20) {
+                // alert('password must be less than 20 charcters');
+                password_span.innerHTML = "password must be less than 20 charcters"
+                return false;
+            }
+            if (!password_validate.value.match(/[0-9]/)) {
+                password_span.innerHTML = "password have at least a number"
+                return false;
+            }
+            if (!password_validate.value.match(/[A-Z]/)) {
+                password_span.innerHTML = "password have at least a uppercase letter"
+                return false;
+            }
+            if (!password_validate.value.match(/[!\@\#\$\%\^\&\*|(\)\[\]\{\}]/)) {
+                password_span.innerHTML = "password have at least a special case letter"
+                return false;
+            }
+            if (password_validate.value !== confirmpassword.value) {
+                password_span.innerHTML = "";
+                cpassword_span.innerHTML = "passwords not matching"
+                return false;
+            }
+            else {
+                true;
+            }
+        }
+
+    </script>
+    <footer>
+        <div class="col">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong>28/2 6th cross Kg Nagar</p>
+            <p><strong>Phone:</strong>+ 01 2222 365/(+91) 76 7677 6413</p>
+            <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-pinterest-p"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+        </div>
+        <div class="col">
+            <h4>Support</h4>
+            <p id="myBtn">Send Feedback</p>
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h2>Send Us Feedback</h2>
+                    </div>
+                    <div class="modal-body">
+                        <br>
+                        <p class="modal-p">First, what would you like to tell us about?</p>
+                        <form class="form-p" id="my-form">
+                            <input type="text" id="fname" class="fname" placeholder="  Tell us Your Queries..."
+                                required>
+                            <br><br>
+                            <p class="modal-p">We'd love to hear your feedback. What was positive? What can we improve?
+                            </p><br>
+                            <textarea name="" class="text-box" id="text-box" cols="70" rows="15" maxlength="800"
+                                placeholder="We would like to have your feedback(max 600 words)" required></textarea>
+                            <p class="last-p">We are unable to respond to requests submitted here. If you need
+                                assistance
+                                with your Nike
+                                Product or Services please contact us.</p>
+                            <button class="but1" type="submit">Submit</button>
+                        </form><br>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <a href="../help/delivery.html">Delivery</a>
+            <a href="../help/question1.html">Get Help</a>
+            <a href="../chatbot/chap.html">Chatbot</a>
+            <a href="../chatbot/video.html">Video support</a>
+        </div>
+        <div class="col">
+            <h4>Useful Links
+            </h4>
+            <a href="../subscription.html">Subscription</a>
+            <a href="../donation.html">Donation</a>
+            <a href="../stylist/stylist.html">Virtual Stylist</a>
+            <a href="../signup/signup.html">Sign In</a>
+            <a href="../signup/login.html">Login</a>
+        </div>
+        <div class="copyright">
+            <p>@ 2023, Shravanth, Inc. All Rights Reserved </p>
+        </div>
+    </footer>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+    <script src="signup.js"></script>
+
+    <!-- Script -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <a href="https://formsubmit.co/el/dutaye">To connect with me</a> -->

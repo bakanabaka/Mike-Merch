@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Filter And Search</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="favourite.css">
+    <!-- <link rel="stylesheet" href="../navbars/naya.css"> -->
+
+</head>
+
+<body>
+
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="../index1.html"><img src="../images/logs-removebg-preview.png" alt="" height="100vh"
+                        width="100vh"></a>
+            </div>
+            <ul class="links">
+                <li><a href="../signup/login.html">Login</a></li>
+                <li><a href="../style1.html">SHOP</a></li>
+                <li><a href="../signup/signup.html">Sign up</a></li>
+                <div class="dropdown">
+                    <button class="dropbtn">NEW
+
+                    </button>
+                    <div class="dropdown-content">
+                        <div class="row">
+                            <div class="column">
+                                <h3 class="column-h3">Eco Varsity Jacket</h3>
+                                <a href="../item_info/item_info2.html">Varsity Forest</a>
+                                <a href="../item_info/item_info3.html">Varsity Stone</a>
+                                <a href="../item_info/item_info4.html">Varsity Off</a>
+                            </div>
+                            <div class="column">
+                                <h3 class="column-h3">Artisan Hoodie</h3>
+                                <a href="../item_info/item_info16.html">Pastel Hoodie</a>
+                                <a href="../item_info/item_info18.html">Partition Hoodie</a>
+                                <a href="../item_info/item_info19.html">Toby Hoodie</a>
+                            </div>
+                            <div class="column">
+                                <h3 class="column-h3">Cosmo Puffer Jackets</h3>
+                                <a href="../item_info/item_info8.html">XIX Nitro Puffer</a>
+                                <a href="../item_info/item_info9.html">XIX Nitro Hoodie</a>
+                                <a href="../item_info/item_info11.html">XIX Nitro Hoodie</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr6UOrU0yygGzm6JVLGSzGlFzIzbK-9jXw3DIojgmKxPXHpaJL"
+                    height="40vh" width="40vh" onclick="toggleMe()"> -->
+                <i class="fa-regular fa-user" onclick="toggleMe()"></i>
+                <div class="sub-menu-wrap" id="subMenu">
+                    <div class="sub-menu">
+                        <div class="user-info">
+                            <img src="https://img.freepik.com/free-icon/user_318-159711.jpg" height="40vh" width="40vh"
+                                alt="" id="nav-img">
+                            <h2 id="nav-h2">Name</h2>
+                        </div>
+                        <hr>
+                        <a href="../useracc/account.html" class="sub-menu-link">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <p>Edit</p>
+                            <span>></span>
+                        </a>
+                        <a href="../agreement.html" class="sub-menu-link">
+                            <i class="fa-solid fa-gear"></i>
+                            <p>Terms of sale</p>
+                            <span>></span>
+                        </a>
+                    </div>
+                </div>
+                <script>
+                    let subMenu = document.getElementById('subMenu');
+                    function toggleMe() {
+                        subMenu.classList.toggle("open-menu");
+                    }
+                </script>
+            </ul>
+            <div>
+
+            </div>
+            <div class="search-bar">
+                <i class="fa-solid fa-heart" style="color: red;font-size: 3.2vh;margin-right: 2vh;cursor: pointer;"
+                    id="heart-icon"></i>
+                <i class="fa-solid fa-cart-shopping" style="font-size: 3.2vh;margin-right: 2vh; cursor: pointer;"
+                    id="wish-icon"></i>
+                <script>
+                    document.getElementById('heart-icon').addEventListener('click', function () {
+                        // Replace 'your-page-url' with the URL of the page you want to navigate to
+                        window.location.href = '../favourite.html';
+                    });
+                    document.getElementById('wish-icon').addEventListener('click', function () {
+                        // Replace 'your-page-url' with the URL of the page you want to navigate to
+                        window.location.href = '../nani.html';
+                    });
+                </script>
+                <input type="text" id="search-bar-1">
+                <button class="search-button" onclick="search()"><i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+            <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
+            <div class="dropdown_menu">
+                <li><a href="../signup/login.html">LOGIN</a></li>
+                <li><a href="../style1.html">SHOP</a></li>
+                <li><a href="../signup/signup.html">SIGN UP</a></li>
+                <div class="dropdown">
+                    <button class="dropbtn" id="dropbtn" onclick="toggleHeight()">NEW</button>
+                    <script>
+                        function toggleHeight() {
+                            var button = document.querySelector('.dropbtn');
+                            var dropdown = document.querySelector('.dropdown_menu');
+                            dropdown.classList.toggle('tall');
+                        }
+
+                    </script>
+                    <div class="dropdown-content">
+                        <div class="row">
+                            <div class="column">
+                                <h3>Varsity</h3>
+                                <a href="../item_info/item_info2.html">Varsity Forest</a>
+                                <a href="../item_info/item_info3.html">Varsity Stone</a>
+                                <a href="../item_info/item_info4.html">Varsity Off</a>
+                            </div>
+                            <div class="column">
+                                <h3>Hoodie</h3>
+                                <a href="../item_info/item_info16.html">Pastel Hoodie</a>
+                                <a href="../item_info/item_info18.html">Partition Hoodie</a>
+                                <a href="../item_info/item_info19.html">Toby Hoodie</a>
+                            </div>
+                            <div class="column">
+                                <h3>Puffer</h3>
+                                <a href="../item_info/item_info8.html">Nitro Puffer</a>
+                                <a href="../item_info/item_info9.html">Nitro Hoodie</a>
+                                <a href="../item_info/item_info11.html"> Nitro Hoodie</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <br><br><br><br><br>
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn');
+        const toggleBtnIcon = document.querySelector('.toggle_btn i');
+        const dropDownMenu = document.querySelector('.dropdown_menu');
+
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open');
+            const isOpen = dropDownMenu.classList.contains('open');
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        }
+    </script>
+    <script type="text/javascript">
+        function search() {
+            const searchQuery = document.getElementById("search-bar-1").value;
+            window.location.href = "../style.html?searchQuery=" + encodeURIComponent(searchQuery);
+        }
+    </script>
+    <h1 class="headind-title">Favorites</h1>
+    <br><br><br>
+    <div class="price-heading">
+        <p class="price-remove">Remove</p>
+        <p class="price-price">Price(Rs)</p>
+        <p class="price-item">Item</p>
+        <!-- <br><br> -->
+        <hr class="hr">
+
+    </div>
+    <div class="donation-amount">
+        Donation: <span id="donation-amount-value">0</span>
+    </div>
+    <style>
+        .donation-amount {
+            display: none;
+        }
+    </style>
+    <div id="wishlist"></div>
+    <div class="total-heading">
+        <hr class="hr1">
+        <!-- <div class="total-amount">
+            <br><br>
+            Total Price:<span id="total-amount-value">Rs 0.00</span>
+        </div> -->
+    </div>
+    <div class="buttons-class">
+        <br>
+        <!-- <button id="myBtn">CHECKOUT</button> -->
+        <button class="clear-items" onclick="clearWishlistItems()">CLEAR ALL ITEMS</button>
+        <button onclick="navigateToWebsite()" class="continue-shop">CONTINUE SHOPPING</button>
+        <script>
+            function navigateToWebsite() {
+                window.location.href = "style.html";
+            }
+        </script>
+    </div>
+    <p id="result-paras">Result: <span id="result-display"></span></p>
+    <style>
+        #result-display,
+        #result-paras {
+            display: none;
+        }
+    </style>
+
+    <p id="credit-score">Credit:</p>
+    <style>
+        #credit-score {
+            display: none;
+        }
+    </style>
+    <div id="myModal" class="modal">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Do you want to play and win Points</h2><br>
+            </div>
+            <div class="modal-body">
+                <br>
+                <p class="modal-p" style="text-align:center;">Which game would you like to play</p><br>
+                <a class="game" href="whac-a-mole/index.html">Whack a Mole!!</a>
+                <a class="game" href="breakout/index.html">Breakout</a>
+                <br><br>
+                <a class="game" href="space-invaders/index.html">Space Invaders</a>
+                <a class="game" href="rock-paper-scissor/index.html">Rock and paper</a><br><br><br>
+                <button class="but2" id="no">No I dont want to play any games</button>
+            </div>
+        </div>
+
+    </div>
+    <button id="myBtn1">Credit Points</button>
+    <style>
+        #myBtn1 {
+            display: none;
+        }
+    </style>
+
+    <div id="myModal1" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close1">&times;</span>
+                <h2>Do you want to use your Credits to get off</h2><br><br>
+            </div>
+            <div class="modal-body">
+                <button class="but2" id="credit-yes">Yes i would love to</button>
+                <br><br>
+                <button class="but2" id="credit-no">No I dont want to </button>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+        var modal1 = document.getElementById("myModal1");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+        var btn1 = document.getElementById("myBtn1");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        var span1 = document.getElementsByClassName("close1")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+        btn1.onclick = function () {
+            modal1.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+        span1.onclick = function () {
+            modal1.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+            if (event.target == modal1) {
+                modal1.style.display = "none";
+            }
+        }
+    </script>
+    <button id="rzp-button1">Pay</button>
+    <style>
+        #rzp-button1 {
+            display: none;
+        }
+    </style>
+    <br><br><br>
+    <footer>
+        <div class="col">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong>28/2 6th cross Kg Nagar</p>
+            <p><strong>Phone:</strong>+ 01 2222 365/(+91) 76 7677 6413</p>
+            <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-pinterest-p"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+        </div>
+        <div class="col">
+            <h4>Support</h4>
+            <p id="sendf">Send Feedback</p>
+
+            <!-- The Modal -->
+            <div id="sendModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="closing">&times;</span>
+                        <h2>Send Us Feedback</h2>
+                    </div>
+                    <div class="modal-body">
+                        <br>
+                        <p class="modal-p">First, what would you like to tell us about?</p>
+                        <form class="form-p" id="my-form">
+                            <input type="text" id="fname" class="fname" placeholder="  Tell us Your Queries..."
+                                required>
+                            <br><br>
+                            <p class="modal-p">We'd love to hear your feedback. What was positive? What can we improve?
+                            </p><br>
+                            <textarea name="" class="text-box" id="text-box" cols="70" rows="15" maxlength="800"
+                                placeholder="We would like to have your feedback(max 600 words)" required></textarea>
+                            <p class="last-p">We are unable to respond to requests submitted here. If you need
+                                assistance
+                                with your Nike
+                                Product or Services please contact us.</p>
+                            <button class="but1" type="submit">Submit</button>
+                        </form><br>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <a href="../help/delivery.html">Delivery</a>
+            <a href="../help/question1.html">Get Help</a>
+            <a href="../chatbot/chap.html">Chatbot</a>
+            <a href="../chatbot/video.html">Video support</a>
+        </div>
+        <div class="col">
+            <h4>Useful Links
+            </h4>
+            <a href="../subscription.html">Subscription</a>
+            <a href="../donation.html">Donation</a>
+            <a href="../stylist/stylist.html">Virtual Stylist</a>
+            <a href="../signup/signup.html">Sign In</a>
+            <a href="../signup/login.html">Login</a>
+        </div>
+        <div class="copyright">
+            <p>@ 2023, Shravanth, Inc. All Rights Reserved </p>
+        </div>
+    </footer>
+    <script>
+        // Get the modal
+        var modal3 = document.getElementById("sendModal");
+
+        // Get the button that opens the modal
+        var btn3 = document.getElementById("sendf");
+
+        // Get the <span> element that closes the modal
+        var span3 = document.getElementsByClassName('closing')[0];
+
+        // When the user clicks the button, open the modal 
+        btn3.onclick = function () {
+            modal3.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span3.onclick = function () {
+            modal3.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal3.style.display = "none";
+            }
+        }
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+
+
+    <script>
+
+    </script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+    <script src="favourite.js"></script>
+
+    <!-- Script -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
+
+<!-- <a href="https://formsubmit.co/el/dutaye">To connect with me</a> -->

@@ -1,0 +1,49 @@
+#data-list {
+    padding: 4vh;
+}
+
+.firebase-data1 {
+    text-align: center;
+}
+
+#login-form {
+    text-align: center;
+}
+
+.fmail {
+    color: #000;
+    outline: black;
+    border: 1px solid lightgray;
+    outline-width: thin;
+    width: 60vh;
+    height: 7vh;
+}
+
+
+
+.fmail:hover {
+    border: 1px solid black;
+}
+
+
+.but2 {
+    align-items: right;
+    justify-content: right;
+    text-align: center;
+    width: 60vh;
+    cursor: pointer;
+    color: white;
+    background-color: #000;
+    height: 8vh;
+    font-weight: 500;
+}
+
+.final-p {
+    color: gray;
+}
+
+.but2:hover {
+    background-color: lightgray;
+    color: black;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
+}

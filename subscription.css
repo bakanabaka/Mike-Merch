@@ -1,0 +1,183 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #DBDFEA;
+}
+
+header {
+    background-color: white;
+}
+
+.container {
+    max-width: 180vh;
+    margin: 0 auto;
+
+}
+
+h1 {
+    text-align: center;
+}
+
+.subscription {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.subscription-item {
+    flex-basis: 40%;
+    height: 55vh;
+    padding: 20px;
+    margin-top: 5vh;
+    background-color: #F9F5F6;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0px 12px 5px rgba(0, 0, 0, 0.3);
+}
+
+.subscription-item-unique {
+    flex-basis: 50%;
+    height: 65vh;
+    padding: 20px;
+    background-color: #03001C;
+    color: white;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0px 12px 5px rgba(0, 0, 0, 0.3);
+}
+
+.subscription-item h2 {
+    margin-top: 0;
+}
+
+.subscription-item-unique h2 {
+    margin-top: 0;
+}
+
+.subscription-item p {
+    font-size: 18px;
+}
+
+.subscription-item-unique p {
+    font-size: 18px;
+}
+
+.subscription-item button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #0079FF;
+    color: #fff;
+    border: none;
+    border-radius: 10vh;
+    cursor: pointer;
+    height: 10vh;
+}
+
+.subscription-item-unique button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #0079FF;
+    color: #fff;
+    border: none;
+    border-radius: 10vh;
+    cursor: pointer;
+    height: 9.7vh;
+}
+
+
+.subscription-item button:hover {
+    background-color: #00C4FF;
+}
+
+.subscription-item-unique button:hover {
+    background-color: #00C4FF;
+}
+
+.Choose-para {
+    text-align: center;
+    color: grey;
+}
+
+.one-img {
+    height: 13vh;
+    width: 13vh;
+    border-radius: 3.5vh;
+    /* float: left; */
+}
+
+.img-head1 {
+    float: left;
+}
+
+.h21 {
+    display: flex;
+    padding-left: 3vh;
+    padding-top: 3vh;
+}
+
+.p21 {
+    display: flex;
+    padding-left: 3vh;
+    padding-top: 0.5vh;
+}
+
+.feature {
+    display: flex;
+    margin-top: 1vh;
+    text-align: left;
+}
+
+.tick {
+    margin-right: 9px;
+    text-align: left;
+}
+
+.text {
+    margin-right: 17vh;
+    flex-grow: 1;
+}
+
+.feature1 {
+    display: flex;
+    margin-top: 1vh;
+}
+
+.tick1 {
+    margin-left: 10px;
+    text-align: left;
+}
+
+.text1 {
+    margin-right: 27vh;
+    flex-grow: 1;
+}
+
+.hr1 {
+    border: none;
+    height: 2px;
+    background-color: lightgray;
+    /* margin: 20px 0; */
+}
+
+.hr2 {
+    border: none;
+    height: 0.5px;
+    background-color: white;
+    /* margin: 20px 0; */
+}
+
+.popular {
+    position: relative;
+    left: 55%;
+    bottom: 13vh;
+    font-size: 16vh;
+    background-color: blue;
+    width: 25%;
+    border-radius: 20px;
+    height: 6vh;
+    display: grid;
+    align-items: center;
+
+    /* padding-bottom: 12%; */
+}

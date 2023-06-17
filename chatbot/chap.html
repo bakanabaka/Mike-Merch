@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../navbars/naya.css">
+    <link rel="stylesheet" href="chap.css">
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="../index1.html"><img src="../images/logs-removebg-preview.png" alt="" height="100vh"
+                        width="100vh"></a>
+            </div>
+            <ul class="links">
+                <li><a href="../signup/login.html">Login</a></li>
+                <li><a href="../style1.html">SHOP</a></li>
+                <li><a href="../signup/signup.html">Sign up</a></li>
+                <div class="dropdown">
+                    <button class="dropbtn">NEW
+
+                    </button>
+                    <div class="dropdown-content">
+                        <div class="row">
+                            <div class="column">
+                                <h3 class="column-h3">Eco Varsity Jacket</h3>
+                                <a href="../item_info/item_info2.html">Varsity Forest</a>
+                                <a href="../item_info/item_info3.html">Varsity Stone</a>
+                                <a href="../item_info/item_info4.html">Varsity Off</a>
+                            </div>
+                            <div class="column">
+                                <h3 class="column-h3">Artisan Hoodie</h3>
+                                <a href="../item_info/item_info16.html">Pastel Hoodie</a>
+                                <a href="../item_info/item_info18.html">Partition Hoodie</a>
+                                <a href="../item_info/item_info19.html">Toby Hoodie</a>
+                            </div>
+                            <div class="column">
+                                <h3 class="column-h3">Cosmo Puffer Jackets</h3>
+                                <a href="../item_info/item_info8.html">XIX Nitro Puffer</a>
+                                <a href="../item_info/item_info9.html">XIX Nitro Hoodie</a>
+                                <a href="../item_info/item_info11.html">XIX Nitro Hoodie</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr6UOrU0yygGzm6JVLGSzGlFzIzbK-9jXw3DIojgmKxPXHpaJL"
+                    height="40vh" width="40vh" onclick="toggleMe()"> -->
+                <i class="fa-regular fa-user" onclick="toggleMe()"></i>
+                <div class="sub-menu-wrap" id="subMenu">
+                    <div class="sub-menu">
+                        <div class="user-info">
+                            <img src="https://img.freepik.com/free-icon/user_318-159711.jpg" height="40vh" width="40vh"
+                                alt="" id="nav-img">
+                            <h2 id="nav-h2">Name</h2>
+                        </div>
+                        <hr>
+                        <a href="../useracc/account.html" class="sub-menu-link">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <p>Edit</p>
+                            <span>></span>
+                        </a>
+                        <a href="../agreement.html" class="sub-menu-link">
+                            <i class="fa-solid fa-gear"></i>
+                            <p>Terms of sale</p>
+                            <span>></span>
+                        </a>
+                    </div>
+                </div>
+                <script>
+                    let subMenu = document.getElementById('subMenu');
+                    function toggleMe() {
+                        subMenu.classList.toggle("open-menu");
+                    }
+                </script>
+            </ul>
+            <div>
+
+            </div>
+            <div class="search-bar">
+                <i class="fa-solid fa-heart" style="color: red;font-size: 3.2vh;margin-right: 2vh;cursor: pointer;"
+                    id="heart-icon"></i>
+                <i class="fa-solid fa-cart-shopping" style="font-size: 3.2vh;margin-right: 2vh; cursor: pointer;"
+                    id="wish-icon"></i>
+                <script>
+                    document.getElementById('heart-icon').addEventListener('click', function () {
+                        // Replace 'your-page-url' with the URL of the page you want to navigate to
+                        window.location.href = '../favourite.html';
+                    });
+                    document.getElementById('wish-icon').addEventListener('click', function () {
+                        // Replace 'your-page-url' with the URL of the page you want to navigate to
+                        window.location.href = '../nani.html';
+                    });
+                </script>
+                <input type="text" id="search-bar-1">
+                <button class="search-button" onclick="search()"><i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+            <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
+            <div class="dropdown_menu">
+                <li><a href="../signup/login.html">LOGIN</a></li>
+                <li><a href="../style1.html">SHOP</a></li>
+                <li><a href="../signup/signup.html">SIGN UP</a></li>
+                <div class="dropdown">
+                    <button class="dropbtn" id="dropbtn" onclick="toggleHeight()">NEW</button>
+                    <script>
+                        function toggleHeight() {
+                            var button = document.querySelector('.dropbtn');
+                            var dropdown = document.querySelector('.dropdown_menu');
+                            dropdown.classList.toggle('tall');
+                        }
+
+                    </script>
+                    <div class="dropdown-content">
+                        <div class="row">
+                            <div class="column">
+                                <h3>Varsity</h3>
+                                <a href="../item_info/item_info2.html">Varsity Forest</a>
+                                <a href="../item_info/item_info3.html">Varsity Stone</a>
+                                <a href="../item_info/item_info4.html">Varsity Off</a>
+                            </div>
+                            <div class="column">
+                                <h3>Hoodie</h3>
+                                <a href="../item_info/item_info16.html">Pastel Hoodie</a>
+                                <a href="../item_info/item_info18.html">Partition Hoodie</a>
+                                <a href="../item_info/item_info19.html">Toby Hoodie</a>
+                            </div>
+                            <div class="column">
+                                <h3>Puffer</h3>
+                                <a href="../item_info/item_info8.html">Nitro Puffer</a>
+                                <a href="../item_info/item_info9.html">Nitro Hoodie</a>
+                                <a href="../item_info/item_info11.html"> Nitro Hoodie</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <br><br><br><br><br><br>
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn');
+        const toggleBtnIcon = document.querySelector('.toggle_btn i');
+        const dropDownMenu = document.querySelector('.dropdown_menu');
+
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open');
+            const isOpen = dropDownMenu.classList.contains('open');
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        }
+    </script>
+    <script type="text/javascript">
+        function search() {
+            const searchQuery = document.getElementById("search-bar-1").value;
+            window.location.href = "../style1.html?searchQuery=" + encodeURIComponent(searchQuery);
+        }
+    </script>
+    <div id="main">
+
+        <div>
+            <p class="help"> GET HELP WITH CHATBOT</p><br>
+            <p class="help1">Feel free to ask the chatbot any doubts regarding the products,availablity or anything
+                related to the
+                website </p><br><br>
+            <input id="input" type="text" placeholder="Write something..." autocomplete="off" autofocus="true" />
+            <br><br>
+            <p id="messages"></p>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const utterances = [["how are you", "how life", "how are things"],
+            ["nike delivery"],
+            ["hi", "hey", "hello", "good morning", "good afternoon", "good"],
+            ["what are you doing", "what is going on", "what up"],
+            ["how old are you"],
+            ["who are you", "are you human", "are you bot", "are you human or bot"],
+            ["weather", "temperature"],
+            ["time"],
+            ];
+
+            const answers = [["Fine... how are you?", "Pretty well, how are you?", "Fantastic, how are you?"],
+            ["nike shoes delivery"],
+            ["Hello!", "Hi!", "Hey!", "Hi there!", "Howdy"],
+            ["Nothing much", "About to go to sleep", "Can you guess?", "I don't know actually"],
+            ["I am infinite"],
+            ["I am just a bot", "I am a bot. What are you?"],
+            ["The weather is currently sunny and warm!"],
+            ["The time is currently " + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })],
+            ];
+
+            const alternatives = ["Go on...", "Try again", " I'm sorry, I don't understand"];
+
+            let memory = {};
+
+            document.querySelector("#input").addEventListener("keydown", function (e) {
+                if (e.code === "Enter") {
+                    let input = this.value;
+                    this.value = "";
+                    output(input);
+                }
+            });
+
+            function output(input) {
+                let product;
+                let text = input.toLowerCase().replace(/[^\w\s\d]/gi, "");
+                text = text
+                    .replace(/ a /g, " ")
+                    .replace(/whats/g, "what is")
+                    .replace(/please /g, "")
+                    .replace(/ please/g, "");
+
+                text = checkForTypos(text);
+
+                if (memory[text]) {
+                    product = memory[text];
+                } else if (compare(utterances, answers, text)) {
+                    product = compare(utterances, answers, text);
+                    memory[text] = product;
+                } else {
+                    product = alternatives[Math.floor(Math.random() * alternatives.length)];
+                }
+
+                addChatEntry(input, product);
+            }
+
+            function compare(utterancesArray, answersArray, string) {
+                let item;
+                for (let x = 0; x < utterancesArray.length; x++) {
+                    for (let y = 0; y < utterancesArray[x].length; y++) {
+                        let utterance = utterancesArray[x][y];
+                        let keywords = utterance.split(" ");
+                        let foundAllKeywords = true;
+                        for (let i = 0; i < keywords.length; i++) {
+                            let keyword = keywords[i];
+                            if (!string.includes(keyword)) {
+                                foundAllKeywords = false;
+                                break;
+                            }
+                        }
+                        if (foundAllKeywords || utterance.includes(string)) {
+                            item = answersArray[x][Math.floor(Math.random() * answersArray[x].length)];
+                            break;
+                        }
+                    }
+                    if (item) {
+                        break;
+                    }
+                }
+                if (!item) {
+                    item = alternatives[Math.floor(Math.random() * alternatives.length)];
+                }
+                return item;
+            }
+
+
+
+
+            function addChatEntry(input, product) {
+                const messagesContainer = document.getElementById("messages");
+
+                let correctedInput = checkForTypos(input);
+
+                let userDiv = document.createElement("div");
+                userDiv.id = "user";
+                userDiv.className = "user response";
+                userDiv.innerHTML = `${input}`;
+                messagesContainer.appendChild(userDiv);
+
+                let botDiv = document.createElement("div");
+                let botText = document.createElement("span");
+                botDiv.id = "bot";
+                botDiv.className = "bot response";
+                botText.innerText = "Typing...";
+                botDiv.appendChild(botText);
+                messagesContainer.appendChild(botDiv);
+
+                setTimeout(() => {
+                    botText.innerText = `${product}`;
+                    userDiv.classList.remove("response");
+                    botDiv.classList.remove("response");
+                    userDiv.classList.add("user-message");
+                    botDiv.classList.add("bot-message");
+                }, 2000);
+            }
+            function checkForTypos(input) {
+                // Map common typos to their corrected spelling
+                const typos = {
+                    "helo": "hello",
+                    "heyy": "hey",
+                    "wats": "what's",
+                    "sup": "what's up",
+                    "temprature": "temperature",
+                    "bot?": "are you a bot?",
+                    "humman": "are you human?",
+                };
+
+                // Split the input string into individual words
+                let words = input.split(" ");
+
+                // Check each word for a typo and correct it if necessary
+                for (let i = 0; i < words.length; i++) {
+                    let word = words[i].toLowerCase();
+                    if (typos[word]) {
+                        words[i] = typos[word];
+                    }
+                }
+
+                // Join the corrected words back into a string and return it
+                return words.join(" ");
+            }
+
+        });
+    </script>
+    <br><br><br> <br><br><br> <br><br><br>
+    <footer>
+        <div class="col">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong>28/2 6th cross Kg Nagar</p>
+            <p><strong>Phone:</strong>+ 01 2222 365/(+91) 76 7677 6413</p>
+            <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-pinterest-p"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+        </div>
+        <div class="col">
+            <h4>Support</h4>
+            <p id="myBtn">Send Feedback</p>
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h2>Send Us Feedback</h2>
+                    </div>
+                    <div class="modal-body">
+                        <br>
+                        <p class="modal-p">First, what would you like to tell us about?</p>
+                        <form class="form-p" id="my-form">
+                            <input type="text" id="fname" class="fname" placeholder="  Tell us Your Queries..."
+                                required>
+                            <br><br>
+                            <p class="modal-p">We'd love to hear your feedback. What was positive? What can we improve?
+                            </p><br>
+                            <textarea name="" class="text-box" id="text-box" cols="70" rows="15" maxlength="800"
+                                placeholder="We would like to have your feedback(max 600 words)" required></textarea>
+                            <p class="last-p">We are unable to respond to requests submitted here. If you need
+                                assistance
+                                with your Nike
+                                Product or Services please contact us.</p>
+                            <button class="but1" type="submit">Submit</button>
+                        </form><br>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <a href="../help/delivery.html">Delivery</a>
+            <a href="../help/question1.html">Get Help</a>
+            <a href="../chatbot/chap.html">Chatbot</a>
+            <a href="../chatbot/video.html">Video support</a>
+        </div>
+        <div class="col">
+            <h4>Useful Links
+            </h4>
+            <a href="../subscription.html">Subscription</a>
+            <a href="../donation.html">Donation</a>
+            <a href="../stylist/stylist.html">Virtual Stylist</a>
+            <a href="../signup/signup.html">Sign In</a>
+            <a href="../signup/login.html">Login</a>
+        </div>
+        <div class="copyright">
+            <p>@ 2023, Shravanth, Inc. All Rights Reserved </p>
+        </div>
+    </footer>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <div id="loading">
+        <div class="spinner"></div>
+    </div>
+    <script>
+        window.onload = function () {
+            document.getElementById('loading').style.display = 'none';
+        }
+
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+    <script src="../navbars/naya.js"></script>
+</body>
+
+</html>

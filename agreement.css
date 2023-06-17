@@ -1,0 +1,28 @@
+.main0div {
+    align-items: center;
+    text-align: center;
+    color: #6D5D6E;
+    font-weight: bold;
+}
+
+.side-div {
+    margin-left: 20vh;
+    margin-right: 20vh;
+}
+
+.eff-date {
+    font-style: italic;
+    font-size: 3vh;
+}
+
+.main-ps {
+    color: #6D5D6E;
+    font-weight: 900;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    line-height: 4.4vh;
+}
+
+.side-ps {
+    line-height: 4.4vh;
+    font-family: Arial, Helvetica, sans-serif;
+}

@@ -1,0 +1,124 @@
+.wrapper {
+    width: 95%;
+    margin: 0 auto;
+
+}
+
+#search-container {
+    margin: 1em 0;
+    justify-content: center;
+    text-align: center;
+    background-image: url('https://images.unsplash.com/reserve/uZYSV4nuQeyq64azfVIn_15130980706_64134efc6e_o.jpg?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwyMDc2OTk3fHxlbnwwfHx8fA%3D%3D&w=1000&q=80');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+
+}
+
+
+
+#search-container input {
+    width: 40%;
+    border-bottom: 2px solid #110f29;
+    padding: 1em 0.3em;
+    position: relative;
+    top: 32vh;
+}
+
+#search-container #search {
+    position: relative;
+    top: 32vh;
+}
+
+
+#search-container button {
+    padding: 1em 2em;
+    margin-left: 1em;
+    background-color: black;
+    color: #ffffff;
+    border-radius: 5px;
+    margin-top: 0.5em;
+    cursor: pointer;
+}
+
+#search-container button:hover {
+    background-color: white;
+    color: black;
+    border-color: green;
+    outline: #333;
+}
+
+video {
+    position: relative;
+    bottom: 10vh;
+    z-index: -1;
+}
+
+.nike-div {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.nike-logo {
+    width: 10vh;
+}
+
+.nike-p {
+    font-size: 2.5vh;
+    color: gray;
+
+}
+
+.fmail {
+    color: #000;
+    outline: black;
+    border: 1px solid lightgray;
+    outline-width: thin;
+    width: 60vh;
+    height: 7vh;
+}
+
+
+
+.fmail:hover {
+    border: 1px solid black;
+}
+
+
+.but2 {
+    align-items: right;
+    justify-content: right;
+    text-align: center;
+    width: 60vh;
+    cursor: pointer;
+    color: white;
+    background-color: #000;
+    height: 8vh;
+    font-weight: 500;
+}
+
+.final-p {
+    color: gray;
+}
+
+.but2:hover {
+    background-color: lightgray;
+    color: black;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width:600px) {
+    .fmail {
+        width: 40vh;
+    }
+
+    .but2 {
+        width: 15vh;
+    }
+
+    video {
+        width: 70vh;
+    }
+}

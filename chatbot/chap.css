@@ -1,0 +1,73 @@
+#main {
+    position: relative;
+    /* top: 40%; */
+    left: 83vh;
+}
+
+.help {
+    position: relative;
+    right: 83vh;
+    text-align: center;
+    font-size: 4.8vh;
+    text-transform: uppercase;
+    z-index: -1;
+}
+
+.help1 {
+    font-family: "Poppins", sans-serif;
+    font-size: 2.5vh;
+    position: relative;
+    right: 40vh;
+}
+
+#input {
+    position: relative;
+    right: 10vh;
+    width: 30%;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: rgb(38, 57, 77) 0 20px 30px -10px;
+    box-sizing: border-box;
+}
+
+.messages {
+    position: fixed;
+    top: 40%;
+    right: 200px;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    height: 90%;
+    width: 100%;
+    background-color: white;
+    padding: 5vh;
+    margin: 5vh;
+    border-radius: 10vh;
+}
+
+.user-message {
+    position: relative;
+    right: 20vh;
+    background-color: #e5e5ea;
+    color: #333;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    text-align: left;
+    display: inline-block;
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+.bot-message {
+    position: relative;
+    left: 20vh;
+    text-align: left;
+    background-color: #8696FE;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 15%;
+    word-wrap: break-word;
+}

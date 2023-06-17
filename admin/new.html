@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../navbars/naya.css">
+    <link rel="stylesheet" href="data.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="#">Web</a>
+            </div>
+            <ul class="links">
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Shop</a></li>
+                <div class="dropdown">
+                    <button class="dropbtn">SHOP
+
+                    </button>
+                    <div class="dropdown-content">
+                        <div class="row">
+                            <div class="column">
+                                <h3>Category 1</h3>
+                                <a href="#">Link 1</a>
+                                <a href="#">Link 2</a>
+                                <a href="#">Link 3</a>
+                            </div>
+                            <div class="column">
+                                <h3>Category 2</h3>
+                                <a href="#">Link 1</a>
+                                <a href="#">Link 2</a>
+                                <a href="#">Link 3</a>
+                            </div>
+                            <div class="column">
+                                <h3>Category 3</h3>
+                                <a href="#">Link 1</a>
+                                <a href="#">Link 2</a>
+                                <a href="#">Link 3</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr6UOrU0yygGzm6JVLGSzGlFzIzbK-9jXw3DIojgmKxPXHpaJL"
+                    height="40vh" width="40vh" onclick="toggleMe()"> -->
+                <i class="fa-regular fa-user" onclick="toggleMe()"></i>
+                <div class="sub-menu-wrap" id="subMenu">
+                    <div class="sub-menu">
+                        <div class="user-info">
+                            <img src="https://img.freepik.com/free-icon/user_318-159711.jpg" height="40vh" width="40vh"
+                                alt="" id="nav-img">
+                            <h2 id="nav-h2">Name</h2>
+                        </div>
+                        <hr>
+                        <a href="#" class="sub-menu-link">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <p>Edit</p>
+                            <span>></span>
+                        </a>
+                        <a href="#" class="sub-menu-link">
+                            <i class="fa-solid fa-gear"></i>
+                            <p>Terms of sale</p>
+                            <span>></span>
+                        </a>
+                    </div>
+                </div>
+                <script>
+                    let subMenu = document.getElementById('subMenu');
+                    function toggleMe() {
+                        subMenu.classList.toggle("open-menu");
+                    }
+                </script>
+            </ul>
+            <div class="search-bar">
+                <input type="text" id="search-bar-1">
+                <button class="search-button" onclick="search()"><i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+            <div class="toggle_btn"><i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="dropdown_menu">
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Shop</a></li>
+                <div class="dropdown">
+                    <button class="dropbtn" id="dropbtn" onclick="toggleHeight()">Shop</button>
+                    <script>
+                        function toggleHeight() {
+                            var button = document.querySelector('.dropbtn');
+                            var dropdown = document.querySelector('.dropdown_menu');
+                            dropdown.classList.toggle('tall');
+                        }
+
+                    </script>
+                    <div class="dropdown-content">
+                        <div class="row">
+                            <div class="column">
+                                <h3>Category 1</h3>
+                                <a href="#">Link 1</a>
+                                <a href="#">Link 2</a>
+                                <a href="#">Link 3</a>
+                            </div>
+                            <div class="column">
+                                <h3>Category 2</h3>
+                                <a href="#">Link 1</a>
+                                <a href="#">Link 2</a>
+                                <a href="#">Link 3</a>
+                            </div>
+                            <div class="column">
+                                <h3>Category 3</h3>
+                                <a href="#">Link 1</a>
+                                <a href="#">Link 2</a>
+                                <a href="#">Link 3</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <br><br><br><br><br><br>
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn');
+        const toggleBtnIcon = document.querySelector('.toggle_btn i');
+        const dropDownMenu = document.querySelector('.dropdown_menu');
+
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open');
+            const isOpen = dropDownMenu.classList.contains('open');
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        }
+    </script>
+    <script type="text/javascript">
+        function search() {
+            const searchQuery = document.getElementById("search-bar-1").value;
+            window.location.href = "../style1.html?searchQuery=" + encodeURIComponent(searchQuery);
+        }
+    </script>
+    <h1 class="firebase-data1">Firebase Data</h1><br>
+    <form id="login-form" action="">
+        <p class="form-p1">Email Address</p>
+        <input type="email" id="email" class="fmail" placeholder="  Email Address..." size="20" required>
+        <br><br>
+        <p class="form-p1">Password
+        </p>
+        <input type="password" id="password" class="fmail" placeholder="  Password..." size="20" required><br><br>
+        <br><span class="password-span" id="password-span"></span><br><br>
+        <button type="submit" class="but2">LOGIN</button>
+        <br><br>
+        <div id="error-message"></div>
+        <div id="success-message"></div>
+        <p class="final-p">By signing up, you agree to Nike's Privacy Policy and</p>
+        <p class="final-p">Terms of Use.</p><br><br><br>
+    </form><br>
+
+    <ul id="data-list"></ul>
+
+
+
+    <footer>
+        <div class="col">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong>28/2 6th cross Kg Nagar</p>
+            <p><strong>Phone:</strong>+ 01 2222 365/(+91) 76 7677 6413</p>
+            <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-pinterest-p"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <p id="myBtn">Send Feedback</p>
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h2>Send Us Feedback</h2>
+                    </div>
+                    <div class="modal-body">
+                        <br>
+                        <p class="modal-p">First, what would you like to tell us about?</p>
+                        <form class="form-p" id="my-form">
+                            <input type="text" id="fname" class="fname" placeholder="  Tell us Your Queries..."
+                                required>
+                            <br><br>
+                            <p class="modal-p">We'd love to hear your feedback. What was positive? What can we improve?
+                            </p><br>
+                            <textarea name="" class="text-box" id="text-box" cols="70" rows="15" maxlength="800"
+                                placeholder="We would like to have your feedback(max 600 words)" required></textarea>
+                            <p class="last-p">We are unable to respond to requests submitted here. If you need
+                                assistance
+                                with your Nike
+                                Product or Services please contact us.</p>
+                            <button class="but1" type="submit">Submit</button>
+                        </form><br>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <a href="#">View Cart</a>
+            <a href="#">Sign In</a>
+            <a href="#">Sign In</a>
+            <a href="#">Sign In</a>
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">Sign In</a>
+            <a href="#">Sign In</a>
+            <a href="#">Sign In</a>
+            <a href="#">Sign In</a>
+        </div>
+        <div class="copyright">
+            <p>@ 2023, Shravanth etc - HTML CSS Ecommerce Template </p>
+        </div>
+    </footer>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <div id="loading">
+        <div class="spinner"></div>
+    </div>
+    <script>
+        window.onload = function () {
+            document.getElementById('loading').style.display = 'none';
+        }
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+    <script src="new.js"></script>
+
+    <!-- <script src="../navbars/naya.js"></script> -->
+
+</body>
+
+</html>
