@@ -9,7 +9,8 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
-const API_KEY = "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"
+
+const API_KEY = "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"
 const submitIcon = document.querySelector("#submit-icon")
 const inputElement = document.querySelector("#input-id")
 const imageSection = document.querySelector(".images-section")
@@ -20,12 +21,8 @@ const saveButton = document.getElementById('boos');
 
 let clickCount = 0;
 inputElement.addEventListener("click", function () {
-    // increment click count
     clickCount++;
-
-    // check if input has been clicked twice
     if (clickCount === 2) {
-        // reload page
         location.reload();
     }
 });
@@ -75,10 +72,8 @@ const saveImage = async () => {
         };
         const existingImage = await imageRef.get();
         if (existingImage.exists) {
-            // Update existing document
             await imageRef.update(imageMetadata);
         } else {
-            // Create new document
             await imageRef.set(imageMetadata);
         }
         alert("Image saved successfully!");
@@ -92,13 +87,8 @@ saveButton.addEventListener('click', saveImage);
 
 const auth = firebase.auth();
 const database = firebase.database();
-// Attach click event listener to the logout button
-
-
-
 firebase.auth().onAuthStateChanged(async function (user) {
     if (user) {
-        // User is signed in.
         const currentUser = firebase.auth().currentUser;
         const userId = currentUser.uid;
         const imageRef = db.collection("users").doc(userId).collection("images").doc("userimg");
@@ -113,7 +103,6 @@ firebase.auth().onAuthStateChanged(async function (user) {
             if (doc.exists) {
                 const address = doc.data();
                 // const profile1 = document.querySelector('.profile1');
-
                 document.getElementById('nav-h2').textContent = address.firstName;
 
             } else {
@@ -127,15 +116,10 @@ firebase.auth().onAuthStateChanged(async function (user) {
     }
 });
 
-// Listen for form submission
 document.getElementById('my-form').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent the form from refreshing the page
-
-    // Get the values from the form input fields
+    event.preventDefault();
     var firstName = document.getElementById('fname').value;
     var lastName = document.getElementById('text-box').value;
-
-    // Store the first name and last name in the Firebase database
     database.ref('users').push({
         Name: firstName,
         Comments: lastName
@@ -147,8 +131,6 @@ document.getElementById('my-form').addEventListener('submit', function (event) {
             window.location = 'delivery.html';
         }
     });
-
-    // Clear the input fields
     document.getElementById('fname').value = '';
     document.getElementById('text-box').value = '';
 });

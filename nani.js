@@ -16,18 +16,12 @@ var wishlistStorageKey = '';
 
 firebase.auth().onAuthStateChanged(function (user) {
     var user = firebase.auth().currentUser;
-
-    // Check if a user is currently authenticated
     if (user) {
-        // User is signed in, retrieve their unique ID
         var userId = user.uid;
-
-        // Use the user ID to create separate local storage for each user
         wishlistStorageKey = 'wishlist_' + userId;
         wishlist = JSON.parse(localStorage.getItem(wishlistStorageKey)) || [];
         console.log(wishlistStorageKey);
     } else {
-        // No user is signed in, use a default local storage key
         wishlistStorageKey = 'wishlist';
         wishlist = JSON.parse(localStorage.getItem(wishlistStorageKey)) || [];
         console.log(wishlistStorageKey);
@@ -210,9 +204,6 @@ no.addEventListener('click', function () {
         if (doc.exists) {
             const previousInput = doc.data().credit;
             // const newInput = parseInt(previousInput) + parseInt(score);
-
-            // Update the input sum in Firestore
-
             // creditScoreElement.textContent = "credit:" + previousInput;
             if (previousInput >= 50) {
                 document.getElementById('myBtn1').click();
@@ -222,7 +213,6 @@ no.addEventListener('click', function () {
             }
 
         } else {
-            // If there is no previous input sum, create a new document with the input value
             creditScoreElement.textContent = "credit:" + score;
         }
     })
@@ -243,7 +233,6 @@ firebase.auth().onAuthStateChanged(function (user) {
         } else {
             score = 0;
         }
-        // Get the previous input sum from Firestore
         inputDocument1.get().then((doc) => {
             if (doc.exists) {
                 const previousInput = doc.data().credit;
@@ -272,7 +261,6 @@ firebase.auth().onAuthStateChanged(function (user) {
         } else {
             score = 0;
         }
-        // Get the previous input sum from Firestore
         inputDocument1.get().then((doc) => {
             if (doc.exists) {
                 const previousInput = doc.data().credit;
@@ -373,10 +361,10 @@ document.getElementById('credit-no').onclick = async function (e) {
 
 
         var options = {
-            "key": "rzp_test_vX3Y8QX16DXiF7", // Enter the Key ID generated from the Dashboard
-            "amount": totalAmount * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            "key": "rzp_test_vX3Y8QX16DXiF7",
+            "amount": totalAmount * 100,
             "currency": "INR",
-            "order_id": orderData.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+            "order_id": orderData.id,
             handler: async function (response) {
                 // document.getElementById('rzp-button1').addEventListener('click', addWishlistItemToFirestore);
                 const currentUser = firebase.auth().currentUser;
@@ -414,19 +402,13 @@ document.getElementById('credit-no').onclick = async function (e) {
                 const inputCollection1 = db.collection("credits");
                 const inputDocument1 = inputCollection1.doc(userId);
                 const creditScoreElement = document.getElementById("credit-score");
-                // Get the previous input sum from Firestore
                 inputDocument1.get().then((doc) => {
                     if (doc.exists) {
                         const previousInput = doc.data().credit;
                         const newInput = parseInt(previousInput) + parseInt(score);
-
-                        // Update the input sum in Firestore
                         inputDocument1.set({ credit: newInput });
-
                         creditScoreElement.textContent = "credit:" + newInput;
-
                     } else {
-                        // If there is no previous input sum, create a new document with the input value
                         inputDocument1.set({ credit: score });
                         creditScoreElement.textContent = "credit:" + score;
                     }
@@ -434,21 +416,15 @@ document.getElementById('credit-no').onclick = async function (e) {
                 const inputCollection = db.collection("donations");
                 const inputDocument = inputCollection.doc("donations-document");
                 const inputNumber = document.getElementById("donation-amount-value").innerHTML;
-
-                // Get the previous input sum from Firestore
                 inputDocument.get().then((doc) => {
                     if (doc.exists) {
                         const previousInput = doc.data().inputSum;
                         const newInput = parseInt(previousInput) + parseInt(inputNumber);
-
-                        // Update the input sum in Firestore
                         inputDocument.set({ inputSum: newInput });
                     } else {
-                        // If there is no previous input sum, create a new document with the input value
                         inputDocument.set({ inputSum: inputNumber });
                     }
                 });
-                // alert(response.razorpay_payment_id);
                 const subscriptionSnapshot = await db.collection("subscribe").doc(userId).get();
                 if (subscriptionSnapshot.exists) {
                     alert("Delivery free");
@@ -474,13 +450,9 @@ document.getElementById('credit-yes').onclick = async function (e) {
         const inputCollection1 = db.collection("credits");
         const inputDocument1 = inputCollection1.doc(userId);
         const creditScoreElement = document.getElementById("credit-score");
-        // Get the previous input sum from Firestore
         inputDocument1.get().then((doc) => {
             if (doc.exists) {
                 const previousInput = doc.data().credit;
-
-                // Update the input sum in Firestore
-
                 creditScoreElement.textContent = "credit:" + previousInput;
                 if (previousInput > 50) {
                     amt = 0.95
@@ -517,10 +489,9 @@ document.getElementById('credit-yes').onclick = async function (e) {
 
 
     var options = {
-        "key": "rzp_test_vX3Y8QX16DXiF7", // Enter the Key ID generated from the Dashboard
-        "amount": totalAmount * 95, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-        "currency": "INR",
-        "order_id": orderData.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+        "key": "rzp_test_vX3Y8QX16DXiF7",
+        "amount": totalAmount * 95,
+        "order_id": orderData.id,
         handler: function (response) {
             // document.getElementById('rzp-button1').addEventListener('click', addWishlistItemToFirestore);
             const currentUser = firebase.auth().currentUser;
@@ -563,14 +534,9 @@ document.getElementById('credit-yes').onclick = async function (e) {
                 if (doc.exists) {
                     const previousInput = doc.data().credit;
                     const newInput = parseInt(previousInput) + parseInt(score);
-
-                    // Update the input sum in Firestore
                     inputDocument1.set({ credit: newInput - 50 });
-
                     creditScoreElement.textContent = "credit:" + newInput;
-
                 } else {
-                    // If there is no previous input sum, create a new document with the input value
                     inputDocument1.set({ credit: score });
                     creditScoreElement.textContent = "credit:" + score;
                 }
@@ -578,25 +544,18 @@ document.getElementById('credit-yes').onclick = async function (e) {
             const inputCollection = db.collection("donations");
             const inputDocument = inputCollection.doc("donations-document");
             const inputNumber = document.getElementById("donation-amount-value").innerHTML;
-
-            // Get the previous input sum from Firestore
             inputDocument.get().then((doc) => {
                 if (doc.exists) {
                     const previousInput = doc.data().inputSum;
                     const newInput = parseInt(previousInput) + parseInt(inputNumber);
-
-                    // Update the input sum in Firestore
                     inputDocument.set({ inputSum: newInput });
                 } else {
-                    // If there is no previous input sum, create a new document with the input value
                     inputDocument.set({ inputSum: inputNumber });
                 }
             });
             // alert(response.razorpay_payment_id);
             document.getElementById("result-display").innerHTML = "0";
             window.history.replaceState({}, document.title, window.location.pathname);
-
-            // Check if user already has a subscription
             const subscriptionSnapshot = db.collection("subscribe").doc(userId).get();
             if (subscriptionSnapshot.exists) {
                 alert("Delivery free");
@@ -609,17 +568,10 @@ document.getElementById('credit-yes').onclick = async function (e) {
     var rzp1 = new Razorpay(options);
     rzp1.open();
 }
-
-// const db = firebase.firestore();
 const auth = firebase.auth();
 const database = firebase.database();
-// Attach click event listener to the logout button
-
-
-
 firebase.auth().onAuthStateChanged(async function (user) {
     if (user) {
-        // User is signed in.
         const currentUser = firebase.auth().currentUser;
         const userId = currentUser.uid;
         const imageRef = db.collection("users").doc(userId).collection("images").doc("userimg");
@@ -647,16 +599,10 @@ firebase.auth().onAuthStateChanged(async function (user) {
         console.log("nakn")
     }
 });
-
-// Listen for form submission
 document.getElementById('my-form').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent the form from refreshing the page
-
-    // Get the values from the form input fields
+    event.preventDefault();
     var firstName = document.getElementById('fname').value;
     var lastName = document.getElementById('text-box').value;
-
-    // Store the first name and last name in the Firebase database
     database.ref('users').push({
         Name: firstName,
         Comments: lastName
@@ -668,8 +614,6 @@ document.getElementById('my-form').addEventListener('submit', function (event) {
             window.location = 'delivery.html';
         }
     });
-
-    // Clear the input fields
     document.getElementById('fname').value = '';
     document.getElementById('text-box').value = '';
 });

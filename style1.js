@@ -8,7 +8,7 @@ let products = {
             color: "Black",
             gender: "Men",
             brand: "high",
-            image: "https://cdn.shopify.com/s/files/1/1078/8124/products/VarsityJacket1_900x.png?v=1657557874",
+            image: "images/11.png",
             url: "item_info/item_info1.html",
             tag1: "hoodie",
             tag2: "logang"
@@ -22,7 +22,7 @@ let products = {
             color: "Green",
             gender: "Men",
             brand: "high",
-            image: "https://cdn.shopify.com/s/files/1/1078/8124/products/ForestGreenHoodie1_900x.png?v=1666444501",
+            image: "images/21.png",
             url: "item_info/item_info2.html",
             tag1: "coat",
             tag2: "pullover"
@@ -35,7 +35,7 @@ let products = {
             color: "White",
             gender: "Men",
             brand: "high",
-            image: "https://cdn.shopify.com/s/files/1/1078/8124/products/StoneHoodie1_900x.png?v=1666444860",
+            image: "images/31.png",
             url: "item_info/item_info3.html",
             tag1: "coat",
             tag2: "pullover"
@@ -48,7 +48,7 @@ let products = {
             color: "White",
             gender: "Men",
             brand: "high",
-            image: "https://cdn.shopify.com/s/files/1/1078/8124/products/OffWhiteRedHood1_900x.png?v=1657554270",
+            image: "images/41.png",
             url: "item_info/item_info4.html",
             tag1: "coat",
             tag2: "pullover"
@@ -61,7 +61,7 @@ let products = {
             color: "Black",
             gender: "Men",
             brand: "medium",
-            image: "https://cdn.shopify.com/s/files/1/1078/8124/products/BlackOrangeT-Shirt_900x.png?v=1657555813",
+            image: "images/51.png",
             url: "item_info/item_info6.html",
             tag1: "top",
             tag2: "tee"
@@ -74,7 +74,7 @@ let products = {
             color: "Black",
             gender: "Men",
             brand: "medium",
-            image: "https://cdn.shopify.com/s/files/1/1078/8124/products/BlackOrangeSweater1_900x.png?v=1657554966",
+            image: "images/61.png",
             url: "item_info/item_info5.html",
             tag1: "jumper",
             tag2: "fullarm"
@@ -87,7 +87,7 @@ let products = {
             color: "Black",
             gender: "Men",
             brand: "low",
-            image: "https://cdn.shopify.com/s/files/1/1078/8124/products/BubbleT-ShirtBlack1_900x.png?v=1666266539",
+            image: "images/71.png",
             url: "item_info/item_info7.html",
             tag1: "top",
             tag2: "tee"
@@ -100,7 +100,7 @@ let products = {
             color: "Black",
             gender: "Men",
             brand: "high",
-            image: "https://cdn.shopify.com/s/files/1/1078/8124/products/NitroGilet1_900x.png?v=1659435753",
+            image: "images/81.png",
             url: "item_info/item_info8.html",
             tag1: "coat",
             tag2: "jacket"
@@ -113,7 +113,7 @@ let products = {
             color: "Black",
             gender: "Men",
             brand: "medium",
-            image: "https://cdn.shopify.com/s/files/1/1078/8124/products/NitroBlackHoodie1_900x.png?v=1664216527",
+            image: "images/91.png",
             url: "item_info/item_info9.html",
             tag1: "pullover",
             tag2: "coat"
@@ -126,7 +126,7 @@ let products = {
             color: "Orange",
             gender: "Men",
             brand: "medium",
-            image: "https://cdn.shopify.com/s/files/1/1078/8124/products/NitroOrangeHoodie1_900x.png?v=1664216573",
+            image: "images/101.png",
             url: "item_info/item_info10.html",
             tag1: "pullover",
             tag2: "coat"
@@ -139,7 +139,7 @@ let products = {
             color: "Black",
             gender: "Men",
             brand: "low",
-            image: "https://cdn.shopify.com/s/files/1/1078/8124/products/ThunderT-Shirt1_900x.png?v=1659436991",
+            image: "images/111.png",
             url: "item_info/item_info11.html",
             tag1: "polo",
             tag2: "tee"
@@ -152,7 +152,7 @@ let products = {
             color: "Grey",
             gender: "Men",
             brand: "high",
-            image: "https://cdn.shopify.com/s/files/1/1078/8124/products/GreyGreenHood1_900x.png?v=1657553184",
+            image: "images/121.png",
             url: "item_info/item_info12.html",
             tag1: "pullover",
             tag2: "coat"
@@ -165,7 +165,7 @@ let products = {
             color: "Black",
             gender: "Men",
             brand: "high",
-            image: "https://cdn.shopify.com/s/files/1/1078/8124/products/BlackHoodie1_900x.png?v=1664364068",
+            image: "images/131.png",
             url: "item_info/item_info13.html",
             tag1: "pullover",
             tag2: "coat"
@@ -178,7 +178,7 @@ let products = {
             color: "White",
             gender: "Men",
             brand: "low",
-            image: "https://cdn.shopify.com/s/files/1/1078/8124/products/BubbleT-ShirtWhite1_900x.png?v=1666369710",
+            image: "images/141.png",
             url: "item_info/item_info14.html",
             tag1: "tee",
             tag2: "polo"
@@ -191,7 +191,7 @@ let products = {
             color: "Red",
             gender: "Men",
             brand: "low",
-            image: "https://cdn.shopify.com/s/files/1/1078/8124/products/RedT-Shirt1_900x.png?v=1666445092",
+            image: "images/151.png",
             url: "item_info/item_info15.html",
             tag1: "polo",
             tag2: "tee"
@@ -204,7 +204,7 @@ let products = {
             color: "Red",
             gender: "Women",
             brand: "high",
-            image: "https://cdn.shopify.com/s/files/1/1078/8124/products/ColourBlockPastelHoodie1_900x.png?v=1637686043",
+            image: "images/161.png",
             url: "item_info/item_info16.html",
             tag1: "pullover",
             tag2: "coat"
@@ -217,7 +217,7 @@ let products = {
             color: "Pink",
             gender: "Women",
             brand: "low",
-            image: "https://cdn.shopify.com/s/files/1/1078/8124/products/PastelPinkPartitionHoodie1_900x.png?v=1644858551",
+            image: "images/171.png",
             url: "item_info/item_info17.html",
             tag1: "pullover",
             tag2: "coat"
@@ -230,7 +230,7 @@ let products = {
             color: "Green",
             gender: "Men",
             brand: "low",
-            image: "https://cdn.shopify.com/s/files/1/1078/8124/products/PastelGreenPartitionHoodie1_900x.png?v=1638879571",
+            image: "images/181.png",
             url: "item_info/item_info18.html",
             tag1: "pullover",
             tag2: "coat"
@@ -243,7 +243,7 @@ let products = {
             color: "Black",
             gender: "Men",
             brand: "medium",
-            image: "https://cdn.shopify.com/s/files/1/1078/8124/products/BlackOrangeHood1_900x.png?v=1657552446",
+            image: "images/191.png",
             url: "item_info/item_info19.html",
             tag1: "pullover",
             tag2: "coat"
@@ -256,7 +256,7 @@ let products = {
             color: "Orange",
             gender: "Men",
             brand: "medium",
-            image: "https://cdn.shopify.com/s/files/1/1078/8124/products/OrangeSodaSweater1_900x.png?v=1657555754",
+            image: "images/201.png",
             url: "item_info/item_info20.html",
             tag1: "tee",
             tag2: "jumper"
@@ -269,7 +269,7 @@ let products = {
             color: "White",
             gender: "Men",
             brand: "high",
-            image: "https://cdn.shopify.com/s/files/1/1078/8124/products/OffWhiteHoodie1_900x.png?v=1664364080",
+            image: "images/211.png",
             url: "item_info/item_info21.html",
             tag1: "pullover",
             tag2: "coat"

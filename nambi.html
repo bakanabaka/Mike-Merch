@@ -59,20 +59,14 @@
         firebase.initializeApp(firebaseConfig);
         firebase.auth().onAuthStateChanged(function (user) {
             var user = firebase.auth().currentUser;
-
-            // Check if a user is currently authenticated
             if (user) {
-                // User is signed in, retrieve their unique ID
                 var userId = user.uid;
-
-                // Use the user ID to create separate local storage for each user
                 var wishlistStorageKey = 'wishlist_' + userId;
                 var favoritesStorageKey = 'favorites_' + userId;
                 var wishlist = JSON.parse(localStorage.getItem(wishlistStorageKey)) || [];
                 var favorites = JSON.parse(localStorage.getItem(favoritesStorageKey)) || [];
                 console.log(wishlistStorageKey);
             } else {
-                // No user is signed in, use a default local storage key
                 var wishlistStorageKey = 'wishlist';
                 var favoritesStorageKey = 'favorites';
                 var wishlist = JSON.parse(localStorage.getItem(wishlistStorageKey)) || [];

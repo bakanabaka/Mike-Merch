@@ -1,4 +1,4 @@
-//admin db configuration
+
 const firebaseConfig2 = {
     apiKey: "AIzaSyCZ6b8o39AriD7cM55SHpYKxohJGg1hkOI",
     authDomain: "admin-8ce61.firebaseapp.com",
@@ -30,53 +30,28 @@ var errorMessage = document.getElementById("error-message");
 
 
 form.addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent form from submitting
-
-    // Get the email and password values from the form
+    event.preventDefault();
     var email = emailInput.value;
     var password = passwordInput.value;
-
-    // Log in the user with Firebase Authentication
     firebase.auth().signInWithEmailAndPassword(email, password)
         .then(function (userCredential) {
-            // User login successful
             console.log("User logged in successfully.");
-            // You can redirect the user to a different page here, if desired
-            // window.location = 'index1.html';
-            //Your comment configuration
-
             form.style.display = "none";
             var dataList = document.getElementById("data-list");
-
             var db = second.database();
-
-
             var dataRef = db.ref("users");
-
-
             dataRef.on("value", function (snapshot) {
-
                 dataList.innerHTML = "";
-
-                // Loop through the child nodes of the snapshot
                 snapshot.forEach(function (childSnapshot) {
-                    // Get the data object from the child snapshot
                     var data = childSnapshot.val();
-
-                    // Create a new list item element with the data
                     var listItem = document.createElement("li");
                     listItem.textContent = data.Name + "  " + data.Comments + " ";
-
-
-                    // Add the list item to the data list
                     dataList.appendChild(listItem);
                 });
             });
         })
         .catch(function (error) {
-            // Handle login error
             console.log("Login error:", error);
-            // Show an error message to the user if the email or password is invalid
             if (error.code === "auth/user-not-found" || error.code === "auth/invalid-email") {
                 errorMessage.textContent = "Invalid email. Please try again.";
             } else if (error.code === "auth/wrong-password") {
@@ -91,13 +66,9 @@ form.addEventListener("submit", function (event) {
 const db = second.firestore();
 const auth = second.auth();
 const database = second.database();
-// Attach click event listener to the logout button
-
-
 
 second.auth().onAuthStateChanged(async function (user) {
     if (user) {
-        // User is signed in.
         const currentUser = firebase.auth().currentUser;
         const userId = currentUser.uid;
         const imageRef = db.collection("users").doc(userId).collection("images").doc("userimg");
@@ -112,7 +83,6 @@ second.auth().onAuthStateChanged(async function (user) {
             if (doc.exists) {
                 const address = doc.data();
                 // const profile1 = document.querySelector('.profile1');
-
                 document.getElementById('nav-h2').textContent = address.firstName;
 
             } else {
@@ -126,15 +96,10 @@ second.auth().onAuthStateChanged(async function (user) {
     }
 });
 
-// Listen for form submission
 document.getElementById('my-form').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent the form from refreshing the page
-
-    // Get the values from the form input fields
+    event.preventDefault();
     var firstName = document.getElementById('fname').value;
     var lastName = document.getElementById('text-box').value;
-
-    // Store the first name and last name in the Firebase database
     database.ref('users').push({
         Name: firstName,
         Comments: lastName
@@ -146,8 +111,6 @@ document.getElementById('my-form').addEventListener('submit', function (event) {
             window.location = 'delivery.html';
         }
     });
-
-    // Clear the input fields
     document.getElementById('fname').value = '';
     document.getElementById('text-box').value = '';
 });

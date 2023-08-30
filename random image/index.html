@@ -101,11 +101,9 @@
                     id="wish-icon"></i>
                 <script>
                     document.getElementById('heart-icon').addEventListener('click', function () {
-                        // Replace 'your-page-url' with the URL of the page you want to navigate to
                         window.location.href = '../favourite.html';
                     });
                     document.getElementById('wish-icon').addEventListener('click', function () {
-                        // Replace 'your-page-url' with the URL of the page you want to navigate to
                         window.location.href = '../nani.html';
                     });
                 </script>
@@ -181,8 +179,8 @@
         <h1>My Account</h1><br><br>
     </div>
     <div class="nike-div">
-        <img class="nike-logo" src="http://127.0.0.1:5500/images/logs-removebg-preview.png"
-            style="height: 20vh;width: 20vh;" alt=""><br><br>
+        <img class="nike-logo" src="../images/logs-removebg-preview.png" style="width: 20vh;height: 20vh;"
+            alt=""><br><br>
         <h2>EDIT PROFILE PIC</h2>
         <section class="sub-sec">
             <section class="images-section"></section>
@@ -220,11 +218,7 @@
         <div class="col">
             <h4>Support</h4>
             <p id="myBtn">Send Feedback</p>
-
-            <!-- The Modal -->
             <div id="myModal" class="modal">
-
-                <!-- Modal content -->
                 <div class="modal-content">
                     <div class="modal-header">
                         <span class="close">&times;</span>
@@ -272,26 +266,15 @@
         </div>
     </footer>
     <script>
-        // Get the modal
         var modal = document.getElementById("myModal");
-
-        // Get the button that opens the modal
         var btn = document.getElementById("myBtn");
-
-        // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks the button, open the modal 
         btn.onclick = function () {
             modal.style.display = "block";
         }
-
-        // When the user clicks on <span> (x), close the modal
         span.onclick = function () {
             modal.style.display = "none";
         }
-
-        // When the user clicks anywhere outside of the modal, close it
         window.onclick = function (event) {
             if (event.target == modal) {
                 modal.style.display = "none";
@@ -328,8 +311,6 @@
 
     <script src="index.js"></script>
     <!-- <script src="../navbars/naya.js"></script> -->
-
-    <!-- Script -->
 
 </body>
 

@@ -1,5 +1,3 @@
-
-// Initialize Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyBDdIwSsdQ-29jfyA6IfV5U-8SSmA-7iVM",
     authDomain: "pommy-a7657.firebaseapp.com",
@@ -9,24 +7,18 @@ const firebaseConfig = {
     appId: "1:404036371992:web:a040d94f696e6dbc7ce56d",
     measurementId: "G-B02R9C6K2M"
 };
-
 firebase.initializeApp(firebaseConfig);
-
-// Get elements
 const form = document.getElementById('myform');
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
 const registerBtn = document.getElementById('boos')
 var errorMessage = document.getElementById("error-message");
 
-
-
-
 var password_span = document.getElementById('password-span');
 var cpassword_span = document.getElementById('cpassword-span');
 var confirmpassword = document.getElementById('confirmpassword');
 var email_span = document.getElementById('mail-span');
-// Add register button event listener
+
 registerBtn.addEventListener('click', (e) => {
     e.preventDefault();
     const email = emailInput.value;
@@ -83,12 +75,9 @@ registerBtn.addEventListener('click', (e) => {
             const errorCode = error.code;
             const errorMessageText = error.message;
             if (errorCode === 'auth/email-already-in-use') {
-                // Email already in use, show error message to user
                 cpassword_span.innerHTML = '';
                 errorMessage.textContent = 'The email address is already in use.';
             } else {
-                // Other error, show error message to user
-
                 errorMessage.textContent = errorMessageText;
             }
             console.error(error);
@@ -97,13 +86,9 @@ registerBtn.addEventListener('click', (e) => {
 const db = firebase.firestore();
 const auth = firebase.auth();
 const database = firebase.database();
-// Attach click event listener to the logout button
-
-
 
 firebase.auth().onAuthStateChanged(async function (user) {
     if (user) {
-        // User is signed in.
         const currentUser = firebase.auth().currentUser;
         const userId = currentUser.uid;
         const imageRef = db.collection("users").doc(userId).collection("images").doc("userimg");
@@ -132,15 +117,10 @@ firebase.auth().onAuthStateChanged(async function (user) {
     }
 });
 
-// Listen for form submission
 document.getElementById('my-form').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent the form from refreshing the page
-
-    // Get the values from the form input fields
+    event.preventDefault();
     var firstName = document.getElementById('fname').value;
     var lastName = document.getElementById('text-box').value;
-
-    // Store the first name and last name in the Firebase database
     database.ref('users').push({
         Name: firstName,
         Comments: lastName
@@ -152,8 +132,6 @@ document.getElementById('my-form').addEventListener('submit', function (event) {
             window.location = 'delivery.html';
         }
     });
-
-    // Clear the input fields
     document.getElementById('fname').value = '';
     document.getElementById('text-box').value = '';
 });

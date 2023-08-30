@@ -30,18 +30,12 @@ const auth = firebase.auth();
 const auth2 = second.auth();
 form.addEventListener('submit', e => {
     e.preventDefault();
-
-    // Check if a user is already logged in to any Firebase account
     if (auth.currentUser || auth2.currentUser) {
         alert('You are already logged in to another account. Please log out first.');
         return;
     }
-
-    // Get the email and password values from the login form
     const email = form.email.value;
     const password = form.password.value;
-
-    // Log in to the first Firebase account
     auth.signInWithEmailAndPassword(email, password)
         .then(() => {
             // console.log('User logged in successfully to first Firebase account');
@@ -49,9 +43,7 @@ form.addEventListener('submit', e => {
             window.location = '../stylist/stylist.html'
         })
         .catch(function (error) {
-            // Handle login error
             console.log("Login error:", error);
-            // Show an error message to the user if the email or password is invalid
             if (error.code === "auth/user-not-found" || error.code === "auth/invalid-email") {
                 errorMessage.textContent = "Invalid email. Please try again.";
             } else if (error.code === "auth/wrong-password") {
@@ -60,22 +52,15 @@ form.addEventListener('submit', e => {
                 errorMessage.textContent = "Login failed. Please try again later.";
             }
         });
-
-    // Log in to the second Firebase account
     auth2.signInWithEmailAndPassword(email, password)
         .then(() => {
-            // console.log('User logged in successfully to first Firebase account');
             alert('User logged in successfully');
             window.location = '../stylist/stylist.html'
         })
         .catch(function (error) {
-            // Handle login error
             console.log("Login error:", error);
-            // Show an error message to the user if the email or password is invalid
             if (error.code === "auth/user-not-found" || error.code === "auth/invalid-email") {
-                // errorMessage.textContent = "Invalid email. Please try again.";
             } else if (error.code === "auth/wrong-password") {
-                // errorMessage.textContent = "Invalid password. Please try again.";
             } else {
                 errorMessage.textContent = "Login failed. Please try again later.";
             }
@@ -90,7 +75,6 @@ resetBtn.addEventListener('click', e => {
         successMessage.textContent = "A password reset link has been sent to your email address.";
     }).catch(error => {
         console.log("Password reset error:", error);
-        // Show an error message to the user if the email is invalid or not associated with any user account
         if (error.code === "auth/user-not-found" || error.code === "auth/invalid-email") {
             errorMessage.textContent = "Invalid email. Please try again.";
         } else {
@@ -98,8 +82,6 @@ resetBtn.addEventListener('click', e => {
         }
     });
 });
-
-// Attach click event listener to the logout button
 logoutBtn.addEventListener('click', e => {
     e.preventDefault();
 
@@ -128,13 +110,9 @@ logoutBtn.addEventListener('click', e => {
 
 const db = firebase.firestore();
 const database = firebase.database();
-// Attach click event listener to the logout button
-
-
 
 firebase.auth().onAuthStateChanged(async function (user) {
     if (user) {
-        // User is signed in.
         const currentUser = firebase.auth().currentUser;
         const userId = currentUser.uid;
         const imageRef = db.collection("users").doc(userId).collection("images").doc("userimg");
@@ -149,7 +127,6 @@ firebase.auth().onAuthStateChanged(async function (user) {
             if (doc.exists) {
                 const address = doc.data();
                 // const profile1 = document.querySelector('.profile1');
-
                 document.getElementById('nav-h2').textContent = address.firstName;
 
             } else {
@@ -163,15 +140,10 @@ firebase.auth().onAuthStateChanged(async function (user) {
     }
 });
 
-// Listen for form submission
 document.getElementById('my-form').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent the form from refreshing the page
-
-    // Get the values from the form input fields
+    event.preventDefault();
     var firstName = document.getElementById('fname').value;
     var lastName = document.getElementById('text-box').value;
-
-    // Store the first name and last name in the Firebase database
     database.ref('users').push({
         Name: firstName,
         Comments: lastName
@@ -183,8 +155,6 @@ document.getElementById('my-form').addEventListener('submit', function (event) {
             window.location = 'delivery.html';
         }
     });
-
-    // Clear the input fields
     document.getElementById('fname').value = '';
     document.getElementById('text-box').value = '';
 });
