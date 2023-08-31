@@ -10,7 +10,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 
-const API_KEY = "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"
+const API_KEY = "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"
 const submitIcon = document.querySelector("#submit-icon")
 const inputElement = document.querySelector("#input-id")
 const imageSection = document.querySelector(".images-section")

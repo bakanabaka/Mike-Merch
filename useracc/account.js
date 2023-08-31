@@ -68,7 +68,7 @@ document.querySelector(".edit4").addEventListener('click', e => {
 
     if (auth.currentUser) {
         if (auth.currentUser) {
-            window.location.href = "../random_image/index.html";
+            window.location.href = "../random image/index.html";
         }
     } else {
         alert('Login before you want to click it');
