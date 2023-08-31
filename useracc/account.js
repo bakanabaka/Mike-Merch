@@ -29,6 +29,63 @@ logoutBtn.addEventListener('click', e => {
         alert('No account to log out');
     }
 });
+
+document.querySelector(".edit1").addEventListener('click', e => {
+    e.preventDefault();
+
+    if (auth.currentUser) {
+        if (auth.currentUser) {
+            window.location.href = "edit_prof.html";
+        }
+    } else {
+        alert('Login before you want to click it');
+    }
+});
+document.getElementById("edita").addEventListener('click', e => {
+    e.preventDefault();
+
+    if (auth.currentUser) {
+        if (auth.currentUser) {
+            window.location.href = "edit_addr.html";
+        }
+    } else {
+        alert('Login before you want to click it');
+    }
+});
+document.querySelector(".edit2").addEventListener('click', e => {
+    e.preventDefault();
+
+    if (auth.currentUser) {
+        if (auth.currentUser) {
+            window.location.href = "edit_addr.html";
+        }
+    } else {
+        alert('Login before you want to click it');
+    }
+});
+document.querySelector(".edit4").addEventListener('click', e => {
+    e.preventDefault();
+
+    if (auth.currentUser) {
+        if (auth.currentUser) {
+            window.location.href = "../random_image/index.html";
+        }
+    } else {
+        alert('Login before you want to click it');
+    }
+});
+document.querySelector(".edit5").addEventListener('click', e => {
+    e.preventDefault();
+
+    if (auth.currentUser) {
+        if (auth.currentUser) {
+            window.location.href = "edit_prof.html";
+        }
+    } else {
+        alert('Login before you want to click it');
+    }
+});
+
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         // User is signed in.

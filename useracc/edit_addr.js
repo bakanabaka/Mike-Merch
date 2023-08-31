@@ -64,7 +64,7 @@ form.addEventListener("submit", function (event) {
             }).then(() => {
                 console.log("Document created successfully!");
                 form.reset();
-                window.location.href = "../account.html";
+                window.location.href = "account.html";
             }).catch((error) => {
                 console.error("Error creating document: ", error);
             });
