@@ -31,7 +31,7 @@
 //             console.log('Data could not be saved.' + error);
 //         } else {
 //             console.log('Data saved successfully.');
-//             window.location = 'index1.html';
+//             window.location = 'index.html';
 //         }
 //     });
 
