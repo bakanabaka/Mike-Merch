@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Product Filter And Search</title>
-    <!-- Google Font -->
+    <meta charset="utf-8" />
+    <title>2D Breakout Game</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
     <!-- Stylesheet -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -19,9 +18,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="nani.css">
-    <!-- <link rel="stylesheet" href="../navbars/naya.css"> -->
 
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../navbars/naya.css">
 </head>
 
 <body>
@@ -156,7 +155,7 @@
             </div>
         </div>
     </header>
-    <br><br><br><br><br>
+    <br><br><br><br><br><br>
     <script>
         const toggleBtn = document.querySelector('.toggle_btn');
         const toggleBtnIcon = document.querySelector('.toggle_btn i');
@@ -177,147 +176,12 @@
             window.location.href = "../style1.html?searchQuery=" + encodeURIComponent(searchQuery);
         }
     </script>
-    <h1 class="headind-title">The Shop</h1>
-    <br><br>
-    <div class="price-heading">
-        <p class="price-remove">Remove</p>
-        <p class="price-price">Price(Rs)</p>
-        <p class="price-quantity">Quantity</p>
-        <p class="price-total">Total(Rs)</p>
-        <p class="price-item">Item</p>
-        <!-- <br><br> -->
-        <hr class="hr">
 
-    </div>
-    <div class="donation-amount">
-        Donation: <span id="donation-amount-value">0</span>
-    </div>
-    <style>
-        .donation-amount {
-            display: none;
-        }
-    </style>
-    <div id="wishlist"></div>
-    <div class="total-heading">
-        <hr class="hr1">
-        <div class="total-amount">
-            <br><br>
-            Total Price:<span id="total-amount-value">Rs 0.00</span>
-        </div>
-    </div>
-    <div class="buttons-class">
-        <br>
-        <button id="myBtn">CHECKOUT</button>
-        <button class="clear-items" onclick="clearWishlistItems()">CLEAR ALL ITEMS</button>
-        <button onclick="navigateToWebsite()" class="continue-shop">CONTINUE SHOPPING</button>
-        <script>
-            function navigateToWebsite() {
-                window.location.href = "style.html";
-            }
-        </script>
-    </div>
-    <p id="result-paras">Result: <span id="result-display"></span></p>
-    <style>
-        #result-display,
-        #result-paras {
-            display: none;
-        }
-    </style>
 
-    <p id="credit-score">Credit:</p>
-    <style>
-        #credit-score {
-            display: none;
-        }
-    </style>
-    <div id="myModal" class="modal">
-
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close">&times;</span>
-                <h2>Do you want to play and win Points</h2><br>
-            </div>
-            <div class="modal-body">
-                <br>
-                <p class="modal-p" style="text-align:center;">Which game would you like to play</p><br>
-                <a class="game" href="whac_a_mole/index.html">Whack a Mole!!</a>
-                <a class="game" href="break_out/index.html">Breakout</a>
-                <br><br>
-                <a class="game" href="space_invaders/index.html">Space Invaders</a>
-                <a class="game" href="rock_paper_scissor/index.html">Rock and paper</a><br><br><br>
-                <button class="but2" id="no">No I dont want to play any games</button>
-            </div>
-        </div>
-
-    </div>
-    <button id="myBtn1">Credit Points</button>
-    <style>
-        #myBtn1 {
-            display: none;
-        }
-    </style>
-
-    <div id="myModal1" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close1">&times;</span>
-                <h2>Do you want to use your Credits to get off</h2><br><br>
-            </div>
-            <div class="modal-body">
-                <button class="but2" id="credit-yes">Yes i would love to</button>
-                <br><br>
-                <button class="but2" id="credit-no">No I dont want to </button>
-            </div>
-        </div>
-    </div>
-
-    </div>
-    <script>
-        // Get the modal
-        var modal = document.getElementById("myModal");
-        var modal1 = document.getElementById("myModal1");
-
-        // Get the button that opens the modal
-        var btn = document.getElementById("myBtn");
-        var btn1 = document.getElementById("myBtn1");
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-        var span1 = document.getElementsByClassName("close1")[0];
-
-        // When the user clicks the button, open the modal 
-        btn.onclick = function () {
-            modal.style.display = "block";
-        }
-        btn1.onclick = function () {
-            modal1.style.display = "block";
-        }
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
-        span1.onclick = function () {
-            modal1.style.display = "none";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-            if (event.target == modal1) {
-                modal1.style.display = "none";
-            }
-        }
-    </script>
-    <button id="rzp-button1">Pay</button>
-    <style>
-        #rzp-button1 {
-            display: none;
-        }
-    </style>
-    <br><br><br>
+    <h1 id="score" style="align-items: center;justify-content: center; text-align: center;">0</h1>
+    <div class="grid"></div>
+    <br><br><br> <br><br><br> <br><br><br> <br><br><br> <br><br><br> <br><br><br>
+    <br><br><br> <br><br><br> <br><br><br> <br><br><br>
     <footer>
         <div class="col">
             <h4>Contact</h4>
@@ -335,15 +199,15 @@
         </div>
         <div class="col">
             <h4>Support</h4>
-            <p id="sendf">Send Feedback</p>
+            <p id="myBtn">Send Feedback</p>
 
             <!-- The Modal -->
-            <div id="sendModal" class="modal">
+            <div id="myModal" class="modal">
 
                 <!-- Modal content -->
                 <div class="modal-content">
                     <div class="modal-header">
-                        <span class="closing">&times;</span>
+                        <span class="close">&times;</span>
                         <h2>Send Us Feedback</h2>
                     </div>
                     <div class="modal-body">
@@ -389,45 +253,31 @@
     </footer>
     <script>
         // Get the modal
-        var modal3 = document.getElementById("sendModal");
+        var modal = document.getElementById("myModal");
 
         // Get the button that opens the modal
-        var btn3 = document.getElementById("sendf");
+        var btn = document.getElementById("myBtn");
 
         // Get the <span> element that closes the modal
-        var span3 = document.getElementsByClassName('closing')[0];
+        var span = document.getElementsByClassName("close")[0];
 
         // When the user clicks the button, open the modal 
-        btn3.onclick = function () {
-            modal3.style.display = "block";
+        btn.onclick = function () {
+            modal.style.display = "block";
         }
 
         // When the user clicks on <span> (x), close the modal
-        span3.onclick = function () {
-            modal3.style.display = "none";
+        span.onclick = function () {
+            modal.style.display = "none";
         }
 
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function (event) {
             if (event.target == modal) {
-                modal3.style.display = "none";
+                modal.style.display = "none";
             }
         }
     </script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
-
-
-    <script>
-
-    </script>
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-
-    <script src="nani.js"></script>
-
-    <!-- Script -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -439,8 +289,13 @@
         crossorigin="anonymous"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+
+    <script src="index.js"></script>
+    <script src="../navbars/naya.js"></script>
 </body>
 
 </html>
-
-<!-- <a href="https://formsubmit.co/el/dutaye">To connect with me</a> -->

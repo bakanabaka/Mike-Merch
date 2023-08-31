@@ -1,19 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Product Filter And Search</title>
-    <!-- Google Font -->
+    <meta charset="utf-8">
+
+    <title>Space Invaders</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/light.min.css"
-        integrity="sha512-2mJrsfA70oZ9XbwC37glDZyyVJgFzUBIV7VnrtUIb+YadNn28QxN2cX4A4Cx3q7t/5e5f5RtNvS5y5b+6c1dGg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../navbars/naya.css">
+
 </head>
 
 <body>
@@ -54,7 +63,7 @@
                     </div>
                 </div>
                 <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr6UOrU0yygGzm6JVLGSzGlFzIzbK-9jXw3DIojgmKxPXHpaJL"
-                    height="40vh" width="40vh" onclick="toggleMe()"> -->
+                height="40vh" width="40vh" onclick="toggleMe()"> -->
                 <i class="fa-regular fa-user" onclick="toggleMe()"></i>
                 <div class="sub-menu-wrap" id="subMenu">
                     <div class="sub-menu">
@@ -149,196 +158,15 @@
     <script type="text/javascript">
         function search() {
             const searchQuery = document.getElementById("search-bar-1").value;
-            window.location.href = "../style.html?searchQuery=" + encodeURIComponent(searchQuery);
+            window.location.href = "../style1.html?searchQuery=" + encodeURIComponent(searchQuery);
         }
     </script>
+    <h1 class="score" style="align-items: center;justify-content: center; text-align: center;">0</h1>
+    <div class="grid"></div>
 
-    <div class="wrapper">
-        <div id="search-container">
-            <input type="search" id="search-input" placeholder="Search product name here.." />
-            <button id="search">Search</button>
-            <i class="fa fa-microphone" id="voice" style="height: 2vh;"></i>
-        </div>
-        <script>
-            const but = document.getElementById('voice');
-            but.addEventListener('click', function () {
-                var recognition = new webkitSpeechRecognition();
-                recognition.lang = "en-GB";
-                recognition.onresult = function (event) {
-                    console.log(event);
-                    document.getElementById('search-input').value = event.results[0][0].transcript;
-                }
-                recognition.start();
-                window.onload = function () {
-                    document.getElementById('search').click();
-                };
-
-
-            })
-        </script>
-        <script type="text/javascript">
-            window.onload = function () {
-                const urlParams = new URLSearchParams(window.location.search);
-                const searchQuery = urlParams.get("searchQuery");
-                const searchBar2 = document.getElementById("search-input");
-                searchBar2.value = searchQuery;
-
-                const searchButton = document.getElementById("search");
-                searchButton.click();
-            };
-        </script>
-        <div id="buttons">
-            <button class="button-value" onclick="filterProduct('all')">All</button>
-            <button class="button-value" onclick="filterProduct('Topwear')">
-                Topwear
-            </button>
-            <button id="btn" class="button-value" onclick="filterProduct('Bottomwear')">
-                Bottomwear
-            </button>
-            <button class="button-value" onclick="filterProduct('Jacket')">
-                Jacket
-            </button>
-            <button class="button-value" onclick="filterProduct('Watch')">
-                Watch
-            </button>
-        </div>
-
-        <!-- <div id="result-message"></div> -->
-        <div id="result-message1"></div>
-        <div id="products"></div>
-
-    </div>
-    <div class="sidebar">
-        <h3>Filter By</h3><br>
-        <div id="div1">
-            <h4>Category</h4>
-            <ul>
-                <li><input type="checkbox" name="gender" id="mo1" value="Men" class="checkbox1"
-                        onclick="filterProducts()">
-                    <label for="gender">Men</label>
-                </li>
-                <li><input type="checkbox" name="gender" id="mo1" value="Women" class="checkbox1"
-                        onclick="filterProducts()">
-                    <label for="gender">Women</label>
-                </li>
-
-            </ul>
-        </div>
-        <div id="div2">
-            <h4>Brand</h4>
-            <ul>
-                <li><input type="checkbox" name="brand" value="Sidemen" class="checkbox2" onclick="filterProducts()">
-                    <label for="brand">Sidemen</label>
-                </li>
-                <li><input type="checkbox" name="brand" value="Logang" class="checkbox2" onclick="filterProducts()">
-                    <label for="brand">Logang</label>
-                </li>
-            </ul>
-        </div>
-        <div id="div4">
-            <h4>Color</h4>
-            <ul>
-                <li><input type="checkbox" name="color" value="White" class="checkbox4" onclick="filterProducts()">
-                    <label for="color">White</label>
-                </li>
-                <li><input type="checkbox" name="color" value="Black" class="checkbox4" onclick="filterProducts()">
-                    <label for="color">Black</label>
-                </li>
-                <li><input type="checkbox" name="color" value="Green" class="checkbox4" onclick="filterProducts()">
-                    <label for="color">Green</label>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-
-    <div id="products">
-        <!-- Cards will be generated dynamically by JavaScript -->
-    </div>
-
-
-
-    <script>
-        const div1Checkboxes = document.querySelectorAll('#div1 .checkbox1');
-        const div2Checkboxes = document.querySelectorAll('#div2 .checkbox2');
-        const div3Checkboxes = document.querySelectorAll('#div3 .checkbox3');
-        const div4Checkboxes = document.querySelectorAll('#div4 .checkbox4');
-
-
-        div1Checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('click', function () {
-                div1Checkboxes.forEach(cb => {
-                    if (cb !== this) {
-                        cb.disabled = this.checked;
-                    }
-                });
-            });
-        });
-
-        div2Checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('click', function () {
-                div2Checkboxes.forEach(cb => {
-                    if (cb !== this) {
-                        cb.disabled = this.checked;
-                    }
-                });
-            });
-        });
-        div3Checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('click', function () {
-                div3Checkboxes.forEach(cb => {
-                    if (cb !== this) {
-                        cb.disabled = this.checked;
-                    }
-                });
-            });
-        });
-        div4Checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('click', function () {
-                div4Checkboxes.forEach(cb => {
-                    if (cb !== this) {
-                        cb.disabled = this.checked;
-                    }
-                });
-            });
-        });
-
-    </script>
-
-    <script>
-        //Search button click
-        document.getElementById("search").addEventListener("click", () => {
-            //initializations
-            let searchInput = document.getElementById("search-input").value;
-            let elements = document.querySelectorAll(".product-name");
-            let cards = document.querySelectorAll(".card");
-            let resultCount = 0; //to track the number of search results found
-
-            //loop through all elements
-            elements.forEach((element, index) => {
-                //check if text includes the search value
-                if (element.innerText.includes(searchInput.toUpperCase())) {
-                    //display matching card
-                    cards[index].classList.remove("hide");
-                    resultCount++; //increment result count
-                } else {
-                    //hide others
-                    cards[index].classList.add("hide");
-                }
-            });
-
-            //display result not found message
-            let resultMessage = document.getElementById("result-message");
-            if (resultCount == 0) {
-                resultMessage.classList.remove("hide");
-            } else {
-                resultMessage.classList.add("hide");
-            }
-
-        });
-
-
-    </script>
+    <br><br><br> <br><br><br> <br><br><br> <br><br><br>
+    <br><br><br> <br><br><br> <br><br><br> <br><br><br>
+    <br><br><br>
     <footer>
         <div class="col">
             <h4>Contact</h4>
@@ -434,7 +262,6 @@
             }
         }
     </script>
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -450,7 +277,8 @@
     <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
-    <script src="style.js"></script>
+
+    <script src="app.js"></script>
     <script src="../navbars/naya.js"></script>
 </body>
 

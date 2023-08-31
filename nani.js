@@ -222,7 +222,7 @@ no.addEventListener('click', function () {
 })
 
 firebase.auth().onAuthStateChanged(function (user) {
-    if (user && document.referrer.includes("whac-a-mole/index.html")) {
+    if (user && document.referrer.includes("whac_a_mole/index.html")) {
         const userId = user.uid;
         const inputCollection1 = db.collection("credits");
         const inputDocument1 = inputCollection1.doc(userId);
@@ -246,11 +246,11 @@ firebase.auth().onAuthStateChanged(function (user) {
             }
         });
     } else {
-        console.log("User is not signed in or not coming from whac-a-mole/index.html.");
+        console.log("User is not signed in or not coming from whac_a_mole/index.html.");
     }
 });
 firebase.auth().onAuthStateChanged(function (user) {
-    if (user && document.referrer.includes("breakout/index.html")) {
+    if (user && document.referrer.includes("break_out/index.html")) {
         const userId = user.uid;
         const inputCollection1 = db.collection("credits");
         const inputDocument1 = inputCollection1.doc(userId);
@@ -274,11 +274,11 @@ firebase.auth().onAuthStateChanged(function (user) {
             }
         });
     } else {
-        console.log("User is not signed in or not coming from whac-a-mole/index.html.");
+        console.log("User is not signed in or not coming from whac_a_mole/index.html.");
     }
 });
 firebase.auth().onAuthStateChanged(function (user) {
-    if (user && document.referrer.includes("rock-paper-scissor/index.html")) {
+    if (user && document.referrer.includes("rock_paper_scissor/index.html")) {
         const userId = user.uid;
         const inputCollection1 = db.collection("credits");
         const inputDocument1 = inputCollection1.doc(userId);
@@ -307,7 +307,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     }
 });
 firebase.auth().onAuthStateChanged(function (user) {
-    if (user && document.referrer.includes("space-invaders/index.html")) {
+    if (user && document.referrer.includes("space_invaders/index.html")) {
         const userId = user.uid;
         const inputCollection1 = db.collection("credits");
         const inputDocument1 = inputCollection1.doc(userId);
