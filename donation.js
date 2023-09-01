@@ -26,7 +26,7 @@ document.getElementById('sub1').onclick = async function (e) {
         const totalAmount = parseInt(document.getElementById('subscribe-value1').value);
 
         // Check if user already has a subscription
-        let response = await fetch("http://localhost:3000/payment", {
+        let response = await fetch("/payment", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

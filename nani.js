@@ -169,6 +169,7 @@ const db = firebase.firestore();
 
 const no = document.getElementById('no');
 no.addEventListener('click', function () {
+    console.log("Clicked 'no' button");
 
     if (total <= 0) {
         alert("no items in the cart")
@@ -193,19 +194,23 @@ no.addEventListener('click', function () {
             return;
         }
     });
-    // if (result >= 2) {
-    //     score = 10;
-    // }
-    // else {
-    //     score = 0;
-    // }
+    if (result >= 2) {
+        score = 10;
+    }
+    else {
+        score = 0;
+    }
+
     // Get the previous input sum from Firestore
     inputDocument1.get().then((doc) => {
         if (doc.exists) {
+            console.log("Clicked 'no' button");
             const previousInput = doc.data().credit;
+            console.log(previousInput);
             // const newInput = parseInt(previousInput) + parseInt(score);
             // creditScoreElement.textContent = "credit:" + previousInput;
             if (previousInput >= 50) {
+
                 document.getElementById('myBtn1').click();
             } else {
                 document.getElementById('credit-no').removeAttribute('disabled');
@@ -346,7 +351,7 @@ document.getElementById('credit-no').onclick = async function (e) {
         totalAmount += parseFloat(cartItem.price) * (cartItem.quantity || 1);
     }
     try {
-        let response = await fetch("http://localhost:3000/payment", {
+        let response = await fetch("/payment", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -357,8 +362,6 @@ document.getElementById('credit-no').onclick = async function (e) {
         })
         let orderData = await response.json();
         console.log(orderData);
-
-
 
         var options = {
             "key": "rzp_test_vX3Y8QX16DXiF7",
@@ -474,7 +477,7 @@ document.getElementById('credit-yes').onclick = async function (e) {
         totalAmount += parseFloat(cartItem.price) * (cartItem.quantity || 1);
     }
 
-    let response = await fetch("http://localhost:3000/payment", {
+    let response = await fetch("/payment", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
