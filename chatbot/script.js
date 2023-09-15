@@ -1,6 +1,5 @@
 const natural = require('natural');
 
-// Define the training data
 const trainingData = [
     { input: 'hello', output: 'Hi there!' },
     { input: 'hi', output: 'Hi there!' },
@@ -9,7 +8,6 @@ const trainingData = [
     { input: 'what time is it?', output: new Date().toLocaleTimeString() }
 ];
 
-// Train the classifier
 let classifier;
 natural.BayesClassifier.load('classifier.json', null, function (err, loadedClassifier) {
     if (err) {
@@ -29,8 +27,6 @@ natural.BayesClassifier.load('classifier.json', null, function (err, loadedClass
 function send() {
     const userInput = document.getElementById('userinput').value.toLowerCase();
     let response;
-
-    // Use the classifier to get the appropriate response
     classifier.getClassifications(userInput, function (err, classifications) {
         if (err) {
             console.error(err);

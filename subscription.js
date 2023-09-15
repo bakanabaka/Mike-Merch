@@ -21,14 +21,12 @@ document.getElementById('sub1').onclick = async function (e) {
             return;
         }
         const userId = currentUser.uid;
-
-        // Check if user already has a subscription
         const subscriptionSnapshot = await db.collection("subscribe").doc(userId).get();
         if (subscriptionSnapshot.exists) {
             alert("You already have an active subscription");
             return;
         }
-        let response = await fetch("http://localhost:3000/payment", {
+        let response = await fetch("/payment", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -42,10 +40,10 @@ document.getElementById('sub1').onclick = async function (e) {
 
 
         var options = {
-            "key": "rzp_test_vX3Y8QX16DXiF7", // Enter the Key ID generated from the Dashboard
-            "amount": totalAmount * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            "key": "rzp_test_vX3Y8QX16DXiF7",
+            "amount": totalAmount * 100,
             "currency": "INR",
-            "order_id": orderData.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+            "order_id": orderData.id,
             handler: function (response) {
                 // document.getElementById('rzp-button1').addEventListener('click', addWishlistItemToFirestore);
                 const currentUser = firebase.auth().currentUser;
@@ -64,7 +62,6 @@ document.getElementById('sub1').onclick = async function (e) {
                     .catch((error) => {
                         console.error("Error writing data to Firestore: ", error);
                     });
-                // alert(response.razorpay_payment_id);
                 document.getElementById("result-display").innerHTML = "0";
                 window.history.replaceState({}, document.title, window.location.pathname);
 
@@ -91,14 +88,12 @@ document.getElementById('sub2').onclick = async function (e) {
             return;
         }
         const userId = currentUser.uid;
-
-        // Check if user already has a subscription
         const subscriptionSnapshot = await db.collection("subscribe").doc(userId).get();
         if (subscriptionSnapshot.exists) {
             alert("You already have an active subscription");
             return;
         }
-        let response = await fetch("http://localhost:3000/payment", {
+        let response = await fetch("/payment", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -112,10 +107,10 @@ document.getElementById('sub2').onclick = async function (e) {
 
 
         var options = {
-            "key": "rzp_test_vX3Y8QX16DXiF7", // Enter the Key ID generated from the Dashboard
-            "amount": totalAmount1 * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            "key": "rzp_test_vX3Y8QX16DXiF7",
+            "amount": totalAmount1 * 100,
             "currency": "INR",
-            "order_id": orderData.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+            "order_id": orderData.id,
             handler: function (response) {
                 // document.getElementById('rzp-button1').addEventListener('click', addWishlistItemToFirestore);
                 const currentUser = firebase.auth().currentUser;
@@ -126,7 +121,7 @@ document.getElementById('sub2').onclick = async function (e) {
                 const userId = currentUser.uid;
                 db.collection("subscribe").doc(userId).set({
                     timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-                    total: totalAmount,
+                    total: totalAmount1,
                 })
                     .then(() => {
                         alert("For every payment you make 5% off your total amount will be given to charity");
@@ -135,7 +130,6 @@ document.getElementById('sub2').onclick = async function (e) {
                     .catch((error) => {
                         console.error("Error writing data to Firestore: ", error);
                     });
-                // alert(response.razorpay_payment_id);
 
             },
 
@@ -158,14 +152,12 @@ document.getElementById('sub').onclick = async function (e) {
             return;
         }
         const userId = currentUser.uid;
-
-        // Check if user already has a subscription
         const subscriptionSnapshot = await db.collection("subscribe").doc(userId).get();
         if (subscriptionSnapshot.exists) {
             alert("You already have an active subscription");
             return;
         }
-        let response = await fetch("http://localhost:3000/payment", {
+        let response = await fetch("/payment", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -179,10 +171,10 @@ document.getElementById('sub').onclick = async function (e) {
 
 
         var options = {
-            "key": "rzp_test_vX3Y8QX16DXiF7", // Enter the Key ID generated from the Dashboard
-            "amount": totalAmount1 * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            "key": "rzp_test_vX3Y8QX16DXiF7",
+            "amount": totalAmount2 * 100,
             "currency": "INR",
-            "order_id": orderData.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+            "order_id": orderData.id,
             handler: function (response) {
                 // document.getElementById('rzp-button1').addEventListener('click', addWishlistItemToFirestore);
                 const currentUser = firebase.auth().currentUser;
@@ -193,7 +185,7 @@ document.getElementById('sub').onclick = async function (e) {
                 const userId = currentUser.uid;
                 db.collection("subscribe").doc(userId).set({
                     timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-                    total: totalAmount,
+                    total: totalAmount2,
                 })
                     .then(() => {
                         alert("For every payment you make 5% off your total amount will be given to charity");
@@ -202,7 +194,6 @@ document.getElementById('sub').onclick = async function (e) {
                     .catch((error) => {
                         console.error("Error writing data to Firestore: ", error);
                     });
-                // alert(response.razorpay_payment_id);
 
             },
 
@@ -216,13 +207,9 @@ document.getElementById('sub').onclick = async function (e) {
 // const db = firebase.firestore();
 const auth = firebase.auth();
 const database = firebase.database();
-// Attach click event listener to the logout button
-
-
 
 firebase.auth().onAuthStateChanged(async function (user) {
     if (user) {
-        // User is signed in.
         const currentUser = firebase.auth().currentUser;
         const userId = currentUser.uid;
         const imageRef = db.collection("users").doc(userId).collection("images").doc("userimg");
@@ -251,29 +238,21 @@ firebase.auth().onAuthStateChanged(async function (user) {
     }
 });
 
-// Listen for form submission
-document.getElementById('my-form').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent the form from refreshing the page
-
-    // Get the values from the form input fields
-    var firstName = document.getElementById('fname').value;
-    var lastName = document.getElementById('text-box').value;
-
-    // Store the first name and last name in the Firebase database
+document.getElementById('my-form1').addEventListener('submit', function (event) {
+    event.preventDefault();
+    var firstName1 = document.getElementById('fname1').value;
+    var lastName1 = document.getElementById('text-box1').value;
     database.ref('users').push({
-        Name: firstName,
-        Comments: lastName
+        Name: firstName1,
+        Comments: lastName1
     }, function (error) {
         if (error) {
             console.log('Data could not be saved.' + error);
         } else {
             console.log('Data saved successfully.');
-            window.location = 'delivery.html';
+            alert('Feedback successfully recorded');
         }
     });
-
-    // Clear the input fields
-    document.getElementById('fname').value = '';
-    document.getElementById('text-box').value = '';
+    document.getElementById('fname1').value = '';
+    document.getElementById('text-box1').value = '';
 });
-

@@ -12,10 +12,7 @@ input:focus {
     cursor: pointer;
 }
 
-
-/*  for image and left text*/
 .img-shoe1 {
-    /* padding: 9% 3%; */
     width: 30%;
     height: 40%;
     position: relative;
@@ -23,7 +20,6 @@ input:focus {
 }
 
 .img-shoe2 {
-    /* padding: 9% 3%; */
     width: 30%;
     height: 40%;
     position: relative;
@@ -51,7 +47,6 @@ input:focus {
     .img-shoe3,
     .img-shoe4 {
         position: relative;
-        /* bottom: 650vh; */
     }
 
 }
@@ -307,7 +302,6 @@ header {
     height: 0px;
     width: 500px;
     overflow: hidden;
-    /* transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275); */
     background: #fff;
 }
 
@@ -324,9 +318,7 @@ header {
 
 .dropdown_menu.tall {
     height: 490px;
-    /* Change this value to the desired height */
     width: 55vh;
-    /* Change this value to the desired width */
 }
 
 .dropdown_menu li {
@@ -338,7 +330,6 @@ header {
 
 .dropdown_menu .search-bar {
     width: 100%;
-    /* display: flex; */
     justify-content: center;
     align-items: center;
 }
@@ -405,7 +396,6 @@ header {
     font-size: 1em;
     color: #333;
     letter-spacing: 0.1em;
-    /* right: 20vh; */
 }
 
 @media screen and (max-width:600px) {
@@ -432,7 +422,6 @@ header {
     display: block;
 }
 
-/* Create three equal columns that floats next to each other */
 .column {
     float: left;
     width: 33.33%;
@@ -481,7 +470,6 @@ header {
     left: 16vh;
 }
 
-/* Clear floats after the columns */
 .row:after {
     content: "";
     display: table;
@@ -596,7 +584,6 @@ header {
 
 footer {
     display: flex;
-    /* flex-direction: column; */
     flex-wrap: wrap;
     justify-content: space-between;
     background-color: #000;
@@ -675,29 +662,19 @@ footer .copyright {
 
 .modal {
     display: none;
-    /* Hidden by default */
     position: fixed;
-    /* Stay in place */
     z-index: 1;
-    /* Sit on top */
     padding-top: 100px;
-    /* Location of the box */
     left: 0;
     top: 0;
     width: 100%;
-    /* Full width */
     height: 100%;
-    /* Full height */
     overflow: auto;
-    /* Enable scroll if needed */
     background-color: rgb(0, 0, 0);
-    /* Fallback color */
     background-color: rgba(0, 0, 0, 0.4);
-    /* Black w/ opacity */
 
 }
 
-/* Modal Content */
 .modal-content {
     position: relative;
     background-color: #fefefe;
@@ -724,7 +701,6 @@ footer .copyright {
     }
 }
 
-/* Add Animation */
 @-webkit-keyframes animatetop {
     from {
         top: -300px;
@@ -749,7 +725,6 @@ footer .copyright {
     }
 }
 
-/* The Close Button */
 .close {
     color: black;
     float: right;
@@ -781,8 +756,6 @@ footer .copyright {
 .fname {
     color: #000;
     outline: black;
-    /* background-color: black; */
-    /* outline-style: auto; */
     border: 1px solid lightgray;
     outline-width: thin;
     width: 80vh;
@@ -798,8 +771,6 @@ footer .copyright {
 .text-box {
     color: #000;
     outline: black;
-    /* background-color: black; */
-    /* outline-style: auto; */
     border: 1px solid lightgray;
     outline-width: thin;
     /* width: 80vh; */

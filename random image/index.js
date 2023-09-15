@@ -10,7 +10,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 
-const API_KEY = "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"
+const API_KEY = "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"
 const submitIcon = document.querySelector("#submit-icon")
 const inputElement = document.querySelector("#input-id")
 const imageSection = document.querySelector(".images-section")
@@ -116,22 +116,22 @@ firebase.auth().onAuthStateChanged(async function (user) {
     }
 });
 
-document.getElementById('my-form').addEventListener('submit', function (event) {
+document.getElementById('my-form1').addEventListener('submit', function (event) {
     event.preventDefault();
-    var firstName = document.getElementById('fname').value;
-    var lastName = document.getElementById('text-box').value;
+    var firstName1 = document.getElementById('fname1').value;
+    var lastName1 = document.getElementById('text-box1').value;
     database.ref('users').push({
-        Name: firstName,
-        Comments: lastName
+        Name: firstName1,
+        Comments: lastName1
     }, function (error) {
         if (error) {
             console.log('Data could not be saved.' + error);
         } else {
             console.log('Data saved successfully.');
-            window.location = 'delivery.html';
+            alert('Feedback successfully recorded');
         }
     });
-    document.getElementById('fname').value = '';
-    document.getElementById('text-box').value = '';
+    document.getElementById('fname1').value = '';
+    document.getElementById('text-box1').value = '';
 });
 

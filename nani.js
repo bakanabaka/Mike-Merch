@@ -169,7 +169,6 @@ const db = firebase.firestore();
 
 const no = document.getElementById('no');
 no.addEventListener('click', function () {
-    console.log("Clicked 'no' button");
 
     if (total <= 0) {
         alert("no items in the cart")
@@ -194,23 +193,11 @@ no.addEventListener('click', function () {
             return;
         }
     });
-    if (result >= 2) {
-        score = 10;
-    }
-    else {
-        score = 0;
-    }
 
-    // Get the previous input sum from Firestore
     inputDocument1.get().then((doc) => {
         if (doc.exists) {
-            console.log("Clicked 'no' button");
             const previousInput = doc.data().credit;
-            console.log(previousInput);
-            // const newInput = parseInt(previousInput) + parseInt(score);
-            // creditScoreElement.textContent = "credit:" + previousInput;
             if (previousInput >= 50) {
-
                 document.getElementById('myBtn1').click();
             } else {
                 document.getElementById('credit-no').removeAttribute('disabled');
@@ -221,8 +208,6 @@ no.addEventListener('click', function () {
             creditScoreElement.textContent = "credit:" + score;
         }
     })
-    const creditYes = document.getElementById('credit-yes');
-    const creditNo = document.getElementById('credit-no');
 
 })
 
@@ -232,15 +217,17 @@ firebase.auth().onAuthStateChanged(function (user) {
         const inputCollection1 = db.collection("credits");
         const inputDocument1 = inputCollection1.doc(userId);
         const creditScoreElement = document.getElementById("credit-score");
-        let score;
+        // let score;
         if (result >= 2) {
             score = 10;
         } else {
             score = 0;
         }
+        console.log(inputDocument1);
         inputDocument1.get().then((doc) => {
             if (doc.exists) {
                 const previousInput = doc.data().credit;
+                console.log(previousInput);
                 creditScoreElement.textContent = "credit:" + previousInput;
                 if (previousInput >= 50) {
                     document.getElementById('myBtn1').click();
@@ -251,7 +238,7 @@ firebase.auth().onAuthStateChanged(function (user) {
             }
         });
     } else {
-        console.log("User is not signed in or not coming from whac_a_mole/index.html.");
+        console.log("User is not signed in or not coming from whac-a-mole/index.html.");
     }
 });
 firebase.auth().onAuthStateChanged(function (user) {
@@ -279,7 +266,7 @@ firebase.auth().onAuthStateChanged(function (user) {
             }
         });
     } else {
-        console.log("User is not signed in or not coming from whac_a_mole/index.html.");
+        console.log("User is not signed in or not coming from whac-a-mole/index.html.");
     }
 });
 firebase.auth().onAuthStateChanged(function (user) {
@@ -294,7 +281,6 @@ firebase.auth().onAuthStateChanged(function (user) {
         } else {
             score = 0;
         }
-        // Get the previous input sum from Firestore
         inputDocument1.get().then((doc) => {
             if (doc.exists) {
                 const previousInput = doc.data().credit;
@@ -323,7 +309,6 @@ firebase.auth().onAuthStateChanged(function (user) {
         } else {
             score = 0;
         }
-        // Get the previous input sum from Firestore
         inputDocument1.get().then((doc) => {
             if (doc.exists) {
                 const previousInput = doc.data().credit;
@@ -345,11 +330,7 @@ firebase.auth().onAuthStateChanged(function (user) {
 document.getElementById('credit-no').onclick = async function (e) {
     e.preventDefault();
     var cartItems = JSON.parse(localStorage.getItem("wishlist")) || [];
-    var totalAmount = 0;
-    for (var i = 0; i < cartItems.length; i++) {
-        var cartItem = cartItems[i];
-        totalAmount += parseFloat(cartItem.price) * (cartItem.quantity || 1);
-    }
+    var totalAmount = total;
     try {
         let response = await fetch("/payment", {
             method: "POST",
@@ -362,6 +343,8 @@ document.getElementById('credit-no').onclick = async function (e) {
         })
         let orderData = await response.json();
         console.log(orderData);
+
+
 
         var options = {
             "key": "rzp_test_vX3Y8QX16DXiF7",
@@ -410,7 +393,9 @@ document.getElementById('credit-no').onclick = async function (e) {
                         const previousInput = doc.data().credit;
                         const newInput = parseInt(previousInput) + parseInt(score);
                         inputDocument1.set({ credit: newInput });
+
                         creditScoreElement.textContent = "credit:" + newInput;
+
                     } else {
                         inputDocument1.set({ credit: score });
                         creditScoreElement.textContent = "credit:" + score;
@@ -428,10 +413,12 @@ document.getElementById('credit-no').onclick = async function (e) {
                         inputDocument.set({ inputSum: inputNumber });
                     }
                 });
+                // alert(response.razorpay_payment_id);
                 const subscriptionSnapshot = await db.collection("subscribe").doc(userId).get();
                 if (subscriptionSnapshot.exists) {
                     alert("Delivery free");
                 }
+                clearWishlistItems();
                 document.getElementById("result-display").innerHTML = "0";
                 window.history.replaceState({}, document.title, window.location.pathname);
 
@@ -441,6 +428,7 @@ document.getElementById('credit-no').onclick = async function (e) {
         var rzp1 = new Razorpay(options);
         rzp1.open();
     } catch (error) {
+        console.log("error");
         console.error(error);
     }
 }
@@ -470,12 +458,7 @@ document.getElementById('credit-yes').onclick = async function (e) {
     }
     e.preventDefault();
     var cartItems = JSON.parse(localStorage.getItem("wishlist")) || [];
-    var totalAmount = 0;
-
-    for (var i = 0; i < cartItems.length; i++) {
-        var cartItem = cartItems[i];
-        totalAmount += parseFloat(cartItem.price) * (cartItem.quantity || 1);
-    }
+    var totalAmount = total;
 
     let response = await fetch("/payment", {
         method: "POST",
@@ -494,6 +477,7 @@ document.getElementById('credit-yes').onclick = async function (e) {
     var options = {
         "key": "rzp_test_vX3Y8QX16DXiF7",
         "amount": totalAmount * 95,
+        "currency": "INR",
         "order_id": orderData.id,
         handler: function (response) {
             // document.getElementById('rzp-button1').addEventListener('click', addWishlistItemToFirestore);
@@ -532,13 +516,14 @@ document.getElementById('credit-yes').onclick = async function (e) {
             const inputCollection1 = db.collection("credits");
             const inputDocument1 = inputCollection1.doc(userId);
             const creditScoreElement = document.getElementById("credit-score");
-            // Get the previous input sum from Firestore
             inputDocument1.get().then((doc) => {
                 if (doc.exists) {
                     const previousInput = doc.data().credit;
                     const newInput = parseInt(previousInput) + parseInt(score);
                     inputDocument1.set({ credit: newInput - 50 });
+
                     creditScoreElement.textContent = "credit:" + newInput;
+
                 } else {
                     inputDocument1.set({ credit: score });
                     creditScoreElement.textContent = "credit:" + score;
@@ -563,6 +548,7 @@ document.getElementById('credit-yes').onclick = async function (e) {
             if (subscriptionSnapshot.exists) {
                 alert("Delivery free");
             }
+            clearWishlistItems();
 
 
         },
@@ -571,8 +557,11 @@ document.getElementById('credit-yes').onclick = async function (e) {
     var rzp1 = new Razorpay(options);
     rzp1.open();
 }
+
+// const db = firebase.firestore();
 const auth = firebase.auth();
 const database = firebase.database();
+
 firebase.auth().onAuthStateChanged(async function (user) {
     if (user) {
         const currentUser = firebase.auth().currentUser;
@@ -602,22 +591,22 @@ firebase.auth().onAuthStateChanged(async function (user) {
         console.log("nakn")
     }
 });
-document.getElementById('my-form').addEventListener('submit', function (event) {
+
+document.getElementById('my-form1').addEventListener('submit', function (event) {
     event.preventDefault();
-    var firstName = document.getElementById('fname').value;
-    var lastName = document.getElementById('text-box').value;
+    var firstName1 = document.getElementById('fname1').value;
+    var lastName1 = document.getElementById('text-box1').value;
     database.ref('users').push({
-        Name: firstName,
-        Comments: lastName
+        Name: firstName1,
+        Comments: lastName1
     }, function (error) {
         if (error) {
             console.log('Data could not be saved.' + error);
         } else {
             console.log('Data saved successfully.');
-            window.location = 'delivery.html';
+            alert('Feedback successfully recorded');
         }
     });
-    document.getElementById('fname').value = '';
-    document.getElementById('text-box').value = '';
+    document.getElementById('fname1').value = '';
+    document.getElementById('text-box1').value = '';
 });
-

@@ -24,7 +24,6 @@ const db = firebase.firestore();
 const storageRef = firebase.storage().ref();
 const commentsList = document.getElementById('comments-list');
 
-// Listen for changes in the user's authentication state
 db.collection('comments').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
     commentsList.innerHTML = '';
     snapshot.forEach(doc => {
@@ -71,7 +70,6 @@ db.collection('comments').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
     });
 });
 
-// Resize image to a maximum width and height of 500 pixels
 function resizeImage(file) {
     return new Promise((resolve, reject) => {
         const img = document.createElement('img');
@@ -100,7 +98,6 @@ function resizeImage(file) {
     });
 }
 
-// Add comment
 const commentForm = document.getElementById('comment-form');
 commentForm.addEventListener('submit', e => {
     e.preventDefault();
@@ -108,14 +105,12 @@ commentForm.addEventListener('submit', e => {
     const commentText = commentForm.comment.value.trim();
     const photoFile = commentForm.photo.files[0];
     if (name && commentText) {
-        // Upload photo to storage if selected
         if (photoFile) {
             resizeImage(photoFile).then(photoUrl => {
                 const photoRef = storageRef.child(`comment-photos/${Date.now()}_${photoFile.name}`);
                 photoRef.putString(photoUrl, 'data_url').then(() => {
                     return photoRef.getDownloadURL();
                 }).then(photoUrl => {
-                    // Add comment with photoUrl to database
                     db.collection('comments').add({
                         name,
                         commentText,
@@ -126,7 +121,6 @@ commentForm.addEventListener('submit', e => {
                 });
             }).catch(error => {
                 console.error(error);
-                // Add comment without photo to database
                 db.collection('comments').add({
                     name,
                     commentText,
@@ -135,7 +129,6 @@ commentForm.addEventListener('submit', e => {
                 });
             });
         } else {
-            // Add comment without photo to database
             db.collection('comments').add({
                 name,
                 commentText,
@@ -181,12 +174,10 @@ firebase.auth().onAuthStateChanged(user => {
                                 userId: firebase.auth().currentUser.uid,
                             }),
                         }).then(() => {
-                            // Clear existing replies list
                             const repliesList = e.target.closest('li').querySelector('.replies-list');
                             if (repliesList) {
                                 repliesList.remove();
                             }
-                            // Display updated replies list
                             const commentLi = e.target.closest('li');
                             const replies = commentLi.querySelector('.replies');
                             const repliesUl = document.createElement('ul');
@@ -217,11 +208,9 @@ firebase.auth().onAuthStateChanged(user => {
                 });
             }
             else if (e.target.classList.contains('delete-comment')) {
-                // Delete main comment
                 const commentId = e.target.dataset.id;
                 db.collection('comments').doc(commentId).get().then(doc => {
                     const commentData = doc.data();
-                    // Check if authenticated user matches comment user ID
                     if (commentData.userId === auth.currentUser.uid) {
                         db.collection('comments').doc(commentId).delete().then(() => {
                             const commentLi = e.target.closest('li');
@@ -234,20 +223,13 @@ firebase.auth().onAuthStateChanged(user => {
                 });
             }
             else if (e.target.classList.contains('delete-reply')) {
-                // Delete sub comment
                 const commentId = e.target.dataset.commentId;
                 const replyId = e.target.dataset.replyId;
-
-                // Get the current user
                 const user = firebase.auth().currentUser;
-
-                // Get the comment and check if the user is authorized to delete the sub comment
                 db.collection('comments').doc(commentId).get().then(doc => {
                     if (doc.exists) {
                         const comment = doc.data();
                         const replies = comment.replies;
-
-                        // Check if the user is the owner of the comment or the user who posted the sub comment
                         if (user.uid === comment.userId || user.uid === replies.find(reply => reply.replyId === replyId).userId) {
                             const newReplies = replies.filter(reply => reply.replyId !== replyId);
                             db.collection('comments').doc(commentId).update({
@@ -258,7 +240,6 @@ firebase.auth().onAuthStateChanged(user => {
                                 console.error(`Error deleting reply ${replyId}: ${error}`);
                             });
                         } else {
-                            // Show an alert message if the user is not authorized to delete the sub comment
                             alert('You are not authorized to delete this sub comment.');
                         }
                     } else {
@@ -310,12 +291,10 @@ second.auth().onAuthStateChanged(user => {
                                         userId: second.auth().currentUser.uid,
                                     }),
                                 }).then(() => {
-                                    // Clear existing replies list
                                     const repliesList = e.target.closest('li').querySelector('.replies-list');
                                     if (repliesList) {
                                         repliesList.remove();
                                     }
-                                    // Display updated replies list
                                     const commentLi = e.target.closest('li');
                                     const replies = commentLi.querySelector('.replies');
                                     const repliesUl = document.createElement('ul');
@@ -357,11 +336,9 @@ second.auth().onAuthStateChanged(user => {
             }
 
             else if (e.target.classList.contains('delete-comment')) {
-                // Delete main comment
                 const commentId = e.target.dataset.id;
                 db.collection('comments').doc(commentId).get().then(doc => {
                     const commentData = doc.data();
-                    // Check if authenticated user matches comment user ID
                     if (second.auth().currentUser.uid) {
                         db.collection('comments').doc(commentId).delete().then(() => {
                             const commentLi = e.target.closest('li');
@@ -374,20 +351,13 @@ second.auth().onAuthStateChanged(user => {
                 });
             }
             else if (e.target.classList.contains('delete-reply')) {
-                // Delete sub comment
                 const commentId = e.target.dataset.commentId;
                 const replyId = e.target.dataset.replyId;
-
-                // Get the current user
                 const user = second.auth().currentUser;
-
-                // Get the comment and check if the user is authorized to delete the sub comment
                 db.collection('comments').doc(commentId).get().then(doc => {
                     if (doc.exists) {
                         const comment = doc.data();
                         const replies = comment.replies;
-
-                        // Check if the user is the owner of the comment or the user who posted the sub comment
                         if (second.auth().currentUser.uid) {
                             const newReplies = replies.filter(reply => reply.replyId !== replyId);
                             db.collection('comments').doc(commentId).update({
@@ -398,7 +368,6 @@ second.auth().onAuthStateChanged(user => {
                                 console.error(`Error deleting reply ${replyId}: ${error}`);
                             });
                         } else {
-                            // Show an alert message if the user is not authorized to delete the sub comment
                             alert('You are not authorized to delete this sub comment.');
                         }
                     } else {
@@ -414,13 +383,8 @@ second.auth().onAuthStateChanged(user => {
 
 
 const database = firebase.database();
-// Attach click event listener to the logout button
-
-
-
 firebase.auth().onAuthStateChanged(async function (user) {
     if (user) {
-        // User is signed in.
         const currentUser = firebase.auth().currentUser;
         const userId = currentUser.uid;
         const imageRef = db.collection("users").doc(userId).collection("images").doc("userimg");
@@ -449,29 +413,21 @@ firebase.auth().onAuthStateChanged(async function (user) {
     }
 });
 
-// Listen for form submission
-document.getElementById('my-form').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent the form from refreshing the page
-
-    // Get the values from the form input fields
-    var firstName = document.getElementById('fname').value;
-    var lastName = document.getElementById('text-box').value;
-
-    // Store the first name and last name in the Firebase database
+document.getElementById('my-form1').addEventListener('submit', function (event) {
+    event.preventDefault();
+    var firstName1 = document.getElementById('fname1').value;
+    var lastName1 = document.getElementById('text-box1').value;
     database.ref('users').push({
-        Name: firstName,
-        Comments: lastName
+        Name: firstName1,
+        Comments: lastName1
     }, function (error) {
         if (error) {
             console.log('Data could not be saved.' + error);
         } else {
             console.log('Data saved successfully.');
-            window.location = 'delivery.html';
+            alert('Feedback successfully recorded');
         }
     });
-
-    // Clear the input fields
-    document.getElementById('fname').value = '';
-    document.getElementById('text-box').value = '';
+    document.getElementById('fname1').value = '';
+    document.getElementById('text-box1').value = '';
 });
-

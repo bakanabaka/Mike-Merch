@@ -103,7 +103,6 @@ h1 {
     height: 13vh;
     width: 13vh;
     border-radius: 3.5vh;
-    /* float: left; */
 }
 
 .img-head1 {
@@ -157,7 +156,6 @@ h1 {
     border: none;
     height: 2px;
     background-color: lightgray;
-    /* margin: 20px 0; */
 }
 
 .hr2 {
@@ -178,6 +176,4 @@ h1 {
     height: 6vh;
     display: grid;
     align-items: center;
-
-    /* padding-bottom: 12%; */
 }

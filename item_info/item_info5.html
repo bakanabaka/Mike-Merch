@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
-    <!-- Stylesheet -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -101,11 +100,9 @@
                     id="wish-icon"></i>
                 <script>
                     document.getElementById('heart-icon').addEventListener('click', function () {
-                        // Replace 'your-page-url' with the URL of the page you want to navigate to
                         window.location.href = '../favourite.html';
                     });
                     document.getElementById('wish-icon').addEventListener('click', function () {
-                        // Replace 'your-page-url' with the URL of the page you want to navigate to
                         window.location.href = '../nani.html';
                     });
                 </script>
@@ -638,11 +635,8 @@
             <div class="col">
                 <h4>Support</h4>
                 <p id="myBtn">Send Feedback</p>
-
-                <!-- The Modal -->
                 <div id="myModal" class="modal">
 
-                    <!-- Modal content -->
                     <div class="modal-content">
                         <div class="modal-header">
                             <span class="close">&times;</span>
@@ -651,14 +645,14 @@
                         <div class="modal-body">
                             <br>
                             <p class="modal-p">First, what would you like to tell us about?</p>
-                            <form class="form-p" id="my-form">
-                                <input type="text" id="fname" class="fname" placeholder="  Tell us Your Queries..."
+                            <form class="form-p" id="my-form1">
+                                <input type="text" id="fname1" class="fname" placeholder="  Tell us Your Queries..."
                                     required>
                                 <br><br>
                                 <p class="modal-p">We'd love to hear your feedback. What was positive? What can we
                                     improve?
                                 </p><br>
-                                <textarea name="" class="text-box" id="text-box" cols="70" rows="15" maxlength="800"
+                                <textarea name="" class="text-box" id="text-box1" cols="70" rows="15" maxlength="800"
                                     placeholder="We would like to have your feedback(max 600 words)"
                                     required></textarea>
                                 <p class="last-p">We are unable to respond to requests submitted here. If you need
@@ -692,26 +686,20 @@
             </div>
         </footer>
         <script>
-            // Get the modal
             var modal = document.getElementById("myModal");
 
-            // Get the button that opens the modal
             var btn = document.getElementById("myBtn");
 
-            // Get the <span> element that closes the modal
             var span = document.getElementsByClassName("close")[0];
 
-            // When the user clicks the button, open the modal 
             btn.onclick = function () {
                 modal.style.display = "block";
             }
 
-            // When the user clicks on <span> (x), close the modal
             span.onclick = function () {
                 modal.style.display = "none";
             }
 
-            // When the user clicks anywhere outside of the modal, close it
             window.onclick = function (event) {
                 if (event.target == modal) {
                     modal.style.display = "none";

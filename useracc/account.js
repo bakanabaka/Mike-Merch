@@ -11,7 +11,6 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const auth = firebase.auth();
-// Attach click event listener to the logout button
 logoutBtn.addEventListener('click', e => {
     e.preventDefault();
 
@@ -88,7 +87,6 @@ document.querySelector(".edit5").addEventListener('click', e => {
 
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
-        // User is signed in.
         const currentUser = firebase.auth().currentUser;
         const userId = currentUser.uid;
 
@@ -112,8 +110,6 @@ firebase.auth().onAuthStateChanged(function (user) {
             if (doc.exists) {
                 const address = doc.data();
                 const profile2 = document.querySelector('.profile2');
-
-                // Update HTML with retrieved data
                 document.getElementById('address-title').textContent = address.title;
                 document.getElementById('country').textContent = address.country;
                 document.getElementById('address-line1').textContent = address.line1;
@@ -131,8 +127,6 @@ firebase.auth().onAuthStateChanged(function (user) {
             if (doc.exists) {
                 const address = doc.data();
                 const profile2 = document.querySelector('.profile2');
-
-                // Update HTML with retrieved data
                 document.getElementById('phones').textContent = address.phone;
 
             } else {
@@ -156,20 +150,16 @@ resetBtn.addEventListener('click', e => {
         successMessage.textContent = "A password reset link has been sent to your email address. Login with new password";
     }).catch(error => {
         console.log("Password reset error:", error);
-        // Show an error message to the user if the email is invalid or not associated with any user account
     });
 });
 const passwordField = document.getElementById('password-field');
 
-// Check if user is logged in
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-        // User is logged in, show dots instead of password
         const passwordLength = 10;
         const dots = '\u2022'.repeat(passwordLength);
         passwordField.textContent = dots;
     } else {
-        // User is logged out, don't show anything
         passwordField.textContent = '';
     }
 });
@@ -178,7 +168,6 @@ firebase.auth().onAuthStateChanged((user) => {
 
 firebase.auth().onAuthStateChanged(async function (user) {
     if (user) {
-        // User is signed in.
         const currentUser = firebase.auth().currentUser;
         const userId = currentUser.uid;
         const imageRef = db.collection("users").doc(userId).collection("images").doc("userimg");
@@ -195,7 +184,6 @@ firebase.auth().onAuthStateChanged(async function (user) {
 });
 firebase.auth().onAuthStateChanged(async function (user) {
     if (user) {
-        // User is signed in.
         const currentUser = firebase.auth().currentUser;
         const userId = currentUser.uid;
         const imageRef = db.collection("users").doc(userId).collection("images").doc("userimg");

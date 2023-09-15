@@ -17,7 +17,6 @@ let ballCurrentPosition = ballStart
 let timerId
 let score = 0
 
-//my block
 class Block {
     constructor(xAxis, yAxis) {
         this.bottomLeft = [xAxis, yAxis]
@@ -27,7 +26,6 @@ class Block {
     }
 }
 
-//all my blocks
 const blocks = [
     new Block(10, 270),
     new Block(120, 270),
@@ -46,7 +44,6 @@ const blocks = [
     new Block(450, 210),
 ]
 
-//draw my blocks
 function addBlocks() {
     for (let i = 0; i < blocks.length; i++) {
         const block = document.createElement('div')
@@ -59,19 +56,16 @@ function addBlocks() {
 }
 addBlocks()
 
-//add user
 const user = document.createElement('div')
 user.classList.add('user')
 grid.appendChild(user)
 drawUser()
 
-//add ball
 const ball = document.createElement('div')
 ball.classList.add('ball')
 grid.appendChild(ball)
 drawBall()
 
-//move user
 function moveUser(e) {
     switch (e.key) {
         case 'ArrowLeft':
@@ -92,19 +86,16 @@ function moveUser(e) {
 }
 document.addEventListener('keydown', moveUser)
 
-//draw User
 function drawUser() {
     user.style.left = currentPosition[0] + 'px'
     user.style.bottom = currentPosition[1] + 'px'
 }
 
-//draw Ball
 function drawBall() {
     ball.style.left = ballCurrentPosition[0] + 'px'
     ball.style.bottom = ballCurrentPosition[1] + 'px'
 }
 
-//move ball
 function moveBall() {
     ballCurrentPosition[0] += xDirection
     ballCurrentPosition[1] += yDirection
@@ -114,9 +105,7 @@ function moveBall() {
 timerId = setInterval(moveBall, 30)
 
 let result;
-//check for collisions
 function checkForCollisions() {
-    //check for block collision
     for (let i = 0; i < blocks.length; i++) {
         if
             (
@@ -138,12 +127,10 @@ function checkForCollisions() {
             }
         }
     }
-    // check for wall hits
     if (ballCurrentPosition[0] >= (boardWidth - ballDiameter) || ballCurrentPosition[0] <= 0 || ballCurrentPosition[1] >= (boardHeight - ballDiameter)) {
         changeDirection()
     }
 
-    //check for user collision
     if
         (
         (ballCurrentPosition[0] > currentPosition[0] && ballCurrentPosition[0] < currentPosition[0] + blockWidth) &&
@@ -152,7 +139,6 @@ function checkForCollisions() {
         changeDirection()
     }
 
-    //game over
     if (ballCurrentPosition[1] <= 0) {
         clearInterval(timerId)
         scoreDisplay.innerHTML = 'You lose!';

@@ -7,6 +7,7 @@
 body {
     height: 100vh;
     overflow-x: hidden;
+    /* background-color: #EEEEEE; */
 
 }
 
@@ -28,6 +29,7 @@ header {
     position: relative;
     padding: 0 1rem;
     box-shadow: 0 15px 15px rgba(0, 0, 0, 0.05);
+    background-color: white;
 }
 
 .navbar {
@@ -56,9 +58,10 @@ header {
     font-size: 1em;
     color: #333;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.1em;
     position: relative;
     top: 2.5vh;
+    left: 19vh;
 }
 
 .navbar .links li a::before {
@@ -92,7 +95,6 @@ header {
     height: 0px;
     width: 500px;
     overflow: hidden;
-    /* transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275); */
     background: #fff;
 }
 
@@ -109,9 +111,7 @@ header {
 
 .dropdown_menu.tall {
     height: 490px;
-    /* Change this value to the desired height */
     width: 55vh;
-    /* Change this value to the desired width */
 }
 
 .dropdown_menu li {
@@ -123,7 +123,6 @@ header {
 
 .dropdown_menu .search-bar {
     width: 100%;
-    /* display: flex; */
     justify-content: center;
     align-items: center;
 }
@@ -185,10 +184,11 @@ header {
     font: inherit;
     margin: 0;
     position: relative;
+    left: 17vh;
     text-decoration: none;
     font-size: 1em;
     color: #333;
-    /* right: 20vh; */
+    letter-spacing: 0.1em;
 }
 
 @media screen and (max-width:600px) {
@@ -215,7 +215,6 @@ header {
     display: block;
 }
 
-/* Create three equal columns that floats next to each other */
 .column {
     float: left;
     width: 33.33%;
@@ -261,9 +260,9 @@ header {
 .fa-regular {
     position: relative;
     top: 2vh;
+    left: 16vh;
 }
 
-/* Clear floats after the columns */
 .row:after {
     content: "";
     display: table;
@@ -278,7 +277,7 @@ header {
     max-height: 0px;
     overflow: hidden;
     transition: max-height 0.5s;
-    z-index: 1;
+    z-index: 2;
 }
 
 .sub-menu-wrap.open-menu {
@@ -295,7 +294,6 @@ header {
 .user-info {
     display: flex;
     align-items: center;
-    height: 8vh;
 }
 
 .user-info h3 {
@@ -352,6 +350,7 @@ header {
 
 
 
+
 body {
     z-index: -1;
 }
@@ -404,7 +403,6 @@ body {
 #products {
     display: grid;
     grid-template-columns: auto auto auto;
-    /* grid-column-gap: 0em; */
     padding: 2em 0;
     width: 75%;
     min-height: calc(100vh - 100px);
@@ -413,7 +411,6 @@ body {
 #recommend {
     display: grid;
     grid-template-columns: auto auto auto;
-    /* grid-column-gap: 0em; */
     padding: 2em 0;
     width: 75%;
     min-height: calc(100vh - 100px);
@@ -426,7 +423,6 @@ body {
     max-width: 18em;
     max-height: 20em;
     margin-top: 1em;
-    /* margin-bottom: 10px; */
     padding: 1em;
     border-radius: 5px;
     box-shadow: 1em 2em 2.5em rgba(1, 2, 68, 0.08);
@@ -481,10 +477,6 @@ img {
     }
 }
 
-
-
-/* Sidebar styling */
-
 .sidebar {
     width: 250px;
     height: 100%;
@@ -494,8 +486,6 @@ img {
     top: 20vh;
     left: 2vh;
     min-height: calc(100vh - 110px);
-    /* 110px = height of navbar + footer */
-    /* adjust for the width of the sidebar */
 }
 
 .sidebar h2 {
@@ -532,7 +522,6 @@ img {
     text-decoration: underline;
 }
 
-/* Active state */
 .sidebar li.active {
     background-color: #ddd;
 }
@@ -725,7 +714,6 @@ img {
 
 footer {
     display: flex;
-    /* flex-direction: column; */
     flex-wrap: wrap;
     justify-content: space-between;
     background-color: #000;
@@ -804,29 +792,18 @@ footer .copyright {
 
 .modal {
     display: none;
-    /* Hidden by default */
     position: fixed;
-    /* Stay in place */
     z-index: 1;
-    /* Sit on top */
     padding-top: 100px;
-    /* Location of the box */
     left: 0;
     top: 0;
     width: 100%;
-    /* Full width */
     height: 100%;
-    /* Full height */
     overflow: auto;
-    /* Enable scroll if needed */
     background-color: rgb(0, 0, 0);
-    /* Fallback color */
     background-color: rgba(0, 0, 0, 0.4);
-    /* Black w/ opacity */
-
 }
 
-/* Modal Content */
 .modal-content {
     position: relative;
     background-color: #fefefe;
@@ -853,7 +830,6 @@ footer .copyright {
     }
 }
 
-/* Add Animation */
 @-webkit-keyframes animatetop {
     from {
         top: -300px;
@@ -878,7 +854,6 @@ footer .copyright {
     }
 }
 
-/* The Close Button */
 .close {
     color: black;
     float: right;
@@ -910,8 +885,6 @@ footer .copyright {
 .fname {
     color: #000;
     outline: black;
-    /* background-color: black; */
-    /* outline-style: auto; */
     border: 1px solid lightgray;
     outline-width: thin;
     width: 80vh;
@@ -927,8 +900,6 @@ footer .copyright {
 .text-box {
     color: #000;
     outline: black;
-    /* background-color: black; */
-    /* outline-style: auto; */
     border: 1px solid lightgray;
     outline-width: thin;
     /* width: 80vh; */

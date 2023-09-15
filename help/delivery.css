@@ -75,12 +75,8 @@ body {
 
 .card {
     background-color: #ffffff;
-    /* max-width: 18em; */
-    /* width: 20%; */
-
     margin-top: 1em;
     padding: 1em;
-    /* box-shadow: 1em 2em 2.5em rgba(1, 2, 68, 0.08); */
 }
 
 
@@ -114,8 +110,6 @@ body {
     }
 
     #products {
-        /* grid-template-columns: auto auto;
-        grid-column-gap: 1em; */
         position: relative;
         right: 60vh;
     }
@@ -365,29 +359,18 @@ footer .copyright {
 
 .modal {
     display: none;
-    /* Hidden by default */
     position: fixed;
-    /* Stay in place */
     z-index: 1;
-    /* Sit on top */
     padding-top: 100px;
-    /* Location of the box */
     left: 0;
     top: 0;
     width: 100%;
-    /* Full width */
     height: 100%;
-    /* Full height */
     overflow: auto;
-    /* Enable scroll if needed */
     background-color: rgb(0, 0, 0);
-    /* Fallback color */
     background-color: rgba(0, 0, 0, 0.4);
-    /* Black w/ opacity */
-
 }
 
-/* Modal Content */
 .modal-content {
     position: relative;
     background-color: #fefefe;
@@ -414,7 +397,6 @@ footer .copyright {
     }
 }
 
-/* Add Animation */
 @-webkit-keyframes animatetop {
     from {
         top: -300px;
@@ -439,7 +421,6 @@ footer .copyright {
     }
 }
 
-/* The Close Button */
 .close {
     color: black;
     float: right;
@@ -471,8 +452,6 @@ footer .copyright {
 .fname {
     color: #000;
     outline: black;
-    /* background-color: black; */
-    /* outline-style: auto; */
     border: 1px solid lightgray;
     outline-width: thin;
     width: 80vh;
@@ -488,8 +467,6 @@ footer .copyright {
 .text-box {
     color: #000;
     outline: black;
-    /* background-color: black; */
-    /* outline-style: auto; */
     border: 1px solid lightgray;
     outline-width: thin;
     /* width: 80vh; */

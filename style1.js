@@ -278,15 +278,10 @@ let products = {
 };
 let productCount = 0;
 for (let i of products.data) {
-
-    //Create Card
     let card = document.createElement("div");
-    //Card should have category and should stay hidden initially
     card.classList.add("card", i.category, "hide");
-    //image div
     let imgContainer = document.createElement("div");
     imgContainer.classList.add("image-container");
-    //img tag
     let image = document.createElement("img");
     image.setAttribute("src", i.image);
     card.onclick = function () {
@@ -295,15 +290,12 @@ for (let i of products.data) {
 
     imgContainer.appendChild(image);
     card.appendChild(imgContainer);
-    //container
     let container = document.createElement("div");
     container.classList.add("container");
-    //product name
     let name = document.createElement("h5");
     name.classList.add("product-name");
     name.innerText = i.productName.toUpperCase();
     container.appendChild(name);
-    //price
     let price = document.createElement("h6");
     price.innerText = "Rs" + i.price;
     container.appendChild(price);
@@ -321,16 +313,11 @@ for (let i of products.data) {
     document.getElementById("products").appendChild(card);
 
 }
-// Get the search bar input element
 let searchInput = document.getElementById("search-input");
 let searchButton1 = document.getElementById("search");
 let count = 0;
-// Listen for changes in the search bar input value
 searchButton1.addEventListener("click", function () {
-    // Get the search term from the input value
     let searchTerm = searchInput.value.trim().toLowerCase();
-
-    // Count the number of products that match the search term
     count = 0;
     for (let i of products.data) {
         if (i.productName.toLowerCase().includes(searchTerm)) {
@@ -338,7 +325,6 @@ searchButton1.addEventListener("click", function () {
         }
     }
 
-    // Update the count display
     console.log(count + " products found");
 });
 
@@ -429,25 +415,19 @@ function recommend(tag) {
 
 }
 document.getElementById("search").addEventListener("click", () => {
-    //initializations
     let searchInput = document.getElementById("search-input").value;
     let elements = document.querySelectorAll(".product-name");
     let cards = document.querySelectorAll(".card");
-    let resultCount = 0; //to track the number of search results found      
-
-    //loop through all elements
+    let resultCount = 0;
     elements.forEach((element, index) => {
-        //check if text includes the search value
         if (element.innerText.includes(searchInput.toUpperCase())) {
-            //display matching card
             cards[index].classList.remove("hide");
-            resultCount++; //increment result count
+            resultCount++;
         } else {
             cards[index].classList.add("hide");
         }
     });
 
-    //display result not found message
     let resultMessage = document.getElementById("result-message");
     if (resultCount == 0) {
         resultMessage.classList.remove("hide");
@@ -460,39 +440,29 @@ document.getElementById("search").addEventListener("click", () => {
 let checkboxes = document.querySelector('input[type="checkbox"]');
 let topwearButton = document.querySelector(".button-value");
 checkboxes.addEventListener("click", function () {
-    // Get the recommendDiv element
     let recommendDiv = document.getElementById("recommend");
     let heading = document.getElementById("heading");
-
-    // Clear the recommendations div if the Topwear button is clicked
     recommendDiv.innerHTML = "";
     heading.innerHTML = "";
-
-    // Exit the event listener function early to prevent further code execution
     return;
 });
 topwearButton.addEventListener("click", function () {
-    // Get the recommendDiv element
     let recommendDiv = document.getElementById("recommend");
     let heading = document.getElementById("heading");
-
-    // Clear the recommendations div if the Topwear button is clicked
     recommendDiv.innerHTML = "";
     heading.innerHTML = "";
-
-    // Exit the event listener function early to prevent further code execution
     return;
 });
 
 function getRandomProducts(count) {
     let randomProducts = [];
     let maxIndex = products.data.length - 1;
-    let productsCopy = [...products.data]; // create a copy of the products array
+    let productsCopy = [...products.data];
 
     for (let i = 0; i < count; i++) {
         let randomIndex = Math.floor(Math.random() * (maxIndex + 1));
         randomProducts.push(productsCopy[randomIndex]);
-        productsCopy.splice(randomIndex, 1); // remove the selected product from the copy
+        productsCopy.splice(randomIndex, 1);
         maxIndex--;
     }
 
@@ -508,10 +478,8 @@ searchButton.addEventListener("click", function () {
 
 
 function filterProduct(value) {
-    //Button class code
     let buttons = document.querySelectorAll(".button-value");
     buttons.forEach((button) => {
-        //check if value equals innerText
         if (value.toUpperCase() === button.innerText.toUpperCase()) {
             button.classList.add("active");
         } else {
@@ -519,49 +487,36 @@ function filterProduct(value) {
         }
     });
 
-
-    //select all cards
     let elements = document.querySelectorAll(".card");
-    //loop through all cards
     elements.forEach((element) => {
-        //display all cards on 'all' button click
         if (value === "all") {
             element.classList.remove("hide");
         } else {
-            //Check if element contains category class
             if (element.classList.contains(value)) {
-                //display element based on category
                 element.classList.remove("hide");
             } else {
-                //hide other elements
                 element.classList.add("hide");
             }
         }
     });
-    // showResultMessage();
 }
 
 
 function filterProducts() {
-    // Get all selected values
     const selectedColors = Array.from(document.querySelectorAll('input[name="color"]:checked')).map((checkbox) => checkbox.value);
     const selectedGenders = Array.from(document.querySelectorAll('input[name="gender"]:checked')).map((checkbox) => checkbox.value);
     const selectedBrand = Array.from(document.querySelectorAll('input[name="brand"]:checked')).map((checkbox) => checkbox.value);
-    // Select all cards
     const elements = document.querySelectorAll('.card');
     var resultMessage = document.getElementById('result-message1');
     let count = 0;
 
-    // Loop through all cards
     elements.forEach((element) => {
         const productColor = element.getAttribute('data-color');
         const productGender = element.dataset.gender;
         const productdBrand = element.dataset.brand;
-        // Check if the card's color and gender match any of the selected values
         const colorMatch = selectedColors.length === 0 || selectedColors.includes(productColor);
         const genderMatch = selectedGenders.length === 0 || selectedGenders.includes(productGender) || (selectedGenders.includes("Men") && selectedGenders.includes("Women") && productGender === "Both");
         const brandMatch = selectedBrand.length === 0 || selectedBrand.includes(productdBrand) || (selectedBrand.includes("Sidemen") && selectedBrand.includes("Logang") && productdBrand === "Both");
-        // Display card if it matches the selected values, hide it otherwise
         if (colorMatch && genderMatch && brandMatch) {
             element.classList.remove('hide');
             count++;
@@ -570,7 +525,6 @@ function filterProducts() {
         }
     });
     let heading = document.getElementById('heading');
-    // showResultMessage();
     if (count === 0) {
         resultMessage.innerHTML = 'No matching products found.';
         heading.innerHTML = "";
@@ -579,14 +533,12 @@ function filterProducts() {
         heading.innerHTML = "";
     }
 }
-// Add event listeners to all checkboxes
 document.querySelectorAll('input[name="color"], input[name="gender"],input[name="brand"]').forEach((checkbox) => {
     checkbox.addEventListener('change', filterProducts);
 });
 
 if (window.performance) {
     if (performance.navigation.type == 1) {
-        // Page is reloaded
         const searchParams = new URLSearchParams(window.location.search);
         searchParams.delete('searchQuery');
         const newUrl = `${window.location.origin}${window.location.pathname}?${searchParams.toString()}`;

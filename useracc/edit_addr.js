@@ -16,10 +16,7 @@ var db = firebase.firestore();
 var form = document.getElementById("form");
 
 form.addEventListener("submit", function (event) {
-    // Prevent default form submission
     event.preventDefault();
-
-    // Get form values
     var addtit = document.getElementById("addtit").value;
     var country = document.getElementById("country").value;
     var line1 = document.getElementById("line1").value;
@@ -31,11 +28,21 @@ form.addEventListener("submit", function (event) {
     const currentUser = firebase.auth().currentUser;
     const userId = currentUser.uid;
     const addressRef = db.collection("users").doc(userId).collection("address").doc("myAddress");
-
-    // Check if the document exists
+    const inputCollection1 = db.collection("credits").doc(userId);
+    // const inputDocument1 = inputCollection1.doc(userId);
+    inputCollection1.get().then((doc) => {
+        if (!doc.exists) {
+            inputCollection1.set({
+                credit: 0
+            }).then(() => {
+                console.log("Credits added!");
+            }).catch((error) => {
+                console.error("Error updating document: ", error);
+            });
+        }
+    })
     addressRef.get().then((doc) => {
         if (doc.exists) {
-            // Update the existing document with new data
             addressRef.update({
                 title: addtit,
                 country: country,
@@ -52,7 +59,6 @@ form.addEventListener("submit", function (event) {
                 console.error("Error updating document: ", error);
             });
         } else {
-            // Create a new document with the specified data
             addressRef.set({
                 title: addtit,
                 country: country,
@@ -76,13 +82,9 @@ form.addEventListener("submit", function (event) {
 // const db = firebase.firestore();
 const auth = firebase.auth();
 const database = firebase.database();
-// Attach click event listener to the logout button
-
-
 
 firebase.auth().onAuthStateChanged(async function (user) {
     if (user) {
-        // User is signed in.
         const currentUser = firebase.auth().currentUser;
         const userId = currentUser.uid;
         const imageRef = db.collection("users").doc(userId).collection("images").doc("userimg");
@@ -111,29 +113,21 @@ firebase.auth().onAuthStateChanged(async function (user) {
     }
 });
 
-// Listen for form submission
-document.getElementById('my-form').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent the form from refreshing the page
-
-    // Get the values from the form input fields
-    var firstName = document.getElementById('fname').value;
-    var lastName = document.getElementById('text-box').value;
-
-    // Store the first name and last name in the Firebase database
+document.getElementById('my-form1').addEventListener('submit', function (event) {
+    event.preventDefault();
+    var firstName1 = document.getElementById('fname1').value;
+    var lastName1 = document.getElementById('text-box1').value;
     database.ref('users').push({
-        Name: firstName,
-        Comments: lastName
+        Name: firstName1,
+        Comments: lastName1
     }, function (error) {
         if (error) {
             console.log('Data could not be saved.' + error);
         } else {
             console.log('Data saved successfully.');
-            window.location = 'delivery.html';
+            alert('Feedback successfully recorded');
         }
     });
-
-    // Clear the input fields
-    document.getElementById('fname').value = '';
-    document.getElementById('text-box').value = '';
+    document.getElementById('fname1').value = '';
+    document.getElementById('text-box1').value = '';
 });
-

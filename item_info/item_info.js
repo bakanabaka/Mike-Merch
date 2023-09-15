@@ -40,7 +40,6 @@
 //     document.getElementById('area').value = '';
 // });
 
-// Initialize Firebase
 var firebaseConfig = {
     apiKey: "AIzaSyBDdIwSsdQ-29jfyA6IfV5U-8SSmA-7iVM",
     authDomain: "pommy-a7657.firebaseapp.com",
@@ -58,20 +57,14 @@ let selectedSizeButton = null;
 
 firebase.auth().onAuthStateChanged(function (user) {
     var user = firebase.auth().currentUser;
-
-    // Check if a user is currently authenticated
     if (user) {
-        // User is signed in, retrieve their unique ID
         var userId = user.uid;
-
-        // Use the user ID to create separate local storage for each user
         var wishlistStorageKey = 'wishlist_' + userId;
         var favoritesStorageKey = 'favorites_' + userId;
         var wishlist = JSON.parse(localStorage.getItem(wishlistStorageKey)) || [];
         var favorites = JSON.parse(localStorage.getItem(favoritesStorageKey)) || [];
         console.log(wishlistStorageKey);
     } else {
-        // No user is signed in, use a default local storage key
         var wishlistStorageKey = 'wishlist';
         var favoritesStorageKey = 'favorites';
         var wishlist = JSON.parse(localStorage.getItem(wishlistStorageKey)) || [];
@@ -81,16 +74,11 @@ firebase.auth().onAuthStateChanged(function (user) {
 
     sizeButtons.forEach(button => {
         button.addEventListener('click', function () {
-            // Remove the "selected" class from all buttons
             sizeButtons.forEach(button => {
                 button.classList.remove('selected');
             });
-
-            // Add the "selected" class to the clicked button
             button.classList.add('selected');
             selectedSizeButton = button;
-
-            // Set the selected size to the Add To WishList button
             const addToWishlistButton = document.querySelector('.add-to-wishlist');
             const addToFavoritesButton = document.querySelector('.fav');
             addToWishlistButton.setAttribute('data-size', button.getAttribute('data-size'));
@@ -167,18 +155,12 @@ firebase.auth().onAuthStateChanged(function (user) {
 });
 
 var dataList = document.getElementById("data-list");
-// Get a reference to the Firebase database
 var database = firebase.database();
 
-// Listen for form submission
 document.getElementById('my-form').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent the form from refreshing the page
-
-    // Get the values from the form input fields
+    event.preventDefault();
     var firstName = document.getElementById('fname').value;
     var lastName = document.getElementById('text-box').value;
-
-    // Store the first name and last name in the Firebase database
     database.ref('shoe1').push({
         Name: firstName,
         Comments: lastName
@@ -187,11 +169,9 @@ document.getElementById('my-form').addEventListener('submit', function (event) {
             console.log('Data could not be saved.' + error);
         } else {
             console.log('Data saved successfully.');
-            window.location = 'item_info.html';
         }
     });
 
-    // Clear the input fields
     document.getElementById('fname').value = '';
     document.getElementById('text-box').value = '';
 });
@@ -200,23 +180,13 @@ document.getElementById('my-form').addEventListener('submit', function (event) {
 var db = firebase.database();
 
 var dataRef = db.ref("shoe1").orderByChild("fname").limitToLast(3);
-
-// Attach a listener to the data reference
 dataRef.on("value", function (snapshot) {
-    // Clear the data list
     dataList.innerHTML = "";
-
-    // Loop through the child nodes of the snapshot
     snapshot.forEach(function (childSnapshot) {
-        // Get the data object from the child snapshot
         var data = childSnapshot.val();
-
-        // Create a new list item element with the data
         var listItem = document.createElement("li");
         var list = document.createElement("p");
-        listItem.textContent = data.Name + " [ " + data.Comments + " ]";
-
-        // Add the list item to the data list
+        listItem.textContent = data.Name + " - " + data.Comments;
         dataList.appendChild(listItem);
     });
 });
@@ -224,13 +194,9 @@ dataRef.on("value", function (snapshot) {
 const db1 = firebase.firestore();
 const auth = firebase.auth();
 // const database = firebase.database();
-// Attach click event listener to the logout button
-
-
 
 firebase.auth().onAuthStateChanged(async function (user) {
     if (user) {
-        // User is signed in.
         const currentUser = firebase.auth().currentUser;
         const userId = currentUser.uid;
         const imageRef = db1.collection("users").doc(userId).collection("images").doc("userimg");
@@ -259,29 +225,22 @@ firebase.auth().onAuthStateChanged(async function (user) {
     }
 });
 
-// Listen for form submission
-document.getElementById('my-form').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent the form from refreshing the page
-
-    // Get the values from the form input fields
-    var firstName = document.getElementById('fname').value;
-    var lastName = document.getElementById('text-box').value;
-
-    // Store the first name and last name in the Firebase database
+document.getElementById('my-form1').addEventListener('submit', function (event) {
+    event.preventDefault();
+    var firstName1 = document.getElementById('fname1').value;
+    var lastName1 = document.getElementById('text-box1').value;
     database.ref('users').push({
-        Name: firstName,
-        Comments: lastName
+        Name: firstName1,
+        Comments: lastName1
     }, function (error) {
         if (error) {
             console.log('Data could not be saved.' + error);
         } else {
             console.log('Data saved successfully.');
-            window.location = 'delivery.html';
+            alert('Feedback successfully recorded');
         }
     });
-
-    // Clear the input fields
-    document.getElementById('fname').value = '';
-    document.getElementById('text-box').value = '';
+    document.getElementById('fname1').value = '';
+    document.getElementById('text-box1').value = '';
 });
 

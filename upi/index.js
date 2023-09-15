@@ -39,8 +39,8 @@ function sendTextMessage() {
     client.messages
         .create({
             body: 'Hello from twilio-node',
-            to: '+12345678901', // Text your number
-            from: '+12345678901', // From a valid Twilio number
+            to: '+12345678901',
+            from: '+12345678901',
         })
         .then((message) => console.log(message.sid));
 }
