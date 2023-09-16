@@ -189,6 +189,7 @@ header {
     font-size: 1em;
     color: #333;
     letter-spacing: 0.1em;
+    /* right: 20vh; */
 }
 
 @media screen and (max-width:600px) {
@@ -215,6 +216,7 @@ header {
     display: block;
 }
 
+/* Create three equal columns that floats next to each other */
 .column {
     float: left;
     width: 33.33%;
@@ -263,6 +265,7 @@ header {
     left: 16vh;
 }
 
+/* Clear floats after the columns */
 .row:after {
     content: "";
     display: table;
@@ -294,6 +297,7 @@ header {
 .user-info {
     display: flex;
     align-items: center;
+    height: 8vh;
 }
 
 .user-info h3 {
@@ -346,7 +350,6 @@ header {
 .sub-menu-link:hover p {
     font-weight: 600;
 }
-
 
 
 
@@ -411,6 +414,7 @@ body {
 #recommend {
     display: grid;
     grid-template-columns: auto auto auto;
+    /* grid-column-gap: 0em; */
     padding: 2em 0;
     width: 75%;
     min-height: calc(100vh - 100px);
@@ -423,6 +427,7 @@ body {
     max-width: 18em;
     max-height: 20em;
     margin-top: 1em;
+    /* margin-bottom: 10px; */
     padding: 1em;
     border-radius: 5px;
     box-shadow: 1em 2em 2.5em rgba(1, 2, 68, 0.08);
@@ -453,11 +458,13 @@ img {
 
 .no-products {
     position: relative;
-    bottom: 60vh;
+    bottom: 85vh;
     /* top: 410vh; */
 }
 
-
+.no-display {
+    display: none;
+}
 
 @media screen and (max-width: 720px) {
     img {
@@ -486,6 +493,8 @@ img {
     top: 20vh;
     left: 2vh;
     min-height: calc(100vh - 110px);
+    /* 110px = height of navbar + footer */
+    /* adjust for the width of the sidebar */
 }
 
 .sidebar h2 {
@@ -802,6 +811,7 @@ footer .copyright {
     overflow: auto;
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.4);
+
 }
 
 .modal-content {

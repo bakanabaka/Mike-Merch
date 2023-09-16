@@ -10,7 +10,7 @@ let products = {
             brand: "high",
             image: "images/11.png",
             url: "item_info/item_info1.html",
-            tag1: "hoodie",
+            tag1: " ",
             tag2: "logang"
         },
 
@@ -364,25 +364,47 @@ function recommend(tag) {
             numRecommended++;
         }
     }
-    if (numRecommended >= 1) {
-        let heading = document.getElementById("heading");
-        heading.innerText = "Recommended Products";
-        heading.classList.add("no-products");
-        recommendDiv.classList.add("no-products");
-    }
-    if (count === 0) {
-        recommendDiv.classList.add("no-products");
-        heading.classList.add("no-products");
-        heading.innerText = "";
-    }
-    else {
+    // if (numRecommended >= 1) {
+    //     let heading = document.getElementById("heading");
+    //     heading.innerText = "Recommended Products";
+    //     heading.classList.add("no-products");
+    //     recommendDiv.classList.remove("no-products");
+
+    // }
+    // if (numRecommended >= 1) {
+    //     let heading = document.getElementById("heading");
+    //     heading.innerText = "Recommended";
+    //     heading.style.display = "none";
+    //     recommendDiv.style.display = "none";
+
+    // }
+    // if (numRecommended == 0) {
+    //     let heading = document.getElementById("heading");
+    //     heading.innerText = " ";
+    //     recommendDiv.classList.remove("no-products");
+    // }
+    // if (count === 0) {
+    //     recommendDiv.classList.add("no-products");
+    //     heading.classList.add("no-products");
+    //     heading.innerText = "";
+    // }
+    // else {
+    //     recommendDiv.classList.remove("no-products");
+    //     heading.classList.remove("no-products");
+    //     heading.innerText = " ";
+    // }
+    if (count > 0) {
         recommendDiv.classList.remove("no-products");
-        heading.classList.remove("no-products");
-        // heading.innerText = "";
     }
-    if (numRecommended === 0 && count === 0) {
+    if (numRecommended != 0 && count == 0) {
         let heading = document.getElementById("heading");
-        heading.innerText = "No matching products found. Here are some random products:";
+        heading.innerText = " ";
+        heading.classList.add("no-products");
+        recommendDiv.classList.add("no-products");
+    }
+    if (count === 0 && numRecommended == 0) {
+        let heading = document.getElementById("heading");
+        heading.innerText = "No matching products found. Here are some Recommended products:";
         recommendDiv.classList.add("no-products");
         heading.classList.add("no-products");
         let randomProducts = getRandomProducts(6);
@@ -411,6 +433,11 @@ function recommend(tag) {
             recommendDiv.appendChild(card);
             card.style.padding = "1em";
         }
+        // recommendDiv.style.position = "relative";
+        // recommendDiv.style.height = "10vh";
+        // recommendDiv.style.bottom = "85vh";
+        heading.style.position = "relative";
+        heading.style.bottom = "78vh";
     }
 
 }
@@ -545,6 +572,5 @@ if (window.performance) {
         window.location.replace(newUrl);
     }
 }
-
 
 
