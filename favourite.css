@@ -775,10 +775,10 @@ footer .copyright {
 
 .wishlist-item {
     background-color: white;
-    padding-left: 2vh;
-    padding-right: 2vh;
-    margin-left: 20vh;
-    margin-right: 20vh;
+    padding: 1vh;
+    position: relative;
+    margin-left: 8.9%;
+    margin-right: 10.1%;
     font-family: cursive;
 }
 
