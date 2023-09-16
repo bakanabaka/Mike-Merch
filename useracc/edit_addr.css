@@ -413,17 +413,17 @@ header {
     left: 1vh;
 }
 
-.nike-div {
+.Nike-div {
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
-.nike-logo {
+.Nike-logo {
     width: 10vh;
 }
 
-.nike-p {
+.Nike-p {
     font-size: 2.5vh;
     color: gray;
 

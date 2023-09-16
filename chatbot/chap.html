@@ -193,24 +193,38 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const utterances = [["how are you", "how life", "how are things"],
-            ["nike delivery"],
-            ["hi", "hey", "hello", "good morning", "good afternoon", "good"],
-            ["what are you doing", "what is going on", "what up"],
-            ["how old are you"],
-            ["who are you", "are you human", "are you bot", "are you human or bot"],
-            ["weather", "temperature"],
-            ["time"],
+            const utterances = [
+                ["how order", "how product", "order", "product"],
+                ["free shipping", "shipping options", "shipping cost", "shipping"],
+                ["return product", "return policy", "request refund"],
+                ["payment secure", "financial data", "security"],
+                ["promotions", "sales", "discount code"],
+                ["payment methods", "paypal", "credit cards", "cards", "gpay", "paytm", "phonepe"],
+                ["track order", "order status", "tracking number"],
+                ["how are you", "how life", "how are things"],
+                ["hi", "hey", "hello", "good morning", "good afternoon", "good"],
+                ["what are you doing", "what is going on", "what up", "sup"],
+                ["old", "age"],
+                ["who are you", "are you human", "are you bot", "are you human or bot", "bot"],
+                ["weather", "temperature"],
+                ["time"],
             ];
 
-            const answers = [["Fine... how are you?", "Pretty well, how are you?", "Fantastic, how are you?"],
-            ["nike shoes delivery"],
-            ["Hello!", "Hi!", "Hey!", "Hi there!", "Howdy"],
-            ["Nothing much", "About to go to sleep", "Can you guess?", "I don't know actually"],
-            ["I am infinite"],
-            ["I am just a bot", "I am a bot. What are you?"],
-            ["The weather is currently sunny and warm!"],
-            ["The time is currently " + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })],
+            const answers = [
+                ["To place an order, simply browse our products, select the item you want, and click 'Add to Cart'. Then, proceed to checkout and follow the steps to complete your purchase.", "You can buy products by adding them to your cart and then proceeding to checkout. It's a straightforward process.", "Making a purchase is easy! Just choose the product you want, add it to your cart, and complete the checkout process."],
+                ["Yes, we offer free shipping on all orders.You can choose from various shipping options during checkout.", "We provide free shipping on every orders. We also offer different shipping methods with varying costs.", "Free shipping is available. During checkout, you can select your preferred shipping option."],
+                ["We have a hassle-free return policy. If you're not satisfied with your purchase, you can return it within 30 days of receiving it. Please visit our 'Returns' page for detailed instructions.", "Our return policy is customer-friendly. You can return items within 30 days of receipt. For detailed instructions, please refer to our 'Returns' page.", "You can request a return within 30 days of receiving your order. Check our 'Returns' page for step-by-step guidance."],
+                ["Your payment information is completely secure with us. We use industry-standard encryption and security protocols to protect your data and ensure safe transactions.", "We take the security of your payment information seriously. We use advanced encryption methods to keep your data safe.", "Rest assured, your payment information is secure. We employ the latest security measures to protect your financial data."],
+                ["We frequently run promotions and discounts. To stay updated, subscribe to our newsletter or check our 'Deals' section for the latest offers.", "Our website features regular promotions and discounts. Be sure to subscribe to our newsletter to receive exclusive offers.", "Stay tuned for our ongoing promotions and discounts. You can find them in our 'Deals' section or subscribe to our newsletter for updates."],
+                ["We accept several payment methods, including credit cards (Visa, MasterCard, American Express), PayPal, and more. You can select your preferred method during checkout.", "You have various payment options when shopping with us, such as credit cards (Visa, MasterCard, American Express), and PayPal. Choose your preferred method at checkout.", "During checkout, you can choose from multiple payment methods, including credit cards like Visa and MasterCard, as well as PayPal."],
+                ["You can easily track your order by logging into your account and visiting the 'Order Status' page. Once your order ships, you'll receive a tracking number to monitor the delivery progress.", "Tracking your order is simple. Just log in to your account and go to the 'Order Status' page. We'll provide you with a tracking number once your order is shipped.", "For order tracking, log in to your account and go to the 'Order Status' page. You'll receive a tracking number when your order is on its way."],
+                ["Fine... how are you?", "Pretty well, how are you?", "Fantastic, how are you?"],
+                ["Hello!", "Hi!", "Hey!", "Hi there!", "Howdy"],
+                ["Nothing much", "About to go to sleep", "Can you guess?", "I don't know actually"],
+                ["I am infinite", "I am a bot so my age is pretty much undefined"],
+                ["I am just a bot", "I am a bot. What are you?"],
+                ["The weather is currently sunny and warm!"],
+                ["The time is currently " + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })],
             ];
 
             const alternatives = ["Go on...", "Try again", " I'm sorry, I don't understand"];
@@ -309,13 +323,11 @@
             }
             function checkForTypos(input) {
                 const typos = {
+                    "orde": "order",
                     "helo": "hello",
-                    "heyy": "hey",
-                    "wats": "what's",
-                    "sup": "what's up",
+                    "wats": "sup",
                     "temprature": "temperature",
-                    "bot?": "are you a bot?",
-                    "humman": "are you human?",
+                    "humman": "human",
                 };
 
                 let words = input.split(" ");
@@ -369,7 +381,7 @@
                                 placeholder="We would like to have your feedback(max 600 words)" required></textarea>
                             <p class="last-p">We are unable to respond to requests submitted here. If you need
                                 assistance
-                                with your Nike
+                                with your Mike's
                                 Product or Services please contact us.</p>
                             <button class="but1" type="submit">Submit</button>
                         </form><br>

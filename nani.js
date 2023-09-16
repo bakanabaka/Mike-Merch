@@ -212,11 +212,21 @@ no.addEventListener('click', function () {
 })
 
 firebase.auth().onAuthStateChanged(function (user) {
+
     if (user && document.referrer.includes("whac_a_mole/index.html")) {
+
+
         const userId = user.uid;
         const inputCollection1 = db.collection("credits");
         const inputDocument1 = inputCollection1.doc(userId);
         const creditScoreElement = document.getElementById("credit-score");
+        const addressRef = db.collection("users").doc(userId).collection("address").doc("myAddress");
+        addressRef.get().then((addressDoc) => {
+            if (!addressDoc.exists) {
+                alert("Please provide your address before proceeding.");
+                return;
+            }
+        });
         // let score;
         if (result >= 2) {
             score = 10;
@@ -247,6 +257,12 @@ firebase.auth().onAuthStateChanged(function (user) {
         const inputCollection1 = db.collection("credits");
         const inputDocument1 = inputCollection1.doc(userId);
         const creditScoreElement = document.getElementById("credit-score");
+        addressRef.get().then((addressDoc) => {
+            if (!addressDoc.exists) {
+                alert("Please provide your address before proceeding.");
+                return;
+            }
+        });
         let score;
         if (result == 15) {
             score = 10;
@@ -275,6 +291,12 @@ firebase.auth().onAuthStateChanged(function (user) {
         const inputCollection1 = db.collection("credits");
         const inputDocument1 = inputCollection1.doc(userId);
         const creditScoreElement = document.getElementById("credit-score");
+        addressRef.get().then((addressDoc) => {
+            if (!addressDoc.exists) {
+                alert("Please provide your address before proceeding.");
+                return;
+            }
+        });
         let score;
         if (result == 5) {
             score = 10;
@@ -303,6 +325,12 @@ firebase.auth().onAuthStateChanged(function (user) {
         const inputCollection1 = db.collection("credits");
         const inputDocument1 = inputCollection1.doc(userId);
         const creditScoreElement = document.getElementById("credit-score");
+        addressRef.get().then((addressDoc) => {
+            if (!addressDoc.exists) {
+                alert("Please provide your address before proceeding.");
+                return;
+            }
+        });
         let score;
         if (result == 5) {
             score = 10;
