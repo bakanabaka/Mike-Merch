@@ -75,10 +75,14 @@ registerBtn.addEventListener('click', (e) => {
             const errorCode = error.code;
             const errorMessageText = error.message;
             if (errorCode === 'auth/email-already-in-use') {
-                cpassword_span.innerHTML = '';
-                errorMessage.textContent = 'The email address is already in use.';
-            } else {
-                errorMessage.textContent = errorMessageText;
+                cpassword_span.innerHTML = 'The email address is already in use.';
+                errorMessage.textContent = '';
+            }
+            if (errorCode === 'auth/invalid-email') {
+                cpassword_span.innerHTML = 'The email address is badly formatted';
+            }
+            else {
+                cpassword_span.innerHTML = errorMessageText;
             }
             console.error(error);
         });

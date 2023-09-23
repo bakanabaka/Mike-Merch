@@ -20,7 +20,7 @@ document.getElementById('sub1').onclick = async function (e) {
         const currentUser = firebase.auth().currentUser;
         if (!currentUser) {
             alert("Login to contribute to society");
-            return;
+            window.location.href = "signup/login.html";
         }
         const userId = currentUser.uid;
         const totalAmount = parseInt(document.getElementById('subscribe-value1').value);

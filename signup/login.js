@@ -32,6 +32,7 @@ form.addEventListener('submit', e => {
     e.preventDefault();
     if (auth.currentUser || auth2.currentUser) {
         alert('You are already logged in to another account. Please log out first.');
+        window.location.href = "../useracc/account.html"
         return;
     }
     const email = form.email.value;
@@ -40,7 +41,7 @@ form.addEventListener('submit', e => {
         .then(() => {
             // console.log('User logged in successfully to first Firebase account');
             alert('User logged in successfully');
-            window.location = '../stylist/stylist.html'
+            window.location = '../style1.html'
         })
         .catch(function (error) {
             console.log("Login error:", error);
@@ -55,7 +56,7 @@ form.addEventListener('submit', e => {
     auth2.signInWithEmailAndPassword(email, password)
         .then(() => {
             alert('User logged in successfully');
-            window.location = '../stylist/stylist.html'
+            window.location = '../style1.html'
         })
         .catch(function (error) {
             console.log("Login error:", error);

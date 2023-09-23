@@ -18,7 +18,7 @@ document.getElementById('sub1').onclick = async function (e) {
         const currentUser = firebase.auth().currentUser;
         if (!currentUser) {
             alert("Sign In before you want to buy a subscription");
-            return;
+            window.location.href = "signup/login.html";
         }
         const userId = currentUser.uid;
         const subscriptionSnapshot = await db.collection("subscribe").doc(userId).get();

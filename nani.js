@@ -178,7 +178,7 @@ no.addEventListener('click', function () {
     const currentUser = firebase.auth().currentUser;
     if (!currentUser) {
         alert("You are not logged in. Please log in to continue.");
-        return;
+        window.location.href = "signup/login.html";
     }
 
     const userId = currentUser.uid;
@@ -212,7 +212,6 @@ no.addEventListener('click', function () {
 })
 
 firebase.auth().onAuthStateChanged(function (user) {
-
     if (user && document.referrer.includes("whac_a_mole/index.html")) {
 
 
@@ -247,7 +246,11 @@ firebase.auth().onAuthStateChanged(function (user) {
                 }
             }
         });
-    } else {
+    }
+    if (!user && document.referrer.includes("whac_a_mole/index.html")) {
+        alert('Login before you want to continue to payment');
+    }
+    else {
         console.log("User is not signed in or not coming from whac-a-mole/index.html.");
     }
 });
@@ -281,7 +284,11 @@ firebase.auth().onAuthStateChanged(function (user) {
                 }
             }
         });
-    } else {
+    }
+    if (!user && document.referrer.includes("break_out/index.html")) {
+        alert('Login before you want to continue to payment');
+    }
+    else {
         console.log("User is not signed in or not coming from whac-a-mole/index.html.");
     }
 });
@@ -294,7 +301,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         addressRef.get().then((addressDoc) => {
             if (!addressDoc.exists) {
                 alert("Please provide your address before proceeding.");
-                return;
+                window.location.href = "useracc/account.html";
             }
         });
         let score;
@@ -315,7 +322,12 @@ firebase.auth().onAuthStateChanged(function (user) {
                 }
             }
         });
-    } else {
+    }
+    if (!user && document.referrer.includes("rock_paper_scissor/index.html")) {
+        alert('Login before you want to continue to payment');
+    }
+
+    else {
         console.log("User is not signed in or not coming from whac-a-mole/index.html.");
     }
 });
@@ -328,7 +340,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         addressRef.get().then((addressDoc) => {
             if (!addressDoc.exists) {
                 alert("Please provide your address before proceeding.");
-                return;
+                window.location.href = "useracc/account.html";
             }
         });
         let score;
@@ -349,7 +361,11 @@ firebase.auth().onAuthStateChanged(function (user) {
                 }
             }
         });
-    } else {
+    }
+    if (!user && document.referrer.includes("space_invaders/index.html")) {
+        alert('Login before you want to continue to payment');
+    }
+    else {
         console.log("User is not signed in or not coming from whac-a-mole/index.html.");
     }
 });
