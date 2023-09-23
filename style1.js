@@ -10,8 +10,8 @@ let products = {
             brand: "high",
             image: "images/11.png",
             url: "item_info/item_info1.html",
-            tag1: " ",
-            tag2: "logang"
+            tag1: "coat",
+            tag2: "jacket"
         },
 
         {
@@ -63,7 +63,7 @@ let products = {
             brand: "medium",
             image: "images/51.png",
             url: "item_info/item_info6.html",
-            tag1: "top",
+            tag1: "t shirt",
             tag2: "tee"
         },
         {
@@ -89,7 +89,7 @@ let products = {
             brand: "low",
             image: "images/71.png",
             url: "item_info/item_info7.html",
-            tag1: "top",
+            tag1: "t shirt",
             tag2: "tee"
         },
         {
@@ -142,7 +142,7 @@ let products = {
             image: "images/111.png",
             url: "item_info/item_info11.html",
             tag1: "polo",
-            tag2: "tee"
+            tag2: "t shirt"
         },
         {
             productName: "SDMN Varsity Melange",
@@ -193,7 +193,7 @@ let products = {
             brand: "low",
             image: "images/151.png",
             url: "item_info/item_info15.html",
-            tag1: "polo",
+            tag1: "t shirt",
             tag2: "tee"
         },
         {
@@ -300,8 +300,6 @@ for (let i of products.data) {
     price.innerText = "Rs" + i.price;
     container.appendChild(price);
 
-
-
     card.appendChild(container);
     card.setAttribute("data-gender", i.gender);
     card.setAttribute("data-color", i.color);
@@ -328,141 +326,25 @@ searchButton1.addEventListener("click", function () {
     console.log(count + " products found");
 });
 
-
-function recommend(tag) {
-    let recommendDiv = document.getElementById("recommend");
-    recommendDiv.innerHTML = "";
-
-    let numRecommended = 0;
-
-    for (let i of products.data) {
-        if (i.tag1 === tag || i.tag2 === tag) {
-            let card = document.createElement("div");
-            card.classList.add("card", i.category);
-            let imgContainer = document.createElement("div");
-            imgContainer.classList.add("image-container");
-            let image = document.createElement("img");
-            image.setAttribute("src", i.image);
-            card.onclick = function () {
-                window.location.href = i.url;
-            };
-            imgContainer.appendChild(image);
-            card.appendChild(imgContainer);
-            let container = document.createElement("div");
-            container.classList.add("container");
-            let name = document.createElement("h5");
-            name.classList.add("product-name");
-            name.innerText = i.productName.toUpperCase();
-            container.appendChild(name);
-            let price = document.createElement("h6");
-            price.innerText = "$" + i.price;
-            container.appendChild(price);
-            card.appendChild(container);
-            recommendDiv.appendChild(card);
-            card.style.padding = "1em";
-
-            numRecommended++;
-        }
-    }
-    // if (numRecommended >= 1) {
-    //     let heading = document.getElementById("heading");
-    //     heading.innerText = "Recommended Products";
-    //     heading.classList.add("no-products");
-    //     recommendDiv.classList.remove("no-products");
-
-    // }
-    // if (numRecommended >= 1) {
-    //     let heading = document.getElementById("heading");
-    //     heading.innerText = "Recommended";
-    //     heading.style.display = "none";
-    //     recommendDiv.style.display = "none";
-
-    // }
-    // if (numRecommended == 0) {
-    //     let heading = document.getElementById("heading");
-    //     heading.innerText = " ";
-    //     recommendDiv.classList.remove("no-products");
-    // }
-    // if (count === 0) {
-    //     recommendDiv.classList.add("no-products");
-    //     heading.classList.add("no-products");
-    //     heading.innerText = "";
-    // }
-    // else {
-    //     recommendDiv.classList.remove("no-products");
-    //     heading.classList.remove("no-products");
-    //     heading.innerText = " ";
-    // }
-    if (count > 0) {
-        recommendDiv.classList.remove("no-products");
-    }
-    if (numRecommended != 0 && count == 0) {
-        let heading = document.getElementById("heading");
-        heading.innerText = " ";
-        heading.classList.add("no-products");
-        recommendDiv.classList.add("no-products");
-    }
-    if (count === 0 && numRecommended == 0) {
-        let heading = document.getElementById("heading");
-        heading.innerText = "No matching products found. Here are some Recommended products:";
-        recommendDiv.classList.add("no-products");
-        heading.classList.add("no-products");
-        let randomProducts = getRandomProducts(6);
-        for (let i of randomProducts) {
-            let card = document.createElement("div");
-            card.classList.add("card", i.category);
-            let imgContainer = document.createElement("div");
-            imgContainer.classList.add("image-container");
-            let image = document.createElement("img");
-            image.setAttribute("src", i.image);
-            card.onclick = function () {
-                window.location.href = i.url;
-            };
-            imgContainer.appendChild(image);
-            card.appendChild(imgContainer);
-            let container = document.createElement("div");
-            container.classList.add("container");
-            let name = document.createElement("h5");
-            name.classList.add("product-name");
-            name.innerText = i.productName.toUpperCase();
-            container.appendChild(name);
-            let price = document.createElement("h6");
-            price.innerText = "$" + i.price;
-            container.appendChild(price);
-            card.appendChild(container);
-            recommendDiv.appendChild(card);
-            card.style.padding = "1em";
-        }
-        // recommendDiv.style.position = "relative";
-        // recommendDiv.style.height = "10vh";
-        // recommendDiv.style.bottom = "85vh";
-        heading.style.position = "relative";
-        heading.style.bottom = "78vh";
-    }
-
-}
 document.getElementById("search").addEventListener("click", () => {
-    let searchInput = document.getElementById("search-input").value;
-    let elements = document.querySelectorAll(".product-name");
+    let searchInput = document.getElementById("search-input").value.toUpperCase();
     let cards = document.querySelectorAll(".card");
     let resultCount = 0;
-    elements.forEach((element, index) => {
-        if (element.innerText.includes(searchInput.toUpperCase())) {
-            cards[index].classList.remove("hide");
+
+    cards.forEach((card) => {
+        let productName = card.querySelector(".product-name").innerText.toUpperCase();
+        let tag1 = card.getAttribute("data-tag1").toUpperCase();
+        let tag2 = card.getAttribute("data-tag2").toUpperCase();
+
+        if (productName.includes(searchInput) || tag1.includes(searchInput) || tag2.includes(searchInput)) {
+            card.classList.remove("hide");
             resultCount++;
         } else {
-            cards[index].classList.add("hide");
+            card.classList.add("hide");
         }
     });
-
-    let resultMessage = document.getElementById("result-message");
-    if (resultCount == 0) {
-        resultMessage.classList.remove("hide");
-    } else {
-        resultMessage.classList.add("hide");
-    }
-
 });
+
 
 let checkboxes = document.querySelector('input[type="checkbox"]');
 let topwearButton = document.querySelector(".button-value");
@@ -497,11 +379,11 @@ function getRandomProducts(count) {
 }
 
 
-let searchButton = document.getElementById("search");
-searchButton.addEventListener("click", function () {
-    let searchInput = document.getElementById("search-input").value;
-    recommend(searchInput);
-});
+// let searchButton = document.getElementById("search");
+// searchButton.addEventListener("click", function () {
+//     let searchInput = document.getElementById("search-input").value;
+//     recommend(searchInput);
+// });
 
 
 function filterProduct(value) {
@@ -553,7 +435,7 @@ function filterProducts() {
     });
     let heading = document.getElementById('heading');
     if (count === 0) {
-        resultMessage.innerHTML = 'No matching products found.';
+        resultMessage.innerHTML = '';
         heading.innerHTML = "";
     } else {
         // resultMessage.innerHTML = `Showing ${count} matching products.`;
@@ -574,3 +456,115 @@ if (window.performance) {
 }
 
 
+// function recommend(tag) {
+//     let recommendDiv = document.getElementById("recommend");
+//     recommendDiv.innerHTML = "";
+
+//     let numRecommended = 0;
+
+//     for (let i of products.data) {
+//         if (i.tag1 === tag || i.tag2 === tag) {
+//             let card = document.createElement("div");
+//             card.classList.add("card", i.category);
+//             let imgContainer = document.createElement("div");
+//             imgContainer.classList.add("image-container");
+//             let image = document.createElement("img");
+//             image.setAttribute("src", i.image);
+//             card.onclick = function () {
+//                 window.location.href = i.url;
+//             };
+//             imgContainer.appendChild(image);
+//             card.appendChild(imgContainer);
+//             let container = document.createElement("div");
+//             container.classList.add("container");
+//             let name = document.createElement("h5");
+//             name.classList.add("product-name");
+//             name.innerText = i.productName.toUpperCase();
+//             container.appendChild(name);
+//             let price = document.createElement("h6");
+//             price.innerText = "$" + i.price;
+//             container.appendChild(price);
+//             card.appendChild(container);
+//             recommendDiv.appendChild(card);
+//             card.style.padding = "1em";
+
+//             numRecommended++;
+//         }
+//     }
+//     // if (numRecommended >= 1) {
+//     //     let heading = document.getElementById("heading");
+//     //     heading.innerText = "Recommended Products";
+//     //     heading.classList.add("no-products");
+//     //     recommendDiv.classList.remove("no-products");
+
+//     // }
+//     // if (numRecommended >= 1) {
+//     //     let heading = document.getElementById("heading");
+//     //     heading.innerText = "Recommended";
+//     //     heading.style.display = "none";
+//     //     recommendDiv.style.display = "none";
+
+//     // }
+//     // if (numRecommended == 0) {
+//     //     let heading = document.getElementById("heading");
+//     //     heading.innerText = " ";
+//     //     recommendDiv.classList.remove("no-products");
+//     // }
+//     // if (count === 0) {
+//     //     recommendDiv.classList.add("no-products");
+//     //     heading.classList.add("no-products");
+//     //     heading.innerText = "";
+//     // }
+//     // else {
+//     //     recommendDiv.classList.remove("no-products");
+//     //     heading.classList.remove("no-products");
+//     //     heading.innerText = " ";
+//     // }
+//     if (count > 0) {
+//         recommendDiv.classList.remove("no-products");
+//     }
+//     if (numRecommended != 0 && count == 0) {
+//         let heading = document.getElementById("heading");
+//         heading.innerText = " ";
+//         heading.classList.add("no-products");
+//         recommendDiv.classList.add("no-products");
+//     }
+//     if (count === 0 && numRecommended == 0) {
+//         let heading = document.getElementById("heading");
+//         heading.innerText = "No matching products found. Here are some Recommended products:";
+//         recommendDiv.classList.add("no-products");
+//         heading.classList.add("no-products");
+//         let randomProducts = getRandomProducts(6);
+//         for (let i of randomProducts) {
+//             let card = document.createElement("div");
+//             card.classList.add("card", i.category);
+//             let imgContainer = document.createElement("div");
+//             imgContainer.classList.add("image-container");
+//             let image = document.createElement("img");
+//             image.setAttribute("src", i.image);
+//             card.onclick = function () {
+//                 window.location.href = i.url;
+//             };
+//             imgContainer.appendChild(image);
+//             card.appendChild(imgContainer);
+//             let container = document.createElement("div");
+//             container.classList.add("container");
+//             let name = document.createElement("h5");
+//             name.classList.add("product-name");
+//             name.innerText = i.productName.toUpperCase();
+//             container.appendChild(name);
+//             let price = document.createElement("h6");
+//             price.innerText = "$" + i.price;
+//             container.appendChild(price);
+//             card.appendChild(container);
+//             recommendDiv.appendChild(card);
+//             card.style.padding = "1em";
+//         }
+//         // recommendDiv.style.position = "relative";
+//         // recommendDiv.style.height = "10vh";
+//         // recommendDiv.style.bottom = "85vh";
+//         heading.style.position = "relative";
+//         heading.style.bottom = "78vh";
+//     }
+
+// }
