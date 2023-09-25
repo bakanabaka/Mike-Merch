@@ -462,6 +462,12 @@ img {
     /* top: 410vh; */
 }
 
+#result-message1 {
+    position: relative;
+    font-size: 5vh;
+    text-align: center;
+}
+
 .no-display {
     display: none;
 }
